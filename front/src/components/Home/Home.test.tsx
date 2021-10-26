@@ -1,11 +1,11 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import App from './App';
-import gifs from './gif.json';
+import { Home } from './Home';
+import gifs from './../../gif.json';
 
 describe('Show 50 gifs', () => {
   it('show error when no gifs', () => {
-    render(<App />);
+    render(<Home gifs={[]}/>);
     const errorElement = screen.getByText(
       /No se han podido mostrar los gifs./i
     );
@@ -14,7 +14,7 @@ describe('Show 50 gifs', () => {
   });
 
   it('show json gifs', () => {
-    render(<App />);
+    render(<Home gifs={gifs}/>);
     const gifElements = screen.getAllByRole('img');
 
     for (let i = 0; i < gifs.length; i++) {
