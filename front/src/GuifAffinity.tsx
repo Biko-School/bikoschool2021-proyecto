@@ -1,16 +1,12 @@
 import './GuifAffinity.css';
 
-import MainHeader from './components/MainHeader';
-import SearchBar from './components/SearchBar';
-import GuiffCointainer from './components/GuiffContainer';
+import GuiffCard from './GuiffCard';
 
 function GuifAffinity() {
   return (
-    <>
-      <MainHeader/>
-      <SearchBar/>
-      <GuiffCointainer/>
-    </>
+        <>
+            <GuiffCard/>
+        </>
   );
 }
 
