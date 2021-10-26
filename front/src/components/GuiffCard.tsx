@@ -4,7 +4,7 @@ import Tag from './Tag';
 const GuiffCard = () => {
     return (
         <>
-            <img src="" alt="" />
+            <img src="" alt="guif" />
             <Tag/>
         </>
     )
