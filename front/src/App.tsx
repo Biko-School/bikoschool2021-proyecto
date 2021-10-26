@@ -1,14 +1,10 @@
 import React from "react";
+import image01 from "./assets/img/image01.png";
 
 function App() {
   return (
     <div>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam aperiam
-        voluptates neque, obcaecati necessitatibus enim dolorem ut quibusdam
-        corrupti inventore nemo ipsum. Quis eaque porro eligendi optio ex natus
-        illo.
-      </p>
+      <img src={image01} alt="" />
     </div>
   );
 }
