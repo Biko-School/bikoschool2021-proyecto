@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   return (
     <div>
-      Init
+      No se han podido mostrar los gifs.
     </div>
   );
 }
