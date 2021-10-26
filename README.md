@@ -10,3 +10,6 @@ npx create-react-app front --template typescript
 ```
 
 - `api`: será el directorio en el que se desarrollará el backend. Se creará en una sesión guiada por un profesor de la BikoSchool
+
+### Diseños
+Tienes los diseños de la aplicación en [este enlace](https://www.figma.com/file/JJlHcbY8OVzwLOExMihuYV/Sistema-de-dise%C3%B1o---Guifaffinity?node-id=6%3A2)
