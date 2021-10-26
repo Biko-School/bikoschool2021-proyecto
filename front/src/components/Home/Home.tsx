@@ -5,7 +5,7 @@ export const Home = (props: any) => {
   return (
     <>
       {props.gifs.length ? (
-        props.gifs.map((gif: any, index: number) => (
+        props.gifs.map((gif: IGif, index: number) => (
           <img key={index} alt={gif.title} src={gif.url} />
         ))
       ) : (
@@ -13,4 +13,10 @@ export const Home = (props: any) => {
       )}
     </>
   );
+}
+
+interface IGif {
+  id: number;
+  url: string;
+  title: string;
 }
