@@ -9,6 +9,7 @@ describe('Show 50 gifs', () => {
     const errorElement = screen.getByText(
       /No se han podido mostrar los gifs./i
     );
+
     expect(errorElement).toBeInTheDocument();
   });
 

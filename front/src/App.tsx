@@ -5,10 +5,13 @@ import gifs from './gif.json';
 function App() {
   return (
     <>
-      <div>No se han podido mostrar los gifs.</div>
-      {gifs.map((gif, index) => (
-        <img key={index} alt={gif.title} src={gif.url} />
-      ))}
+      {gifs.length ? (
+        gifs.map((gif, index) => (
+          <img key={index} alt={gif.title} src={gif.url} />
+        ))
+      ) : (
+        <div>No se han podido mostrar los gifs.</div>
+      )}
     </>
   );
 }
