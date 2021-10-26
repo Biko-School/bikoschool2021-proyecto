@@ -1,6 +1,5 @@
 import './GuifAffinity.css';
-
-import GuiffCard from './GuiffCard';
+import GuiffCard from './components/GuiffCard';
 
 function GuifAffinity() {
   return (
