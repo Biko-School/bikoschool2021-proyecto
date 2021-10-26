@@ -6,6 +6,8 @@ describe("Home", () => {
   it("will show a gif", () => {
     render(<App />);
 
-    screen.getByText("");
+    const display = document.querySelector("img") as HTMLImageElement;
+
+    expect(display.src).toEqual("imgName");
   });
 });
