@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import './_reset.css';
 import GuifAffinity from './GuifAffinity';
 import reportWebVitals from './reportWebVitals';
 
