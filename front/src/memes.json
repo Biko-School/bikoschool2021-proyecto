@@ -1,0 +1,29 @@
+{
+    "results": [
+        {
+            "title": "Meme 1",
+            "tags": ["tag1", "tag2"],
+            "date": "26/10/2021"
+        },
+        {
+            "title": "Meme 2",
+            "tags": ["tag1", "tag2"],
+            "date": "20/10/2021"
+        },
+        {
+            "title": "Meme 3",
+            "tags": ["tag1", "tag2"],
+            "date": "21/10/2021"
+        },
+        {
+            "title": "Meme 4",
+            "tags": ["tag1", "tag2"],
+            "date": "23/10/2021"
+        },
+        {
+            "title": "Meme 5",
+            "tags": ["tag1", "tag2"],
+            "date": "22/10/2021"
+        }        
+    ]
+}

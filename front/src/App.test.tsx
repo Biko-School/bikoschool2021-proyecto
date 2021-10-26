@@ -1,10 +1,16 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
+import memes from './memes.json'
 
 describe ('App', () => {
-  it('get Hello World', () => {
+
+  it('found memes list', () => {
     render (<App />)
-    expect (screen.getByText("Hello World!")).toBeInTheDocument()
+    for (let meme of memes.results){    
+      expect (screen.getByText(meme.title)).toBeInTheDocument()
+    }
   })
+
+
 })
