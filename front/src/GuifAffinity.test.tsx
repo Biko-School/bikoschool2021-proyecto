@@ -1,9 +1,8 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import GuifAffinity from './GuifAffinity';
 
 test('renders learn react link', () => {
-  render(<App />);
+  render(<GuifAffinity />);
   const linkElement = screen.getByText(/learn react/i);
   expect(linkElement).toBeInTheDocument();
 });
