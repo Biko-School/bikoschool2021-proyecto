@@ -9,14 +9,6 @@ test("Muestra el meme Happy Birthday", () => {
   });
 
   expect(memeItem).toBeInTheDocument();
-});
-
-test("Muestra la imagen del meme Happy Birthday", () => {
-  render(<App />);
-  const memeItem = screen.getByRole("img", {
-    name: "Happy Birthday",
-  });
-
   expect(memeItem).toHaveAttribute(
     "src",
     "https://i.giphy.com/media/H3kNUxf6NubwitJuu6/giphy.webp"
