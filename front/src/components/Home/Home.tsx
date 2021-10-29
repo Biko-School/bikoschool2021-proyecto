@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Home.css';
 
-export const Home = (props: any) => {
+interface IGif {
+  id: number;
+  url: string;
+  title: string;
+}
+
+export const Home = () => {
+  useEffect(() => {}, []);
+
   return (
     <>
-      {props.gifs.length ? (
-        props.gifs.map((gif: IGif, index: number) => (
+      {gifs.length ? (
+        gifs.map((gif: IGif, index: number) => (
           <img key={index} alt={gif.title} src={gif.url} />
         ))
       ) : (
@@ -13,10 +21,4 @@ export const Home = (props: any) => {
       )}
     </>
   );
-}
-
-interface IGif {
-  id: number;
-  url: string;
-  title: string;
-}
+};

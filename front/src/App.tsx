@@ -1,13 +1,9 @@
 import React from 'react';
 import './App.css';
-import { Home } from './components/Home'
-import gifs from './gif.json';
-
+import { Home } from './components/Home';
 
 function App() {
-  return (
-    <Home gifs={gifs}/>  
-  );
+  return <Home />;
 }
 
 export default App;

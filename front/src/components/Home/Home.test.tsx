@@ -5,7 +5,7 @@ import gifs from './../../gif.json';
 
 describe('show 50 gifs', () => {
   it('show error when no gifs', () => {
-    render(<Home gifs={[]}/>);
+    render(<Home />);
     const errorElement = screen.getByText(
       /No se han podido mostrar los gifs./i
     );
@@ -14,7 +14,7 @@ describe('show 50 gifs', () => {
   });
 
   it('show json gifs', () => {
-    render(<Home gifs={gifs}/>);
+    render(<Home />);
     const gifElements = screen.getAllByRole('img');
 
     for (let i = 0; i < gifs.length; i++) {
