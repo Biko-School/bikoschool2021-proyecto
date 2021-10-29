@@ -1,20 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import memes from './memes.json'
+import { api } from './api'
+
+export interface IMeme {
+  title: string;
+  tags: string[];
+  date: Date;
+}
 
 function App() {
   
-  // const [memes, setMemes] = useState([])
+  const [memes, setMemes] = useState<IMeme[]>([])
 
-  // const fechMemes = () => { 
-  //   setMemes(memesJson)
-  // }
+  useEffect(() => {
+    (async () => {
+      const memesJSON = await api.memes();
+      console.log(memesJSON)
+      setMemes(memesJSON);
+    })()
+  }, []);
 
-  // useEffect(() => {
-  //   fechMemes()
-  // }, []);
-
-  const memesList = memes.results.map((meme) =>
+  const memesList = memes.map((meme) =>
     <li key={meme.title}>{meme.title}</li>
   );
   return (
