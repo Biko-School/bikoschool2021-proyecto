@@ -11,8 +11,3 @@ app.use(express.json());
 // Parses incoming requests with urlencoded payloads
 // http://expressjs.com/es/api.html#express.urlencoded
 app.use(express.urlencoded({ extended: false }));
-// Routes every path
-// http://expressjs.com/es/api.html#app.use
-app.use("/", (req: Request, res: Response) => {
-    res.json({ data: "index!" });
-});
