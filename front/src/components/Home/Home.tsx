@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Home.css';
+import axios from 'axios'
 
 interface IGif {
   id: number;
@@ -11,17 +12,9 @@ export const Home = () => {
   const [gifs, setGifs] = useState([]);
 
   useEffect(() => {
-    function dataGifs() {
-      fetch('http://localhost:3000/gifs')
-        .then((res) => {
-          return res.json();
-        })
-        .then((data) => {
-          setGifs(data);
-        });
-    }
-
-    dataGifs();
+    axios.get('http://api.bikoschool.dev/gifs')
+      .then(response => setGifs(response.data))
+      .catch(error => {})
   }, []);
 
   return (
