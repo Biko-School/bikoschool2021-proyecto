@@ -1,5 +1,9 @@
-export const getMeme = () => {
+const getMeme: any = () => {
   return {
-    title: "primer meme",
+    title: "irrelevant",
   };
+};
+
+export const memeService = {
+  getMeme,
 };

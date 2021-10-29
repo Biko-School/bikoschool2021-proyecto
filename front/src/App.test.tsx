@@ -1,18 +1,28 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { App } from "./App";
+import { memeService } from "./getMeme";
 
-describe("listado de gif", () => {
-  it("Cuando la pagina no tiene nada devuelve un mensaje de error", () => {
+describe("list gif", () => {
+  beforeEach(() => {
+    jest.resetAllMocks();
+  });
+  it("when the page is undefinded then return an error message", () => {
+    jest.spyOn(memeService, "getMeme").mockReturnValue(undefined);
     render(<App />);
 
-    expect(screen.getByText("No hay gifs disponibles")).toBeInTheDocument();
+    expect(
+      screen.queryByText("There are not availables gifs")
+    ).toBeInTheDocument();
   });
 
-  it("Que la pagina devuelva un gif", () => {
+  it("Check if the page return a gif", () => {
+    jest.spyOn(memeService, "getMeme").mockReturnValue({ title: "irrelevant" });
     render(<App />);
-
-    expect(screen.getByText("No hay gifs disponibles")).not.toBeInTheDocument();
-    expect(screen.getByText("primer meme")).toBeInTheDocument();
+    screen.debug();
+    expect(
+      screen.queryByText("There are not availables gifs")
+    ).not.toBeInTheDocument();
+    expect(screen.queryByText("irrelevant")).toBeInTheDocument();
   });
 });
