@@ -1,7 +1,19 @@
-import { app } from "./app";
 import request from "supertest";
+import Lowdb from "lowdb";
+import { Express } from "express";
+import FileSync from "lowdb/adapters/FileSync";
+import { DatabaseSchema } from "./DatabaseSchema";
+import { createApp } from "./app";
 
 describe("/api/memes", () => {
+  let app: Express;
+
+  beforeEach(() => {
+    const adapter = new FileSync<DatabaseSchema>("./db/db.json");
+    const db = Lowdb(adapter);
+    app = createApp(db);
+  });
+
   it("existe el endpoint", (done) => {
     request(app).get("/api/memes").expect(200, done);
   });
