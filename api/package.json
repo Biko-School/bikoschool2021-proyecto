@@ -28,6 +28,7 @@
   "homepage": "https://github.com/Biko-School/bikoschool2021-proyecto#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "lowdb": "^1.0.0",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
@@ -38,6 +39,7 @@
     "@babel/preset-typescript": "^7.15.0",
     "@types/express": "^4.17.13",
     "@types/jest": "^27.0.2",
+    "@types/lowdb": "^1.0.11",
     "@types/morgan": "^1.9.3",
     "@types/node": "^16.11.6",
     "@types/supertest": "^2.0.11",
