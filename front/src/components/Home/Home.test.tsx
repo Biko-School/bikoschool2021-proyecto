@@ -7,8 +7,16 @@ import { server } from '../../mocks/server';
 
 describe('show 50 gifs', () => {
 
-  it('show error when no gifs', async () => {
+  it('show loading', async () => {
+    render(<Home />);
+    const errorElement = await screen.findByText(
+      /Cargando.../i
+    );
 
+    expect(errorElement).toBeInTheDocument();
+  });
+
+  it('show error when api gives error', async () => {
     server.use(
       rest.get('http://api.bikoschool.dev/gifs', (req, res, ctx) => {
         return res(ctx.status(500), ctx.json({error: 'Server Error'}));
