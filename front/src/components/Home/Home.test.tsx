@@ -13,9 +13,9 @@ describe('show 50 gifs', () => {
     expect(errorElement).toBeInTheDocument();
   });
 
-  it('show json gifs', () => {
+  it('show json gifs', async () => {
     render(<Home />);
-    const gifElements = screen.getAllByRole('img');
+    const gifElements = await screen.findAllByRole('img');
 
     for (let i = 0; i < gifs.length; i++) {
       expect(gifElements[i]).toHaveAttribute('alt', gifs[i].title);
