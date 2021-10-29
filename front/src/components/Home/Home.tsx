@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './Home.css';
-import axios from 'axios';
-
 
 interface IGif {
   id: number;
@@ -13,12 +11,17 @@ export const Home = () => {
   const [gifs, setGifs] = useState([]);
 
   useEffect(() => {
-    const getGifs = async () => {
-      const response = await axios.get('http://api.ourdomain.com/gifs')
-      console.log('response', response)
+    function dataGifs() {
+      fetch('http://localhost:3000/gifs')
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => {
+          setGifs(data);
+        });
     }
 
-    getGifs()
+    dataGifs();
   }, []);
 
   return (
