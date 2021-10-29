@@ -1,28 +1,25 @@
 import React, { useEffect, useState } from 'react';
-
 import './reset.css';
 import './App.css';
+import getMemes from './getMemes'
+import hey from "./images/Image5_.png"
+
 
 function App() {
 
-  const [meme, setMeme] = useState(false);
+  const [memes, setMemes] = useState([{"title": '', "image": ''}]);
 
   useEffect(() => {
-    setMeme(true);
+    setMemes(getMemes());
    }, []);
 
-  const getMemes = (meme: boolean) => {
-    return (
-      meme ? <span>Soy un meme</span> : <span>No hay memes</span>
-    )
-  }
-
   return (
-    
     <div>
       <h1>Guifaffinity</h1>
       {
-        getMemes(meme)
+        memes ? <div>
+          <span>Soy un meme: {memes[0].title}</span><img src={hey} alt="meme"/> 
+          </div> : <span>No hay memes</span>
       }
     </div>
   )
