@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { Home } from './Home';
 import gifs from './../../gif.json';
 
-describe('Show 50 gifs', () => {
+describe('show 50 gifs', () => {
   it('show error when no gifs', () => {
     render(<Home gifs={[]}/>);
     const errorElement = screen.getByText(
