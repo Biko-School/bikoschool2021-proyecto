@@ -2,19 +2,21 @@ import "./App.css";
 import React, { useEffect } from "react";
 import { memeService } from "./getMeme";
 
-//var tituloMeme: String = "";
-
 export const App: React.FC = () => {
-  const [titleMeme, setTitleMeme] = React.useState("");
+  const [titleMeme, setMeme] = React.useState<{ title: string }>();
+  const [gifImage, setGifImage] = React.useState("");
   useEffect(() => {
-    //tituloMeme = getMeme().title;
-    setTitleMeme(memeService.getMeme()?.title);
+    setMeme(memeService.getMeme());
+    setGifImage(memeService.getMeme()?.src);
   }, []);
 
   return (
     <>
-      {titleMeme ? (
-        <h1>{titleMeme}</h1>
+      {titleMeme && gifImage ? (
+        <>
+          <h1>{titleMeme.title}</h1>
+          <img src={gifImage} alt="gifImage" id="2"></img>
+        </>
       ) : (
         <div>There are not availables gifs</div>
       )}
