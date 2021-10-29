@@ -9,11 +9,11 @@ describe('show 50 gifs', () => {
 
   it('show loading', async () => {
     render(<Home />);
-    const errorElement = await screen.findByText(
+    const loadingElement = await screen.findByText(
       /Cargando.../i
     );
 
-    expect(errorElement).toBeInTheDocument();
+    expect(loadingElement).toBeInTheDocument();
   });
 
   it('show error when api gives error', async () => {

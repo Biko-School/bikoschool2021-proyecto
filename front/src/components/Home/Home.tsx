@@ -11,12 +11,13 @@ interface IGif {
 export const Home = () => {
   const [gifs, setGifs] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     setLoading(true)
     axios.get('http://api.bikoschool.dev/gifs')
       .then(response => setGifs(response.data))
-      .catch(error => {})
+      .catch(error => setError(true))
       .finally(() => setLoading(false))
   }, []);
 
@@ -24,15 +25,17 @@ export const Home = () => {
     return <p>Cargando...</p>
   }
 
+  if (error) {
+    return <div>No se han podido mostrar los gifs.</div>
+  }
+
   return (
     <>
-      {gifs.length ? (
+      {
         gifs.map((gif: IGif, index: number) => (
           <img key={index} alt={gif.title} src={gif.url} />
         ))
-      ) : (
-        <div>No se han podido mostrar los gifs.</div>
-      )}
+      }
     </>
   );
 };
