@@ -4,12 +4,12 @@ import App from "./App";
 
 test("Muestra el meme Happy Birthday", () => {
   render(<App />);
-  const memeItem = screen.getByRole("img", {
+  const meme = screen.getByRole("img", {
     name: "Happy Birthday",
   });
 
-  expect(memeItem).toBeInTheDocument();
-  expect(memeItem).toHaveAttribute(
+  expect(meme).toBeInTheDocument();
+  expect(meme).toHaveAttribute(
     "src",
     "https://i.giphy.com/media/H3kNUxf6NubwitJuu6/giphy.webp"
   );
