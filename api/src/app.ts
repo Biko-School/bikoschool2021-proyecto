@@ -11,3 +11,5 @@ app.use(express.json());
 // Parses incoming requests with urlencoded payloads
 // http://expressjs.com/es/api.html#express.urlencoded
 app.use(express.urlencoded({ extended: false }));
+
+app.get("/api/memes", (req: Request, res: Response) => res.sendStatus(200));
