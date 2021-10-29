@@ -1,0 +1,28 @@
+{ 
+    "memes": [
+        {
+            "id": "1",
+            "name": "mundo girando",
+            "tags": ["risa", "humor"],
+            "image": "./earth.gif"
+        },
+        {
+            "id": "2",
+            "name": "conejito feliz",
+            "tags": ["animal", "gusy"],
+            "image": "./gus.gif"
+        },
+        {
+            "id": "3",
+            "name": "sushi saltarín",
+            "tags": ["comida", "sushi"],
+            "image": "./sushi.gif"
+        },
+        {
+            "id": "4",
+            "name": "extraterrestre bailando",
+            "tags": ["bailar", "extraterrestre"],
+            "image": "./et.gif"
+        }
+    ]
+}    
