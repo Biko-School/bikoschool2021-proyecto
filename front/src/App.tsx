@@ -6,6 +6,7 @@ export interface IMeme {
   title: string;
   tags: string[];
   date: Date;
+  img: string;
 }
 
 function App() {
@@ -14,20 +15,18 @@ function App() {
 
   useEffect(() => {
     (async () => {
-      const memesJSON = await api.memes();
-      console.log(memesJSON)
-      setMemes(memesJSON);
+      const memesJSON = await api.memes()
+      setMemes(memesJSON)
     })()
   }, []);
 
-  const memesList = memes.map((meme) =>
-    <li key={meme.title}>{meme.title}</li>
+  const memesImg = memes.map((meme) =>
+    <div key={meme.img}><img src={meme.img} alt={meme.title}></img></div>
   );
+  
   return (
     <div className="App">
-      <ul>
-        {memesList}
-      </ul>
+      <div>{memesImg}</div>  
     </div>
   );  
 }

@@ -5,14 +5,10 @@ import memes from './memes.json'
 
 describe ('App', () => {
 
-  it('found memes list',async () => {
+  it('find memes images', async () => {
     render (<App />)
-    const memesTitle = memes.map((meme) => {
-      const title = meme.title
-      return title
-    })
-    for (let meme of memesTitle){
-      expect (await screen.findByText(meme)).toBeInTheDocument()
+    for (let meme of memes){
+      expect (await screen.findByAltText(meme.title)).toHaveAttribute('src', meme.img);
     }
   })
 })
