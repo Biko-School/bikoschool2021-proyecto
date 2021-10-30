@@ -1,7 +1,7 @@
 import http, { Server } from "http";
 import { NextFunction, Request, Response } from "express";
 import { nextTick } from "process";
-import { app } from "./config/app";
+import { app } from "./app";
 
 const port: string = process.env.PORT || "3000";
 
