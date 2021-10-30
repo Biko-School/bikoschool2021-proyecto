@@ -15,4 +15,8 @@ app.use(express.json());
 // http://expressjs.com/es/api.html#express.urlencoded
 app.use(express.urlencoded({ extended: false }));
 
+app.use('/api/memes', function (req, res) {
+    res.sendStatus(200)
+})
+
 export default app;
