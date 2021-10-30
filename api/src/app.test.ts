@@ -15,4 +15,14 @@ describe("/api/memes", () => {
         done();
       });
   });
+  it("should be array of 50", (done) => {
+    request(app)
+      .get("/api/memes")
+      .expect(200)
+      .then((response) => {
+        expect(response.body.length).toEqual(50);
+
+        done();
+      });
+  });
 });
