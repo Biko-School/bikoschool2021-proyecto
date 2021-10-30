@@ -1,8 +1,15 @@
 import http, { Server } from "http";
-import app from "./app";
+import { createApp } from "./app";
+
+import low from "lowdb";
+import FileSync from "lowdb/adapters/FileSync";
+import DatabaseSchema from "DatabaseSchema";
+
+const adapter = new FileSync<DatabaseSchema>("./database/db.json");
+const db = low(adapter);
 
 const port: string = process.env.PORT || "3000";
-const server: Server = http.createServer(app);
+const server: Server = http.createServer(createApp(db));
 
 server.listen(port);
 server.on("error", onError);

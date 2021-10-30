@@ -1,28 +1,32 @@
 import express, { Express, Request, Response, Router } from "express";
 import morgan from "morgan";
+import low from "lowdb";
+import DatabaseSchema from "DatabaseSchema";
 
-import routes from "./routes";
-const app: Express = express();
+import { createRoutes } from "./routes";
 
-// Shows request log on terminal
-// https://github.com/expressjs/morgan
-app.use(morgan("dev"));
+export const createApp = (db: low.LowdbSync<DatabaseSchema>) => {
+  const app: Express = express();
 
-// Parses incoming requests with JSON payloads
-// http://expressjs.com/es/api.html#express.json
-app.use(express.json());
+  // Shows request log on terminal
+  // https://github.com/expressjs/morgan
+  app.use(morgan("dev"));
 
-// Parses incoming requests with urlencoded payloads
-// http://expressjs.com/es/api.html#express.urlencoded
-app.use(express.urlencoded({ extended: false }));
+  // Parses incoming requests with JSON payloads
+  // http://expressjs.com/es/api.html#express.json
+  app.use(express.json());
 
-const port: string = process.env.PORT || "3000";
+  // Parses incoming requests with urlencoded payloads
+  // http://expressjs.com/es/api.html#express.urlencoded
+  app.use(express.urlencoded({ extended: false }));
 
-// Assigns setting name to value
-// http://expressjs.com/es/api.html#app.set
-app.set("port", port);
+  const port: string = process.env.PORT || "3000";
 
-app.use("/api", routes);
-app.use("/", routes);
+  // Assigns setting name to value
+  // http://expressjs.com/es/api.html#app.set
+  app.set("port", port);
 
-export default app;
+  app.use("/api", createRoutes(db));
+
+  return app;
+};
