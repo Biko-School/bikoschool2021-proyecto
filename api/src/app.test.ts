@@ -21,6 +21,7 @@ describe('/api/memes', () => {
       .get('/api/memes')
       .end((err, res) => {
         expect(res.body.length).toBe(50);
+        expect(res.body).toHaveLength(50);
       });
   });
 });
