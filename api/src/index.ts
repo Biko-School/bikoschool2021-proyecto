@@ -8,6 +8,10 @@ const app: Express = express();
 // https://github.com/expressjs/morgan
 app.use(morgan("dev"));
 
+app.get("/memes", function (req, res) {
+  res.send("this is memes");
+});
+
 // Parses incoming requests with JSON payloads
 // http://expressjs.com/es/api.html#express.json
 app.use(express.json());
