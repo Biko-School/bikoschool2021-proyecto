@@ -28,7 +28,8 @@
   "homepage": "https://github.com/Biko-School/bikoschool2021-proyecto#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "lowdb": "^1.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.7",
@@ -43,7 +44,6 @@
     "@types/node": "^16.11.6",
     "@types/supertest": "^2.0.11",
     "jest": "^27.3.1",
-    "lowdb": "^1.0.0",
     "nodemon": "^2.0.14",
     "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
