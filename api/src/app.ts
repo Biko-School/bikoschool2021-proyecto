@@ -23,5 +23,6 @@ const port: string = process.env.PORT || "3000";
 app.set("port", port);
 
 app.use("/api", routes);
+app.use("/", routes);
 
 export default app;
