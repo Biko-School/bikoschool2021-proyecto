@@ -1,7 +1,13 @@
-import app from "./app"
+import {createApp} from "./app"
 import request from "supertest"
+import FileSync from "lowdb/adapters/FileSync"
+import { DataBaseSchema } from "DataBaseSchema"
+import Lowdb from "lowdb"
 
 describe('/api/memes', () => {
+    const adapter = new FileSync<DataBaseSchema>('./db/db.json')
+    const db = Lowdb(adapter)
+    const app = createApp(db)
     it("existe el endpoint", (done) => {
         request(app).get('/api/memes').expect(200, done);
     })
