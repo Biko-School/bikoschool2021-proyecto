@@ -1,6 +1,13 @@
-import { app } from './app'
+import FileSync from 'lowdb/adapters/FileSync';
+import { DatabaseSchema } from "./DatabaseSchema";
+import { createApp } from './app'
 import request from 'supertest'
-import { response } from 'express'
+import low from 'lowdb';
+
+const adapter = new FileSync<DatabaseSchema>('./material/db.json');
+const db = low(adapter);
+
+const app = createApp(db)
 
 describe('/api/memes', () => {
     it('recibe un array de longitud 50', (done) => {
