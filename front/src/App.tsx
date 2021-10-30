@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 function App() {
-  const [images, setImages] = useState<
+  const [memesData, setMemesData] = useState<
     {
       id: string;
       url: string;
@@ -19,17 +19,17 @@ function App() {
       })
       .then((data) => {
         console.log("data in memes", data);
-        setImages(data.results);
+        setMemesData(data.results);
       });
   }, []);
 
-  if (images.length === 0) {
+  if (memesData.length === 0) {
     return <>Cargando...</>;
   }
 
   return (
     <div>
-      {images.map((result) => (
+      {memesData.map((result) => (
         <img src={result.url} alt={result.title} key={result.id} />
       ))}
     </div>

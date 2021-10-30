@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import App from "../App";
-import memesData from "./mockApi.json";
+import memesData from "../mocks/mockApi.json";
 
 describe("Home", () => {
   it("will show a gif", async () => {
