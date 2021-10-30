@@ -1,30 +1,30 @@
-import http, { Server } from "http";
-import { NextFunction, Request, Response } from "express";
-import { nextTick } from "process";
-import { app } from "./app";
+import http, { Server } from 'http';
+import { NextFunction, Request, Response } from 'express';
+import { nextTick } from 'process';
+import { app } from './app';
 
-const port: string = process.env.PORT || "3000";
+const port: string = process.env.PORT || '3000';
 
 // Assigns setting name to value
 // http://expressjs.com/es/api.html#app.set
-app.set("port", port);
+app.set('port', port);
 
 const server: Server = http.createServer(app);
 
 server.listen(port);
-server.on("error", onError);
-server.on("listening", onListening);
+server.on('error', onError);
+server.on('listening', onListening);
 
 function onError(error) {
-  if (error.syscall !== "listen") {
+  if (error.syscall !== 'listen') {
     throw error;
   }
 
   switch (error.code) {
-    case "EACCES":
+    case 'EACCES':
       console.error(`${port} requires elevated privileges`);
       process.exit(1);
-    case "EADDRINUSE":
+    case 'EADDRINUSE':
       console.error(`${port} is already in use`);
       process.exit(1);
     default:

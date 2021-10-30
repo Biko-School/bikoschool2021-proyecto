@@ -1,8 +1,8 @@
-import { app } from "./app";
-import request from "supertest";
+import { app } from './app';
+import request from 'supertest';
 
-describe("/api/memes", () => {
-  it("endpoint exists", (done) => {
-    request(app).get("api/memes").expect(200, done);
+describe('/api/memes', () => {
+  it('endpoint exists', (done) => {
+    request(app).get('/api/memes').expect(200, done);
   });
 });
