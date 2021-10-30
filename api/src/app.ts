@@ -21,4 +21,8 @@ const port: string = process.env.PORT || "3000";
 // http://expressjs.com/es/api.html#app.set
 app.set("port", port);
 
+app.get("/api/memes", (req: Request, res: Response) => {
+  res.status(200).send();
+});
+
 export default app;
