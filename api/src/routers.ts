@@ -1,6 +1,7 @@
 import express, { Express, Request, Response, Router } from "express";
 
 export const router = express.Router();
-router.use((req: Request, res: Response) => {
-  res.sendStatus(200);
+
+router.get("/memes", (req: Request, res: Response) => {
+  res.status(200).json([]);
 });

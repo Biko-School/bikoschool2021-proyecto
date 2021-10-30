@@ -16,7 +16,7 @@ app.use(express.json());
 // http://expressjs.com/es/api.html#express.urlencoded
 app.use(express.urlencoded({ extended: false }));
 
-app.get("/api/memes", router);
+app.use("/api", router);
 
 app.get("/api/memes/error", (req: Request, res: Response) => {
   res.sendStatus(400);
