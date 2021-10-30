@@ -1,9 +1,11 @@
 import express, { Express } from 'express';
 import morgan from 'morgan';
 import { getRoutes } from './routes';
+import { LowdbSync } from 'lowdb';
+import { DatabaseSchema } from 'DatabaseSchema';
 
 // ## TODO: tipado db
-export function getApp(db): Express {
+export function getApp(db: LowdbSync<DatabaseSchema>): Express {
   const app: Express = express();
 
   // Shows request log on terminal

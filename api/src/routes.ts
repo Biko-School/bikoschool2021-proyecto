@@ -1,7 +1,9 @@
 import { Router, NextFunction, Request, Response } from 'express';
+import { LowdbSync } from 'lowdb';
+import { DatabaseSchema } from 'DatabaseSchema';
 
 // ## TODO: tipado db
-export function getRoutes(db): Router {
+export function getRoutes(db: LowdbSync<DatabaseSchema>): Router {
   const routes = Router();
 
   routes.get('/memes', (req: Request, res: Response) => {
