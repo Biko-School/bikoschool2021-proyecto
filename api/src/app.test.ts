@@ -13,4 +13,12 @@ describe("/api/memes", () => {
         done();
       });
   });
+  it("devuelve 50 elementos", (done) => {
+    request(app)
+      .get("/api/memes")
+      .then((response) => {
+        expect(response.body).toHaveLength(50);
+        done();
+      });
+  });
 });
