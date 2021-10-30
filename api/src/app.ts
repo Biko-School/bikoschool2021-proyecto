@@ -1,5 +1,6 @@
-import express, { Express, Request, Response } from "express";
+import express, { Express, Request, Response, Router } from "express";
 import morgan from "morgan";
+import { router } from "./routers";
 
 export const app: Express = express();
 
@@ -14,3 +15,9 @@ app.use(express.json());
 // Parses incoming requests with urlencoded payloads
 // http://expressjs.com/es/api.html#express.urlencoded
 app.use(express.urlencoded({ extended: false }));
+
+app.get("/api/memes", router);
+
+app.get("/api/memes/error", (req: Request, res: Response) => {
+  res.sendStatus(400);
+});
