@@ -11,4 +11,12 @@ describe('/api/memes', () => {
                 done();
             })
     })
+
+    it('coge el meme con id: YleuWir5NTNVXkflSp', (done) => {
+        request(app).get('/api/memes/YleuWir5NTNVXkflSp').expect(200)
+            .then((response) => {
+                expect(response.body.id).toBe('YleuWir5NTNVXkflSp')
+                done();
+            })
+    })
 })
