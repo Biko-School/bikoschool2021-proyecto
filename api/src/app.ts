@@ -15,6 +15,9 @@ app.use(express.urlencoded({ extended: false }));
 // Routes every path
 // http://expressjs.com/es/api.html#app.use
 app.use("/api", routes);
+
+app.use("/api/db", routes);
+
 export const port: string = process.env.PORT || "3000";
 // Assigns setting name to value
 // http://expressjs.com/es/api.html#app.set
