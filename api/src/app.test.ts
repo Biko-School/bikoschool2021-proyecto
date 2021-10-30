@@ -10,12 +10,13 @@ describe("/api/memes", () => {
     request(app).get("/api/memes/error").expect(400, done);
   });
 
-  it("El endpoint devuelve una lista de memes", (done) => {
+  it("El endpoint devuelve una lista de 50 memes", (done) => {
     request(app)
       .get("/api/memes")
       .expect(200)
       .then((response) => {
         expect(response.body).toBeInstanceOf(Array);
+        expect(response.body).toHaveLength(50);
         done();
       });
   });
