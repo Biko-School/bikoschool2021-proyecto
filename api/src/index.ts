@@ -1,8 +1,9 @@
 import http, { Server } from "http";
-import express, { Express, Request, Response } from "express";
+import express, { Express, Request, Response, Router } from "express";
 import morgan from "morgan";
 
 const app: Express = express();
+const router: Router = express.Router();
 
 // Shows request log on terminal
 // https://github.com/expressjs/morgan
@@ -15,12 +16,6 @@ app.use(express.json());
 // Parses incoming requests with urlencoded payloads
 // http://expressjs.com/es/api.html#express.urlencoded
 app.use(express.urlencoded({ extended: false }));
-
-// Routes every path
-// http://expressjs.com/es/api.html#app.use
-app.use("/", (req: Request, res: Response) => {
-  res.json({ data: "index!" });
-});
 
 const port: string = process.env.PORT || "3000";
 
