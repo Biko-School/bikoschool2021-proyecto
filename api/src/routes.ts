@@ -1,4 +1,3 @@
-import { app } from "./app";
 import { Router } from "express"
 
 export const routes = Router()
