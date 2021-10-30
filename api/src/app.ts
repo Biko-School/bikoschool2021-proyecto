@@ -1,6 +1,7 @@
 import express, { Express, Request, Response, Router } from "express";
 import morgan from "morgan";
 
+import routes from "./routes";
 const app: Express = express();
 
 // Shows request log on terminal
@@ -21,8 +22,6 @@ const port: string = process.env.PORT || "3000";
 // http://expressjs.com/es/api.html#app.set
 app.set("port", port);
 
-app.get("/api/memes", (req: Request, res: Response) => {
-  res.status(200).send();
-});
+app.use("/api", routes);
 
 export default app;
