@@ -2,7 +2,7 @@ import http, { Server } from "http";
 import { Request, Response } from "express";
 import { app } from "./app";
 
-const port: string = process.env.PORT || "3000";
+const port: string = process.env.PORT || "3010";
 
 // Assigns setting name to value
 // http://expressjs.com/es/api.html#app.set
