@@ -1,14 +1,13 @@
 import { Router, NextFunction, Request, Response } from 'express';
-import low from 'lowdb';
-import FileSync from 'lowdb/adapters/FileSync';
-import { DatabaseSchema } from './DatabaseSchema';
 
-export const routes = Router();
+// ## TODO: tipado db
+export function getRoutes(db): Router {
+  const routes = Router();
 
-const adapter = new FileSync<DatabaseSchema>('./db/db.json');
-const db = low(adapter);
+  routes.get('/memes', (req: Request, res: Response) => {
+    const memes = db.get('memes').take(50).value();
+    res.status(200).json(memes);
+  });
 
-routes.get('/memes', (req: Request, res: Response) => {
-  const memes = db.get('memes').take(50).value();
-  res.status(200).json(memes);
-});
+  return routes;
+}

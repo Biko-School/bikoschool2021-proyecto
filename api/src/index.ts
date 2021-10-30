@@ -1,9 +1,17 @@
 import http, { Server } from 'http';
 import { NextFunction, Request, Response } from 'express';
 import { nextTick } from 'process';
-import { app } from './app';
+import { getApp } from './app';
+import low from 'lowdb';
+import FileSync from 'lowdb/adapters/FileSync';
+import { DatabaseSchema } from './DatabaseSchema';
+
+const adapter = new FileSync<DatabaseSchema>('./db/db.json');
+const db = low(adapter);
 
 const port: string = process.env.PORT || '3000';
+
+const app = getApp(db);
 
 // Assigns setting name to value
 // http://expressjs.com/es/api.html#app.set

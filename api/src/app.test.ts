@@ -1,5 +1,13 @@
-import { app } from './app';
+import { getApp } from './app';
 import request from 'supertest';
+
+import low from 'lowdb';
+import FileSync from 'lowdb/adapters/FileSync';
+import { DatabaseSchema } from './DatabaseSchema';
+
+const adapter = new FileSync<DatabaseSchema>('./db/db.json');
+const db = low(adapter);
+const app = getApp(db);
 
 describe('/api/memes', () => {
   it('endpoint exists', (done) => {
