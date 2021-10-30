@@ -1,4 +1,6 @@
 import express, { Express, Request, Response, Router } from "express";
+import fs from "fs";
+import Meme from "meme";
 
 const routes = express.Router();
 
