@@ -1,5 +1,6 @@
 import express, { Express } from 'express';
 import morgan from 'morgan';
+import { routes } from './routes';
 
 export const app: Express = express();
 
@@ -15,6 +16,4 @@ app.use(express.json());
 // http://expressjs.com/es/api.html#express.urlencoded
 app.use(express.urlencoded({ extended: false }));
 
-app.get('/api/memes', (req, res) => {
-  res.sendStatus(200);
-});
+app.use('/api', routes);
