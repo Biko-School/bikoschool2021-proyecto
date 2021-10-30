@@ -1,17 +1,12 @@
 import express, { Express, Request, Response, Router } from "express";
-import low from "lowdb";
-import FileSync from "lowdb/adapters/FileSync";
-import { DatabaseSchema } from "./DatabaseSchema";
 
-const adapter = new FileSync<DatabaseSchema>("./db/db.json");
-const db = low(adapter);
-
-export const router = express.Router();
-
-router.get("/memes", (req: Request, res: Response) => {
-  const memesList = db.get("memes").take(50).value();
-  res.status(200).json(memesList);
-});
+export function getRouter(db) {
+  const router = express.Router();
+  return router.get("/memes", (req: Request, res: Response) => {
+    const memesList = db.get("memes").take(50).value();
+    res.status(200).json(memesList);
+  });
+}
 
 //Tambien se puede hacer asi. De esta forma no hace falta declarar la interface
 // router.get("/memes", (req: Request, res: Response) => {
