@@ -15,4 +15,12 @@ describe('/api/memes', () => {
         done();
       });
   });
+
+  it('endpoint returns 50 items', (done) => {
+    request(app)
+      .get('/api/memes')
+      .end((err, res) => {
+        expect(res.body.length).toBe(50);
+      });
+  });
 });
