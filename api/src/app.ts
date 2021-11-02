@@ -1,8 +1,6 @@
 import express, { Express, Request, Response } from "express";
 import morgan from "morgan";
-import { getRoutes } from "./routes"
-
-
+import {routes} from "./routes"
 
 export const createApp = (db) => {
     const app: Express = express();
@@ -19,8 +17,13 @@ export const createApp = (db) => {
     // http://expressjs.com/es/api.html#express.urlencoded
     app.use(express.urlencoded({ extended: false }));
     
-    
-    app.use("/api", getRoutes(db))
+    // generar middleware contexto del request. Añadir tipado para sobrecargar el request y consumirlo desde routes.
+    app.use((req, res, next) => {
+        req.context = { db };
+        next();
+    })
+
+    app.use("/api", routes)
 
     return app
 }
