@@ -1,20 +1,15 @@
 import { Router, Request, Response } from "express";
-import { LowdbSync }  from 'lowdb';
-import { DatabaseSchema } from "./DatabaseSchema";
-export function getRoutes(db: LowdbSync<DatabaseSchema> ):Router {
-    const routes = Router();
 
-    routes.get('/memes', function (req: Request, res: Response) {
-        const db = req.context.db;
-        res.status(200).json(db.get('memes').take(50).value())
-    })
-    
-    routes.get('/memes/:id', function (req: Request, res: Response) {
-        const { params } = req
-        const { id } = params
-        const db = req.context.db;
-        res.status(200).json(db.get('memes').find({ id: id }).value())
-    })
+export const routes = Router();
 
-    return routes;
-}
+routes.get('/memes', function (req: Request, res: Response) {
+    const db = req.context.db;
+    res.status(200).json(db.get('memes').take(50).value())
+})
+
+routes.get('/memes/:id', function (req: Request, res: Response) {
+    const { params } = req
+    const { id } = params
+    const db = req.context.db;
+    res.status(200).json(db.get('memes').find({ id: id }).value())
+})

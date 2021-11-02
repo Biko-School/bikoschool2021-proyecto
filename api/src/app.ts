@@ -1,6 +1,6 @@
 import express, { Express } from "express";
 import morgan from "morgan";
-import { getRoutes } from "./routes";
+import { routes } from "./routes";
 import { LowdbSync }  from 'lowdb';
 import { DatabaseSchema } from "./DatabaseSchema";
 
@@ -25,7 +25,7 @@ export function createApp(db: LowdbSync<DatabaseSchema>):Express {
     // http://expressjs.com/es/api.html#express.urlencoded
     app.use(express.urlencoded({ extended: false }));
 
-    app.use('/api', getRoutes(db))
+    app.use('/api', routes)
 
     return app;
 }
