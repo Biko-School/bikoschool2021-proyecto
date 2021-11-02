@@ -6,9 +6,9 @@ import { createApp } from "./app"
 
 const database = './db/db.json'
 
-    const adapter = new FileSync<DataBaseSchema>(database)
-    const db = Lowdb(adapter)
-    const app = createApp(db)
+const adapter = new FileSync<DataBaseSchema>(database)
+const db = Lowdb(adapter)
+const app = createApp(db)
 
 const server: Server = http.createServer(app);
 
