@@ -34,7 +34,7 @@ export const createApp = (db: low.LowdbSync<DatabaseSchema>) => {
 
   app.use((req: Request, res: Response, next: NextFunction) => {
     req.context = { db };
-    next;
+    next();
   });
 
   app.use("/api", routes);
