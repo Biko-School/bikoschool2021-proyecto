@@ -7,9 +7,11 @@ routes.get('/memes', function (req: Request, res: Response) {
     res.status(200).json(db.get('memes').take(50).value())
 })
 
-routes.get('/memes/:id', function (req: Request, res: Response) {
+routes.get('/memes/:memeId', function (req: Request, res: Response) {
     const { params } = req
-    const { id } = params
+    const { memeId } = params
     const db = req.context.db;
-    res.status(200).json(db.get('memes').find({ id: id }).value())
+    const meme = db.get('memes').find({ id: memeId }).value()
+    const { id, title: name, tags, giphyUrl: image } = meme
+    res.status(200).json({id, name,tags,image})
 })

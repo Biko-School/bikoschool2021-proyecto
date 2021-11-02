@@ -26,10 +26,13 @@ describe('/api/memes', () => {
             })
     })
 
-    it('coge el meme con id: YleuWir5NTNVXkflSp', (done) => {
+    it('devuelve el detalle de un meme', (done) => {
         request(app).get('/api/memes/YleuWir5NTNVXkflSp').expect(200)
             .then((response) => {
                 expect(response.body.id).toBe('YleuWir5NTNVXkflSp')
+                expect(response.body.name).toBe('Movie Brazil GIF by MOODMAN')
+                expect(response.body.tags).toStrictEqual(["#movie", "#brazil", "#brazil the movie"])
+                expect(response.body.image).toBe('https://giphy.com/gifs/moodman-movie-brazil-the-YleuWir5NTNVXkflSp')
                 done();
             })
     })
