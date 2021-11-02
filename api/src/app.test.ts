@@ -2,9 +2,9 @@ import { getApp } from "./app";
 import request from "supertest";
 import low from "lowdb";
 import dbData from "./fixtures/db.json";
-import FileSync from "lowdb/adapters/FileSync";
 import Memory from "lowdb/adapters/Memory";
 import { DatabaseSchema } from "./DatabaseSchema";
+import morgan from "morgan";
 
 const adapter = new Memory<DatabaseSchema>("");
 const db = low(adapter);

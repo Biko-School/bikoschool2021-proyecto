@@ -10,7 +10,7 @@
     "build": "run-p -l type-check build:prod",
     "build:prod": "npm run clean && babel src -d dist --ignore=\"./src/test-runners\" --extensions \".ts\"",
     "build:dev": "npm run clean && babel src -d dist --ignore=\"./src/test-runners\" --extensions \".ts\" --source-maps",
-    "test": "jest --passWithNoTests",
+    "test": "cross-env NODE_ENV=test jest --passWithNoTests",
     "test:watch": "npm test -- --watch",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
@@ -28,6 +28,7 @@
   "homepage": "https://github.com/Biko-School/bikoschool2021-proyecto#readme",
   "dependencies": {
     "@types/lowdb": "^1.0.11",
+    "cross-env": "^7.0.3",
     "express": "^4.17.1",
     "lowdb": "^1.0.0",
     "morgan": "^1.10.0"
