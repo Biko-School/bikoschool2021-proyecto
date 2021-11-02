@@ -2,16 +2,19 @@ import { createApp } from "./app";
 import request from "supertest";
 
 import low from "lowdb";
-import FileSync from "lowdb/adapters/FileSync";
+import Memory from "lowdb/adapters/Memory";
 import DatabaseSchema from "DatabaseSchema";
 import { Express } from "express";
+
+import dbData from "./fixtures/db.json";
 
 describe("/api/memes", () => {
   let app: Express;
 
   beforeAll(() => {
-    const adapter = new FileSync<DatabaseSchema>("./database/db.json");
+    const adapter = new Memory<DatabaseSchema>("");
     const db = low(adapter);
+    db.defaults(dbData).write();
     app = createApp(db);
   });
 
