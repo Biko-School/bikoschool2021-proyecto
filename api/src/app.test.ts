@@ -1,11 +1,16 @@
 import { getApp } from "./app";
 import request from "supertest";
 import low from "lowdb";
+import dbData from "./fixtures/db.json";
 import FileSync from "lowdb/adapters/FileSync";
+import Memory from "lowdb/adapters/Memory";
 import { DatabaseSchema } from "./DatabaseSchema";
 
-const adapter = new FileSync<DatabaseSchema>("./db/db.json");
+const adapter = new Memory<DatabaseSchema>("");
 const db = low(adapter);
+
+db.defaults(dbData).write();
+
 const app = getApp(db);
 
 describe("/api/memes", () => {
