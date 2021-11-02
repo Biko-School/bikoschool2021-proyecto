@@ -6,14 +6,18 @@ import Memory from "lowdb/adapters/Memory";
 import { DbSchema } from "./DbSchema";
 import dbData from "./fixtures/db.json";
 
-const adapter = new Memory<DbSchema>("./fixtures/db.json");
-const db = low(adapter);
-
-db.defaults(dbData).write();
-
-const app = createApp(db);
-
 describe("/api/memes", () => {
+  let app;
+
+  beforeEach(() => {
+    const adapter = new Memory<DbSchema>("");
+    const db = low(adapter);
+
+    db.defaults(dbData).write();
+
+    app = createApp(db);
+  });
+
   it("should be array of 50", (done) => {
     request(app)
       .get("/api/memes")
