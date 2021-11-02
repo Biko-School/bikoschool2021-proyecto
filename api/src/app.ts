@@ -5,7 +5,7 @@ import { getRoutes } from "./routes";
 import { DbSchema } from "./DbSchema";
 
 export const createApp = (db: low.LowdbSync<DbSchema>) => {
-  const app: Express = express();
+  const app = express();
   // Shows request log on terminal
   // https://github.com/expressjs/morgan
   app.use(morgan("dev"));
@@ -19,7 +19,12 @@ export const createApp = (db: low.LowdbSync<DbSchema>) => {
   app.use(express.urlencoded({ extended: false }));
 
   //   app.use("/api", routes);
-  app.use("/api", getRoutes(db));
 
+  app.use((req, res, next) => {
+    req.context = { db };
+    next();
+  });
+
+  app.use("/api", getRoutes());
   return app;
 };
