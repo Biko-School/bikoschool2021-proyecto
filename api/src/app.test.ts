@@ -1,15 +1,22 @@
-import FileSync from 'lowdb/adapters/FileSync';
+import Memory from 'lowdb/adapters/Memory';
 import { DatabaseSchema } from "./DatabaseSchema";
 import { createApp } from './app'
 import request from 'supertest'
 import low from 'lowdb';
-
-const adapter = new FileSync<DatabaseSchema>('./material/db.json');
-const db = low(adapter);
-
-const app = createApp(db)
+import dbData from './fixtures/db.json';
 
 describe('/api/memes', () => {
+
+    let app;
+
+    beforeEach(() => {
+        const adapter = new Memory<DatabaseSchema>('');
+        const db = low(adapter);
+        db.defaults(dbData).write();
+        
+        app = createApp(db)
+    })
+
     it('recibe un array de longitud 50', (done) => {
         request(app).get('/api/memes').expect(200)
             .then((response) => {
