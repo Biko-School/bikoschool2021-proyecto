@@ -1,10 +1,9 @@
-import express, { Express } from 'express';
+import express, { Express, Request, Response, NextFunction } from 'express';
 import morgan from 'morgan';
-import { getRoutes } from './routes';
+import { routes } from './routes';
 import { LowdbSync } from 'lowdb';
 import { DatabaseSchema } from 'DatabaseSchema';
 
-// ## TODO: tipado db
 export function getApp(db: LowdbSync<DatabaseSchema>): Express {
   const app: Express = express();
 
@@ -20,7 +19,12 @@ export function getApp(db: LowdbSync<DatabaseSchema>): Express {
   // http://expressjs.com/es/api.html#express.urlencoded
   app.use(express.urlencoded({ extended: false }));
 
-  app.use('/api', getRoutes(db));
+  app.use((req: Request, res: Response, next: NextFunction) => {
+    req.context = { db };
+    next();
+  });
+
+  app.use('/api', routes);
 
   return app;
 }
