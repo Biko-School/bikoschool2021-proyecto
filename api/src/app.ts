@@ -9,7 +9,9 @@ export function getApp(db: LowdbSync<DatabaseSchema>): Express {
 
   // Shows request log on terminal
   // https://github.com/expressjs/morgan
-  app.use(morgan('dev'));
+  app.use(
+    morgan('dev', { skip: (req, res) => process.env.NODE_ENV === 'test' })
+  );
 
   // Parses incoming requests with JSON payloads
   // http://expressjs.com/es/api.html#express.json
