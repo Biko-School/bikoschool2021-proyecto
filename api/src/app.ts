@@ -1,6 +1,6 @@
-import express, { Express } from "express";
+import express, { Express, NextFunction, Request, Response } from "express";
 import morgan from "morgan";
-import { routes1 } from "./routes";
+import { routes } from "./routes";
 
 export const port: string = process.env.PORT || "3000";
 
@@ -18,7 +18,13 @@ export const createApp = (db) => {
   // Routes every path
   // http://expressjs.com/es/api.html#app.use
 
-  app.use("/api", routes1(db));
+  app.use((req: Request, res: Response, next: NextFunction) => {
+    req.context = { db };
+
+    next();
+  });
+
+  app.use("/api", routes);
 
   // Assigns setting name to value
   // http://expressjs.com/es/api.html#app.set
