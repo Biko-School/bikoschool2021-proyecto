@@ -5,11 +5,15 @@ import low from 'lowdb';
 import FileSync from 'lowdb/adapters/FileSync';
 import { DatabaseSchema } from './DatabaseSchema';
 
-const adapter = new FileSync<DatabaseSchema>('./db/db.json');
-const db = low(adapter);
-const app = getApp(db);
-
 describe('/api/memes', () => {
+  let app;
+
+  beforeEach(() => {
+    const adapter = new FileSync<DatabaseSchema>('./db/db.json');
+    const db = low(adapter);
+    app = getApp(db);
+  });
+
   it('endpoint exists', (done) => {
     request(app).get('/api/memes').expect(200, done);
   });
