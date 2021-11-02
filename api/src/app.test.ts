@@ -1,16 +1,19 @@
 import { getApp } from './app';
 import request from 'supertest';
-
 import low from 'lowdb';
-import FileSync from 'lowdb/adapters/FileSync';
+import Memory from 'lowdb/adapters/Memory';
 import { DatabaseSchema } from './DatabaseSchema';
+import dbData from './fixtures/db.json';
 
 describe('/api/memes', () => {
   let app;
 
   beforeEach(() => {
-    const adapter = new FileSync<DatabaseSchema>('./db/db.json');
+    const adapter = new Memory<DatabaseSchema>('');
+
     const db = low(adapter);
+    db.defaults(dbData).write();
+
     app = getApp(db);
   });
 
