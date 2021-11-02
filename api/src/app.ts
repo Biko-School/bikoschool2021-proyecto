@@ -9,7 +9,7 @@ import morgan from "morgan";
 import low from "lowdb";
 import DatabaseSchema from "DatabaseSchema";
 
-import { createRoutes } from "./routes";
+import { routes } from "./routes";
 
 export const createApp = (db: low.LowdbSync<DatabaseSchema>) => {
   const app: Express = express();
@@ -37,7 +37,7 @@ export const createApp = (db: low.LowdbSync<DatabaseSchema>) => {
     next;
   });
 
-  app.use("/api", createRoutes());
+  app.use("/api", routes);
 
   return app;
 };
