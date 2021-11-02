@@ -10,8 +10,8 @@ export function createApp(db: LowdbSync<DatabaseSchema>):Express {
     // Shows request log on terminal
     // https://github.com/expressjs/morgan
     if (process.env.NODE_ENV !== "test") {
-        app.use(morgan("dev"));
-      }
+      app.use(morgan("dev"));
+    }
 
     app.use((req, res, next) => {
       req.context = { db };
