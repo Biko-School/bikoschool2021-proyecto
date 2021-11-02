@@ -2,12 +2,14 @@ import { createApp } from "./app";
 import request from "supertest";
 import { response } from "express";
 import { doesNotMatch } from "assert";
-import FileSync from "lowdb/adapters/FileSync";
+import Memory from "lowdb/adapters/Memory";
 import { DatabaseSchema } from "DatabaseSchema";
 import Lowdb from "lowdb";
+import dbData from "./fixture/db.json";
 
-const adapter = new FileSync<DatabaseSchema>("./db/db.json");
+const adapter = new Memory<DatabaseSchema>("");
 const db = Lowdb(adapter);
+db.defaults(dbData).write();
 
 describe("check api meme", () => {
   it("existe el endpoint", (done) => {
