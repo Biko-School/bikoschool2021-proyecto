@@ -1,4 +1,10 @@
-import express, { Express, Request, Response, Router } from "express";
+import express, {
+  Express,
+  Request,
+  Response,
+  Router,
+  NextFunction,
+} from "express";
 import morgan from "morgan";
 import low from "lowdb";
 import DatabaseSchema from "DatabaseSchema";
@@ -26,7 +32,12 @@ export const createApp = (db: low.LowdbSync<DatabaseSchema>) => {
   // http://expressjs.com/es/api.html#app.set
   app.set("port", port);
 
-  app.use("/api", createRoutes(db));
+  app.use((req: Request, res: Response, next: NextFunction) => {
+    req.context = { db };
+    next;
+  });
+
+  app.use("/api", createRoutes());
 
   return app;
 };
