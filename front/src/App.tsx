@@ -17,9 +17,9 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="gif__grid">
       {memes.map((meme, index) => (
-        <img alt={meme.title} src={meme.images.original.url} key={index} />
+        <img className="gif__card" alt={meme.title} src={meme.images.original.url} key={index} />
       ))}
     </div>
   );
