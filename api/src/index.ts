@@ -9,7 +9,7 @@ import { DatabaseSchema } from './DatabaseSchema';
 const adapter = new FileSync<DatabaseSchema>('./db/db.json');
 const db = low(adapter);
 
-const port: string = process.env.PORT || '3000';
+const port: string = process.env.PORT || '4200';
 
 const app = getApp(db);
 
