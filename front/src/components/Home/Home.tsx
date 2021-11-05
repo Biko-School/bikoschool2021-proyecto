@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './Home.css';
 import axios from 'axios';
+import { GuifContainer } from './components/GuifContainer';
 
-interface Meme {
+export interface Meme {
   id: string;
   url: string;
   title: string;
@@ -22,23 +23,13 @@ export const Home = () => {
       .finally(() => setLoading(false));
   }, []);
 
-  if (loading) {
-    return <p>Cargando...</p>;
-  }
-
-  if (error) {
-    return <div>No se han podido mostrar los gifs.</div>;
-  }
-
   return (
     <>
-      <div className="guif-container">
-        {gifs.map((gif: Meme, index: number) => (
-          <div className="guif-wrapper" key={index}>
-            <img className="guif-image" alt={gif.title} src={gif.url} />
-          </div>
-        ))}
-      </div>
+      <GuifContainer
+        gifs={gifs}
+        loading={loading}
+        error={error}
+      ></GuifContainer>
     </>
   );
 };
