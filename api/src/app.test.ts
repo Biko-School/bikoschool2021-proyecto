@@ -60,13 +60,6 @@ describe('/api/memes', () => {
           expect(firstMeme).toHaveProperty(key);
           expect(typeof firstMeme[key]).toEqual(typeof testMeme[key]);
         });
-
-        //expect(firstMeme).toHaveProperty('id');
-        //expect(typeof firstMeme.id).toEqual('string');
-        //expect(firstMeme).toHaveProperty('url');
-        //expect(typeof firstMeme.url).toEqual('string');
-        //expect(firstMeme).toHaveProperty('title');
-        //expect(typeof firstMeme.title).toEqual('string');
         done();
       });
   });
