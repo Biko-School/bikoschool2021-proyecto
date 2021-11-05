@@ -1,4 +1,5 @@
 import express, { Express } from "express";
+import cors from "cors";
 import morgan from "morgan";
 import low from "lowdb";
 
@@ -26,6 +27,8 @@ export function createApp(db: low.LowdbSync<DatabaseSchema>) {
   // Parses incoming requests with urlencoded payloads
   // http://expressjs.com/es/api.html#express.urlencoded
   app.use(express.urlencoded({ extended: false }));
+
+  app.use(cors());
 
   app.use("/api", routes);
 
