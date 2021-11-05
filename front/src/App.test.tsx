@@ -3,9 +3,8 @@ import { render, screen } from "@testing-library/react";
 import App from "./App";
 
 import testMemes from "./mocks/fixtures/test-memes"
-import Meme from "./meme";
 
-test.concurrent.each(testMemes)('Muestra el meme "%s"', async (meme: Meme) => {
+test.concurrent.each(testMemes)('Muestra el meme #%#', async (meme) => {
   render(<App />);
   const memeElement = await screen.findByRole("img", {
     name: meme.title,
