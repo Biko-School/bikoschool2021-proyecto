@@ -14,8 +14,14 @@
 }
 
 .guif-image {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 15px;
+
+  background-color: var(--color-light-green);
+  font-weight: var(--bold-font-weight);
+  color: var(--color-white);
 
   object-fit: cover;
   width: 200px;
