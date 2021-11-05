@@ -28,7 +28,7 @@ function App() {
   const [memesData, setMemesData] = useState<Data[]>([]);
 
   useEffect(() => {
-    fetch("http://localhost:3010/api/memes")
+    fetch("http://localhost:3010/api/memes", { mode: "no-cors" })
       .then((response) => {
         if (!response.ok) {
           return Promise.reject("Error");

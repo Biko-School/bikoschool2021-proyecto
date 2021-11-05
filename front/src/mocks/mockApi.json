@@ -1,27 +1,288 @@
-{
-  "memes": [
-    {
-      "id": "YleuWir5NTNVXkflSp",
-      "type": "gif",
-      "slug": "moodman-movie-brazil-the-YleuWir5NTNVXkflSp",
-      "giphyUrl": "https://giphy.com/gifs/moodman-movie-brazil-the-YleuWir5NTNVXkflSp",
-      "title": "Movie Brazil GIF by MOODMAN",
-      "source_tld": "",
-      "source_post_url": "",
-      "import_datetime": "2020-08-20 02:24:22",
-      "username": ""
+{"memes": [
+  {
+    "id": "YleuWir5NTNVXkflSp",
+    "type": "gif",
+    "slug": "moodman-movie-brazil-the-YleuWir5NTNVXkflSp",
+    "giphyUrl": "https://giphy.com/gifs/moodman-movie-brazil-the-YleuWir5NTNVXkflSp",
+    "title": "Movie Brazil GIF by MOODMAN",
+    "source_tld": "",
+    "source_post_url": "",
+    "import_datetime": "2020-08-20 02:24:22",
+    "username": "",
+    "images": {
+      "original": {
+        "width": "480",
+        "height": "269",
+        "url": "https://media4.giphy.com/media/YleuWir5NTNVXkflSp/giphy.gif?cid=be655fb7f245f7d29df0fc743b70e3ee884dbaf31956e789&rid=giphy.gif"
+      },
+      "small": {
+        "width": "200",
+        "height": "112",
+        "url": "https://media4.giphy.com/media/YleuWir5NTNVXkflSp/200w.gif?cid=be655fb7f245f7d29df0fc743b70e3ee884dbaf31956e789&rid=200w.gif"
+      }
     },
-    {
-      "id": "YleuWir5NTNVXkflSp",
-      "type": "gif",
-      "slug": "moodman-movie-brazil-the-YleuWir5NTNVXkflSp",
-      "giphyUrl": "https://giphy.com/gifs/moodman-movie-brazil-the-YleuWir5NTNVXkflSp",
-      "title": "Movie Brazil GIF by MOODMAN",
-      "source_tld": "",
-      "source_post_url": "",
-      "import_datetime": "2020-08-20 02:24:22",
-      "username": ""
-    }
+    "tags": ["#movie", "#brazil", "#brazil the movie"]
+  },
+  {
+    "id": "J6OQEgOUNOU5BWfjFj",
+    "type": "gif",
+    "slug": "moodman-J6OQEgOUNOU5BWfjFj",
+    "giphyUrl": "https://giphy.com/gifs/moodman-J6OQEgOUNOU5BWfjFj",
+    "title": "Dance Dancing GIF by MOODMAN",
+    "source_tld": "",
+    "source_post_url": "",
+    "import_datetime": "2020-08-26 22:51:59",
+    "username": "",
+    "images": {
+      "original": {
+        "width": "480",
+        "height": "402",
+        "url": "https://media3.giphy.com/media/J6OQEgOUNOU5BWfjFj/giphy.gif?cid=be655fb7f245f7d29df0fc743b70e3ee884dbaf31956e789&rid=giphy.gif"
+      },
+      "small": {
+        "width": "200",
+        "height": "168",
+        "url": "https://media3.giphy.com/media/J6OQEgOUNOU5BWfjFj/200w.gif?cid=be655fb7f245f7d29df0fc743b70e3ee884dbaf31956e789&rid=200w.gif"
+      }
+    },
+    "tags": ["#dance moves", "#dance", "#dancing", "#dancin"]
+  },
+  {
+    "id": "l5DePfMmB09ZVkh3Af",
+    "type": "gif",
+    "slug": "moodman-funny-gif-l5DePfMmB09ZVkh3Af",
+    "giphyUrl": "https://giphy.com/gifs/moodman-funny-gif-l5DePfMmB09ZVkh3Af",
+    "title": "Funny Gif Lol GIF by MOODMAN",
+    "source_tld": "",
+    "source_post_url": "",
+    "import_datetime": "2020-08-26 22:20:35",
+    "username": "",
+    "images": {
+      "original": {
+        "width": "379",
+        "height": "498",
+        "url": "https://media1.giphy.com/media/l5DePfMmB09ZVkh3Af/giphy.gif?cid=be655fb7f245f7d29df0fc743b70e3ee884dbaf31956e789&rid=giphy.gif"
+      },
+      "small": {
+        "width": "200",
+        "height": "263",
+        "url": "https://media1.giphy.com/media/l5DePfMmB09ZVkh3Af/200w.gif?cid=be655fb7f245f7d29df0fc743b70e3ee884dbaf31956e789&rid=200w.gif"
+      }
+    },
+    "tags": ["#funny", "#hilarious", "#lol", "#funny gif"]
+  },
+  {
+    "id": "f4OBJD88w2M7MUVSqf",
+    "type": "gif",
+    "slug": "moodman-funny-gif-f4OBJD88w2M7MUVSqf",
+    "giphyUrl": "https://giphy.com/gifs/moodman-funny-gif-f4OBJD88w2M7MUVSqf",
+    "title": "Sunglasses Horse GIF by MOODMAN",
+    "source_tld": "",
+    "source_post_url": "",
+    "import_datetime": "2020-08-26 22:20:43",
+    "username": "",
+    "images": {
+      "original": {
+        "width": "560",
+        "height": "336",
+        "url": "https://media2.giphy.com/media/f4OBJD88w2M7MUVSqf/giphy.gif?cid=be655fb7f245f7d29df0fc743b70e3ee884dbaf31956e789&rid=giphy.gif"
+      },
+      "small": {
+        "width": "200",
+        "height": "120",
+        "url": "https://media2.giphy.com/media/f4OBJD88w2M7MUVSqf/200w.gif?cid=be655fb7f245f7d29df0fc743b70e3ee884dbaf31956e789&rid=200w.gif"
+      }
+    },
+    "tags": [
+      "#horse",
+      "#bojack",
+      "#horse dude",
+      "#funny",
+      "#sunglasses",
+      "#dude",
+      "#suh dude",
+      "#my dudes"
+    ]
+  },
+  {
+    "id": "L0SaMZxxqMgsAJf69v",
+    "type": "gif",
+    "slug": "moodman-funny-gif-L0SaMZxxqMgsAJf69v",
+    "giphyUrl": "https://giphy.com/gifs/moodman-funny-gif-L0SaMZxxqMgsAJf69v",
+    "title": "Baby Lol GIF by MOODMAN",
+    "source_tld": "",
+    "source_post_url": "",
+    "import_datetime": "2020-08-26 22:20:29",
+    "username": "",
+    "images": {
+      "original": {
+        "width": "300",
+        "height": "224",
+        "url": "https://media2.giphy.com/media/L0SaMZxxqMgsAJf69v/giphy.gif?cid=be655fb7f245f7d29df0fc743b70e3ee884dbaf31956e789&rid=giphy.gif"
+      },
+      "small": {
+        "width": "200",
+        "height": "149",
+        "url": "https://media2.giphy.com/media/L0SaMZxxqMgsAJf69v/200w.gif?cid=be655fb7f245f7d29df0fc743b70e3ee884dbaf31956e789&rid=200w.gif"
+      }
+    },
+    "tags": ["#funny", "#lol", "#baby", "#funny gif", "#rofl", "#roflmao"]
+  },
+  {
+    "id": "JTzI2kM0ymlizRwyV2",
+    "type": "gif",
+    "slug": "moodman-on-my-way-omw-the-JTzI2kM0ymlizRwyV2",
+    "giphyUrl": "https://giphy.com/gifs/moodman-on-my-way-omw-the-JTzI2kM0ymlizRwyV2",
+    "title": "On My Way GIF by MOODMAN",
+    "source_tld": "media.giphy.com",
+    "source_post_url": "https://media.giphy.com/media/mRPcH6QccB2ww/giphy.gif",
+    "import_datetime": "2020-08-19 17:42:36",
+    "username": "",
+    "images": {
+      "original": {
+        "width": "480",
+        "height": "300",
+        "url": "https://media2.giphy.com/media/JTzI2kM0ymlizRwyV2/giphy.gif?cid=be655fb7f245f7d29df0fc743b70e3ee884dbaf31956e789&rid=giphy.gif"
+      },
+      "small": {
+        "width": "200",
+        "height": "125",
+        "url": "https://media2.giphy.com/media/JTzI2kM0ymlizRwyV2/200w.gif?cid=be655fb7f245f7d29df0fc743b70e3ee884dbaf31956e789&rid=200w.gif"
+      }
+    },
+    "tags": ["#on my way", "#omw", "#on the way", "#be right there"]
+  },
+  {
+    "id": "Lk0HfLIarOVAuejLud",
+    "type": "gif",
+    "slug": "moodman-rude-winston-Lk0HfLIarOVAuejLud",
+    "giphyUrl": "https://giphy.com/gifs/moodman-rude-winston-Lk0HfLIarOVAuejLud",
+    "title": "Winston Thats Rude GIF by MOODMAN",
+    "source_tld": "",
+    "source_post_url": "",
+    "import_datetime": "2020-08-17 19:05:41",
+    "username": "",
+    "images": {
+      "original": {
+        "width": "480",
+        "height": "270",
+        "url": "https://media3.giphy.com/media/Lk0HfLIarOVAuejLud/giphy.gif?cid=be655fb7f245f7d29df0fc743b70e3ee884dbaf31956e789&rid=giphy.gif"
+      },
+      "small": {
+        "width": "200",
+        "height": "113",
+        "url": "https://media3.giphy.com/media/Lk0HfLIarOVAuejLud/200w.gif?cid=be655fb7f245f7d29df0fc743b70e3ee884dbaf31956e789&rid=200w.gif"
+      }
+    },
+    "tags": ["#rude", "#winston", "#how rude", "#thats rude", "#winston rude"]
+  },
+  {
+    "id": "k4N5AuZzd9bmo",
+    "type": "gif",
+    "slug": "80s-retro-1980s-k4N5AuZzd9bmo",
+    "giphyUrl": "https://giphy.com/gifs/80s-retro-1980s-k4N5AuZzd9bmo",
+    "title": "Heat Wave 80S GIF",
+    "source_tld": "djcoolhandj.tumblr.com",
+    "source_post_url": "https://djcoolhandj.tumblr.com/post/130399769748/source-fatmagic-httpifttt1ome3pt",
+    "import_datetime": "2015-10-08 08:32:08",
+    "username": "",
+    "images": {
+      "original": {
+        "width": "437",
+        "height": "308",
+        "url": "https://media3.giphy.com/media/k4N5AuZzd9bmo/giphy.gif?cid=be655fb7f245f7d29df0fc743b70e3ee884dbaf31956e789&rid=giphy.gif"
+      },
+      "small": {
+        "width": "200",
+        "height": "141",
+        "url": "https://media3.giphy.com/media/k4N5AuZzd9bmo/200w.gif?cid=be655fb7f245f7d29df0fc743b70e3ee884dbaf31956e789&rid=200w.gif"
+      }
+    },
+    "tags": [
+      "#hot",
+      "#heat wave",
+      "#hot outside",
+      "#80s",
+      "#retro",
+      "#1980s",
+      "#heat"
+    ]
+  },
+  {
+    "id": "QsZol42CPIjMzke1QW",
+    "type": "gif",
+    "slug": "moodman-QsZol42CPIjMzke1QW",
+    "giphyUrl": "https://giphy.com/gifs/moodman-QsZol42CPIjMzke1QW",
+    "title": "Dance Dancing GIF by MOODMAN",
+    "source_tld": "",
+    "source_post_url": "",
+    "import_datetime": "2020-08-26 22:51:52",
+    "username": "",
+    "images": {
+      "original": {
+        "width": "368",
+        "height": "368",
+        "url": "https://media4.giphy.com/media/QsZol42CPIjMzke1QW/giphy.gif?cid=be655fb7f245f7d29df0fc743b70e3ee884dbaf31956e789&rid=giphy.gif"
+      },
+      "small": {
+        "width": "200",
+        "height": "200",
+        "url": "https://media4.giphy.com/media/QsZol42CPIjMzke1QW/200w.gif?cid=be655fb7f245f7d29df0fc743b70e3ee884dbaf31956e789&rid=200w.gif"
+      }
+    },
+    "tags": [
+      "#dance moves",
+      "#getting down",
+      "#dance",
+      "#dancing",
+      "#meme",
+      "#boogie",
+      "#dance off"
+    ]
+  },
+  {
+    "id": "QaH7XZkP5VnUnIcoFl",
+    "type": "gif",
+    "slug": "election2020-melania-trump-ivanka-QaH7XZkP5VnUnIcoFl",
+    "giphyUrl": "https://giphy.com/gifs/election2020-melania-trump-ivanka-QaH7XZkP5VnUnIcoFl",
+    "title": "Staring Melania Trump GIF by GIPHY News",
+    "source_tld": "www.youtube.com",
+    "source_post_url": "https://www.youtube.com/watch?v=8cfL6UbItDk",
+    "import_datetime": "2020-08-28 02:53:57",
+    "username": "news",
+    "images": {
+      "original": {
+        "width": "480",
+        "height": "316",
+        "url": "https://media0.giphy.com/media/QaH7XZkP5VnUnIcoFl/giphy.gif?cid=be655fb7f245f7d29df0fc743b70e3ee884dbaf31956e789&rid=giphy.gif"
+      },
+      "small": {
+        "width": "200",
+        "height": "132",
+        "url": "https://media0.giphy.com/media/QaH7XZkP5VnUnIcoFl/200w.gif?cid=be655fb7f245f7d29df0fc743b70e3ee884dbaf31956e789&rid=200w.gif"
+      }
+    },
+    "user": {
+      "avatar_url": "https://media0.giphy.com/avatars/news/hggHJAb9dlmy.gif",
+      "banner_image": "https://media0.giphy.com/channel_assets/news/s2pdBLQhzA3Z.gif",
+      "banner_url": "https://media0.giphy.com/channel_assets/news/s2pdBLQhzA3Z.gif",
+      "profile_url": "https://giphy.com/news/",
+      "username": "news",
+      "display_name": "GIPHY News",
+      "is_verified": true
+    },
+    "tags": [
+      "#stare",
+      "#melania",
+      "#melania trump",
+      "#staring",
+      "#ivanka trump",
+      "#lol to serious",
+      "#seriousd",
+      "#at first i",
+      "#at first i lold"
+    ]
+  }
 
   ]
 }
