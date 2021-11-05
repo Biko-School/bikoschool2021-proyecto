@@ -1,8 +1,8 @@
 export interface DatabaseSchema {
-  memes: Meme[];
+  memes: DatabaseMeme[];
 }
 
-export interface Meme {
+export interface DatabaseMeme {
   id: string;
   type: string;
   slug: string;
@@ -12,22 +12,22 @@ export interface Meme {
   source_post_url: string;
   import_datetime: string;
   username: string;
-  images: Images;
+  images: DatabaseImages;
   tags: string[];
 }
 
-export interface Images {
-  original: ImageOriginal;
-  small: ImageSmall;
+export interface DatabaseImages {
+  original: DatabaseImageOriginal;
+  small: DatabaseImageSmall;
 }
 
-export interface ImageOriginal {
+export interface DatabaseImageOriginal {
   width: string;
   height: string;
   url: string;
 }
 
-export interface ImageSmall {
+export interface DatabaseImageSmall {
   width: string;
   height: string;
   url: string;
