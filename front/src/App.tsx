@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import { Meme } from "./meme";
+import Meme from "./meme";
 
 function App() {
   const [memes, setMemes] = useState(new Array<Meme>());
@@ -11,7 +11,7 @@ function App() {
   }, []);
 
   const fetchMemes = async () => {
-    let response = await fetch("/memes");
+    let response = await fetch("/api/memes");
     let newMemes = await response.json();
     setMemes(newMemes);
   };
@@ -19,7 +19,7 @@ function App() {
   return (
     <div>
       {memes.map((meme, index) => (
-        <img alt={meme.title} src={meme.src} key={index} />
+        <img alt={meme.title} src={meme.images.original.url} key={index} />
       ))}
     </div>
   );
