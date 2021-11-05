@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './Home.css';
-import axios from 'axios'
+import axios from 'axios';
 
-interface IGif {
-  id: number;
+interface Meme {
+  id: string;
   url: string;
   title: string;
 }
@@ -14,28 +14,27 @@ export const Home = () => {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    setLoading(true)
-    axios.get('http://api.bikoschool.dev/gifs')
-      .then(response => setGifs(response.data))
-      .catch(error => setError(true))
-      .finally(() => setLoading(false))
+    setLoading(true);
+    axios
+      .get('http://localhost:4200/api/memes')
+      .then((response) => setGifs(response.data))
+      .catch((error) => setError(true))
+      .finally(() => setLoading(false));
   }, []);
 
   if (loading) {
-    return <p>Cargando...</p>
+    return <p>Cargando...</p>;
   }
 
   if (error) {
-    return <div>No se han podido mostrar los gifs.</div>
+    return <div>No se han podido mostrar los gifs.</div>;
   }
 
   return (
     <>
-      {
-        gifs.map((gif: IGif, index: number) => (
-          <img key={index} alt={gif.title} src={gif.url} />
-        ))
-      }
+      {gifs.map((gif: Meme, index: number) => (
+        <img key={index} alt={gif.title} src={gif.url} />
+      ))}
     </>
   );
 };
