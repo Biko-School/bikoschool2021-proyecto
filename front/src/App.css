@@ -1,12 +1,61 @@
 .App {
-  display: flex;
-  background: linear-gradient(
-    to bottom right,
-    #4158d0 10%,
-    #c850c075 46%,
-    #ffcc7094 68%
-  );
+  padding-top: 50px;
+  padding-left: 155px;
+  padding-right: 155px;
 }
 
 .App__AppTitle {
+  display: flex;
+  align-items: center;
+}
+
+.App__AppTitle--Title {
+  color: white;
+  font-weight: 800;
+  font-size: 40px;
+  margin-left: 5px;
+}
+
+.App__SearchBar {
+  display: flex;
+  align-items: center;
+  margin-top: 66px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.App__SearchBar--bar {
+  width: 100%;
+  margin-right: 10px;
+  border-style: hidden;
+}
+
+.App__SearchBar--button {
+  position: relative;
+  margin: 10px;
+  background: linear-gradient(
+    to bottom right,
+    #fff35cc4 10%,
+    #00ccff75 40%,
+    #00ff995e 90%
+  );
+  border-right: 10px;
+}
+
+.App__SectionTitle {
+  display: flex;
+  align-items: center;
+  margin-top: 66px;
+}
+
+.App__SectionTitle--Title {
+  color: white;
+  font-weight: 700;
+  font-size: 25px;
+  margin-left: 5px;
+}
+
+.App__GridGifs {
+  margin-top: 30px;
 }
