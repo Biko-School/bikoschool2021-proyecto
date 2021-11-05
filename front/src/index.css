@@ -1,13 +1,54 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --font-family: 'Open Sans', sans-serif;
+  --small-font-size: 12px;
+  --small-line-height: 17px;
+  --base-font-size: 16px;
+  --base-line-height: 22px;
+  --h4-font-size: 18px;
+  --h4-line-height: 25px;
+  --h3-font-size: 25px;
+  --h3-line-height: 35px;
+  --h2-font-size: 36px;
+  --h2-line-height: 50px;
+  --h1-font-size: 41px;
+  --h1-line-height: 57px;
+  --light-font-weight: 300;
+  --bold-font-weight: 700;
+  --extrabold-font-weight: 800;
+
+  --xtiny-space: 4px;
+  --tiny-space: 8px;
+  --small-space: 12px;
+  --mini-space: 16px;
+  --base-space: 24px;
+  --medium-space: 32px;
+  --large-space: 48px;
+  --xlarge-space: 64px;
+  --huge-space: 96px;
+
+  --mobile-breakpoints-lateral-gap: 24px;
+  --mobile-container-max-width: 100%;
+  --tablet-breakpoints-lateral-gap: 24px;
+  --tablet-container-max-width: 100%;
+  --desktop-breakpoints-lateral-gap: 48px;
+  --desktop-container-max-width: 100%;
+  --desktop-large-breakpoints-lateral-gap: 48px;
+  --desktop-large-container-max-width: 1132px;
+
+  --color-purple: #9933ff;
+  --color-light-red: #ff6666;
+  --color-light-blue: #00ccff;
+  --color-light-green: #00ff99;
+  --color-light-yellow: #fff9aa;
+  --color-blue: #4158d0;
+  --color-pink: #c850c0;
+  --color-yellow: #ffcc70;
+  --color-black: #000000;
+  --color-grey: #999999;
+  --color-white: #ffffff;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body,
+#root {
+  min-height: 100vh;
 }
