@@ -27,7 +27,7 @@ export const createApp = (db: low.LowdbSync<DatabaseSchema>) => {
   // http://expressjs.com/es/api.html#express.urlencoded
   app.use(express.urlencoded({ extended: false }));
 
-  const port: string = process.env.PORT || "3000";
+  const port: string = process.env.PORT || "3001";
 
   // Assigns setting name to value
   // http://expressjs.com/es/api.html#app.set
