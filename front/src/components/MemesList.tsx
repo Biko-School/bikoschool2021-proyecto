@@ -20,13 +20,19 @@ export const MemessList: React.FC = () => {
 
   return (
     <div className="App">
-      <div>
-        {memes.map((meme) => (
+      <div className="App__AppTitle">GIFFAFFINITY</div>
+      <div className="App__SearchBar">
+        {/* <div onChange={(event) => setTag(event.target.value)} /> */}
+      </div>
+      <div className="App__SectionTitle">
+        Los giffs más trendings del momento
+      </div>
+      <div className="App__GridGifs"></div>
+      {/* {memes.map((meme) => (
           <div key={meme.img}>
             <img src={meme.img} alt={meme.title} width="50%" height="50%"></img>
           </div>
-        ))}
-      </div>
+        ))} */}
     </div>
   );
 };

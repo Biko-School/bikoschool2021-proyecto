@@ -1,3 +1,12 @@
 .App {
-  /* text-align: center; */
+  display: flex;
+  background: linear-gradient(
+    to bottom right,
+    #4158d0 10%,
+    #c850c075 46%,
+    #ffcc7094 68%
+  );
+}
+
+.App__AppTitle {
 }
