@@ -43,6 +43,19 @@ describe('/api/memes', () => {
             });
     });
 
-    
+    it("api devuelve titulo e imagen", (done) => {
+        request(app)
+            .get('/api/memes')
+            .expect(200)
+            .then((response) => {
+                expect(response.body[0]).toHaveProperty('title') //toBeTruthy()
+                expect(response.body[0]).toHaveProperty('giphyUrl')
+                /**
+                 ¿Como se puede hacer un test que chequee que solo están esas dos propiedades?
+                 ¿Como configuramos el API para que solo devuelva las propiedades que queremos?
+                */
+                done();
+            });
+    })
 
 })

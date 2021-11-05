@@ -1,7 +1,8 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
-import getMemes from './getMemes'
+//import getMemes from './getMemes'
+import api from "./api.json"
 
 /*test('renders learn react link', () => {
   render(<App />);
@@ -17,16 +18,15 @@ import getMemes from './getMemes'
 
 
 describe('Guifaffinity', () => {
-  it('renders the title guifaffinity', () => {
-    render(<App />)
 
-    expect(screen.getByText(/guifaffinity/i)).toBeInTheDocument()
+  it('renders the title guifaffinity', async () => {
+    render(<App />)
+    expect(await screen.findByText(/guifaffinity/i)).toBeInTheDocument()
   })
 
-  it('There is a meme on the page', () => {
+  it('There is a meme on the page', async () => {
     render(<App/>)
-
-    expect(screen.getByText(/Soy un meme/i)).toBeInTheDocument()
+    expect(await screen.findAllByText(/Soy un meme/i)).toBeInTheDocument()
   })
 
   /* Este test no lo estamos usando.
@@ -36,25 +36,23 @@ describe('Guifaffinity', () => {
     expect(screen.getByText(/No hay memes/i)).toBeInTheDocument()
   })*/
 
-  it('The memes array have a length of 5 items', () => {
-    const memes = getMemes()
-
-    expect(memes).toHaveLength(5)
+  it('The memes array have a length of 50 items', () => {
+    expect(api).toHaveLength(50)
   })
 
-  it('There is a meme title', () => {
+  it('There is a meme title', async () => {
     render(<App/>)
 
-    expect(screen.getByText(/hey/i)).toBeInTheDocument()
+
+    for (let meme of api) {
+      expect(await screen.findAllByText(meme.title)).toBeInTheDocument()
+    }
+    
   })
 
   it('There is an img', () => {
     render(<App/>)
-
-    //<img src="pic_trulli.jpg" alt="Italian Trulli">
-
     expect(screen.getByRole('img')).toBeInTheDocument()
   })
-
 
 })

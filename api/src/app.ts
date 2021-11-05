@@ -1,10 +1,12 @@
 import express, { Express, Request, Response } from "express";
 import morgan from "morgan";
 import {routes} from "./routes"
+import cors from "cors";
 
 export const createApp = (db) => {
     const app: Express = express();
 
+    app.use(cors())
     // Shows request log on terminal
     // https://github.com/expressjs/morgan
     

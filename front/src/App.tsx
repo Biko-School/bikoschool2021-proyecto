@@ -1,24 +1,42 @@
 import React, { useEffect, useState } from 'react';
 import './reset.css';
 import './App.css';
-import getMemes from './getMemes'
+//import getMemes from './getMemes'
 import hey from "./images/Image5_.png"
 
 
 function App() {
 
-  const [memes, setMemes] = useState([{"title": '', "image": ''}]);
+  const [memes, setMemes] = useState([{'title': '', 'images': {'original': {'url': ''}}}]);
 
+  async function fetchData() {
+    
+
+    const initialData = await fetch(
+      "http://localhost:3001/api/memes"
+);
+
+    const initialJson = await initialData.json();
+    setMemes(initialJson)
+  }
+  
   useEffect(() => {
-    setMemes(getMemes());
+    fetchData();
    }, []);
-
+   console.log(memes)
   return (
     <div>
       <h1>Guifaffinity</h1>
       {
         memes ? <div>
-          <span>Soy un meme: {memes[0].title}</span><img src={hey} alt="meme"/> 
+          <ul>{memes.map((meme)=> (
+            <>
+            <li key={meme.title}>{meme.title}</li>
+            <img src={meme.images.original.url} alt="meme"/>
+            </>
+            ))}
+          </ul>
+          
           </div> : <span>No hay memes</span>
       }
     </div>

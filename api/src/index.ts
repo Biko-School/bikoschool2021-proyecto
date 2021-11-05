@@ -12,7 +12,7 @@ const app = createApp(db)
 
 const server: Server = http.createServer(app);
 
-const port: string = process.env.PORT || "3000";
+const port: string = process.env.PORT || "3001";
 
 // Assigns setting name to value
 // http://expressjs.com/es/api.html#app.set
