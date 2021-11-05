@@ -46,9 +46,17 @@
   --color-black: #000000;
   --color-grey: #999999;
   --color-white: #ffffff;
+
+  --background-linear-gradient: linear-gradient(
+    157.9deg,
+    #4158d0 1.21%,
+    rgba(200, 80, 192, 0.46) 49.58%,
+    rgba(255, 204, 112, 0.58) 96.91%
+  );
 }
 
 body,
 #root {
   min-height: 100vh;
+  background: var(--background-linear-gradient);
 }
