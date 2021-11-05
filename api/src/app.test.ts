@@ -63,4 +63,24 @@ describe('/api/memes', () => {
         done();
       });
   });
+
+  it('endpoint devuelve el primer elemento de la base de datos cumpliendo con la interface de Meme', (done) => {
+    request(app)
+      .get('/api/memes')
+      .end((err, res) => {
+        const testMeme: Meme = {
+          id: 'YleuWir5NTNVXkflSp',
+          url: 'https://media4.giphy.com/media/YleuWir5NTNVXkflSp/giphy.gif?cid=be655fb7f245f7d29df0fc743b70e3ee884dbaf31956e789&rid=giphy.gif',
+          title: 'Movie Brazil GIF by MOODMAN',
+        };
+        const firstMeme = res.body[0];
+
+        Object.keys(testMeme).forEach((key) => {
+          expect(firstMeme[key]).toEqual(testMeme[key]);
+        });
+
+        //expect(firstMeme.id).toBe(testMeme.id);
+        done();
+      });
+  });
 });
