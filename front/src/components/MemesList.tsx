@@ -8,13 +8,36 @@ export interface Meme {
   img: string;
 }
 
+function sortMemeByDate(memes: Meme[]) {
+  return memes.sort((a, b) => (a.date < b.date ? -1 : 1));
+}
+
+function chooseFiftyMemes(memes: Meme[], n: number) {
+  return memes.slice(0, n);
+}
+
+function memesMapping(memesJSON:any) {
+  const memesData = memesJSON.map((meme:any) => {
+    return {
+      titles : meme.title,
+      tags : meme.tags,
+      date : meme.import_datetime,
+      img : meme.images.original.url 
+    }
+  })
+  return memesData
+}
+
 export const MemessList: React.FC = () => {
   const [memes, setMemes] = useState<Meme[]>([]);
 
   useEffect(() => {
     (async () => {
       const memesJSON = await api.memes();
-      setMemes(memesJSON);
+      const memesJSONmapped = memesMapping(memesJSON)
+      const memesSorted = sortMemeByDate(memesJSONmapped);
+      const fiftyMemesSorted = chooseFiftyMemes(memesSorted, 50);
+      setMemes(fiftyMemesSorted);
     })();
   }, []);
 
