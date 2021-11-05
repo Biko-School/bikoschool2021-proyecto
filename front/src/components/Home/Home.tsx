@@ -34,13 +34,8 @@ export const Home = () => {
     <>
       <div className="guif-container">
         {gifs.map((gif: Meme, index: number) => (
-          <div className="guif-wrapper">
-            <img
-              className="guif-image"
-              key={index}
-              alt={gif.title}
-              src={gif.url}
-            />
+          <div className="guif-wrapper" key={index}>
+            <img className="guif-image" alt={gif.title} src={gif.url} />
           </div>
         ))}
       </div>
