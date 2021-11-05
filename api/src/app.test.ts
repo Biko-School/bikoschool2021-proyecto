@@ -79,7 +79,6 @@ describe('/api/memes', () => {
           expect(firstMeme[key]).toEqual(testMeme[key]);
         });
 
-        //expect(firstMeme.id).toBe(testMeme.id);
         done();
       });
   });
