@@ -10,6 +10,7 @@ export function getApp(db) {
   if (process.env.NODE_ENV !== "test") {
     app.use(morgan("dev"));
   }
+  3001;
 
   // Parses incoming requests with JSON payloads
   // http://expressjs.com/es/api.html#express.json

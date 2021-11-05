@@ -1,6 +1,6 @@
 export const api = {
   memes: async () => {
-    const response = await fetch("http://localhost:3000/api/memes");
+    const response = await fetch("/api/memes");
     return response.json();
   },
 };
