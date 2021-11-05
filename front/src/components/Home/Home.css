@@ -3,10 +3,12 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 33px;
+
   padding: 0 var(--mobile-breakpoints-lateral-gap);
 
   width: 100%;
   height: 100%;
+
   max-width: var(--desktop-large-container-max-width);
   margin: 0 auto;
 }
@@ -16,15 +18,12 @@
   border-radius: 15px;
 
   object-fit: cover;
+  width: 200px;
+  height: 200px;
 }
 
 @media screen and (min-width: 768px) {
   .guif-container {
     padding: 0;
-  }
-  .guif-wrapper,
-  .guif-image {
-    width: 200px;
-    height: 200px;
   }
 }
