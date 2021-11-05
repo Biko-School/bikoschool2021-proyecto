@@ -1,4 +1,6 @@
-const memes = [{
+import Meme from "../../meme";
+
+const memes: Array<Meme> = [{
     "id": "YleuWir5NTNVXkflSp",
     "type": "gif",
     "slug": "moodman-movie-brazil-the-YleuWir5NTNVXkflSp",
