@@ -1,6 +1,7 @@
 import express, { Express, Request, Response, NextFunction } from 'express';
 import morgan from 'morgan';
 import { routes } from './routes';
+import cors from 'cors';
 import { LowdbSync } from 'lowdb';
 import { DatabaseSchema } from 'DatabaseSchema';
 
@@ -20,6 +21,8 @@ export function getApp(db: LowdbSync<DatabaseSchema>): Express {
   // Parses incoming requests with urlencoded payloads
   // http://expressjs.com/es/api.html#express.urlencoded
   app.use(express.urlencoded({ extended: false }));
+
+  app.use(cors());
 
   app.use((req: Request, res: Response, next: NextFunction) => {
     req.context = { db };
