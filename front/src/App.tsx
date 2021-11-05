@@ -1,36 +1,54 @@
 import React, { useState, useEffect } from "react";
+interface Data {
+  id: string;
+  type: string;
+  slug: string;
+  giphyUrl: string;
+  title: string;
+  source_tld: string;
+  source_post_url: string;
+  import_datetime: string;
+  username: string;
+  images: {
+    original: {
+      width: string;
+      height: string;
+      url: string;
+    };
+    small: {
+      width: string;
+      height: string;
+      url: string;
+    };
+  };
+  tags: string[];
+}
 
 function App() {
-  const [memesData, setMemesData] = useState<
-    {
-      id: string;
-      url: string;
-      title: string;
-    }[]
-  >([]);
+  const [memesData, setMemesData] = useState<Data[]>([]);
 
   useEffect(() => {
-    console.log("Inicializando App");
-
-    fetch("/memes")
+    fetch("http://localhost:3010/api/memes")
       .then((response) => {
-        console.log("response in memes");
+        if (!response.ok) {
+          return Promise.reject("Error");
+        }
         return response.json();
       })
       .then((data) => {
-        console.log("data in memes", data);
-        setMemesData(data.results);
+        setMemesData(data.memes);
       });
   }, []);
+  console.log(memesData);
 
   if (memesData.length === 0) {
-    return <>Cargando...</>;
+    return <>Loading...</>;
   }
 
   return (
     <div>
-      {memesData.map((result) => (
-        <img src={result.url} alt={result.title} key={result.id} />
+      {memesData.map((result: Data) => (
+        <img src={result.images.small.url} alt={result.title} key={result.id} />
       ))}
     </div>
   );

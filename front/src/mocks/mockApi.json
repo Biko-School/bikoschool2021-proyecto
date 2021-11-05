@@ -1,19 +1,27 @@
 {
-  "results": [
+  "memes": [
     {
-      "id": "0",
-      "title": "Kid punch",
-      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS_GqcozH0JrcshXtOXYetbu7_AyvI7lbsLw&usqp=CAU"
+      "id": "YleuWir5NTNVXkflSp",
+      "type": "gif",
+      "slug": "moodman-movie-brazil-the-YleuWir5NTNVXkflSp",
+      "giphyUrl": "https://giphy.com/gifs/moodman-movie-brazil-the-YleuWir5NTNVXkflSp",
+      "title": "Movie Brazil GIF by MOODMAN",
+      "source_tld": "",
+      "source_post_url": "",
+      "import_datetime": "2020-08-20 02:24:22",
+      "username": ""
     },
     {
-      "id": "1",
-      "title": "Kid punch 2",
-      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS_GqcozH0JrcshXtOXYetbu7_AyvI7lbsLw&usqp=CAU"
-    },
-    {
-      "id": "2",
-      "title": "Kid punch 3",
-      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS_GqcozH0JrcshXtOXYetbu7_AyvI7lbsLw&usqp=CAU"
+      "id": "YleuWir5NTNVXkflSp",
+      "type": "gif",
+      "slug": "moodman-movie-brazil-the-YleuWir5NTNVXkflSp",
+      "giphyUrl": "https://giphy.com/gifs/moodman-movie-brazil-the-YleuWir5NTNVXkflSp",
+      "title": "Movie Brazil GIF by MOODMAN",
+      "source_tld": "",
+      "source_post_url": "",
+      "import_datetime": "2020-08-20 02:24:22",
+      "username": ""
     }
+
   ]
 }
