@@ -47,7 +47,7 @@ function App() {
 
   return (
     <div>
-      {memesData.map((result: Data) => (
+      {memesData.map((result) => (
         <img src={result.images.small.url} alt={result.title} key={result.id} />
       ))}
     </div>
