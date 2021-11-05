@@ -32,9 +32,18 @@ export const Home = () => {
 
   return (
     <>
-      {gifs.map((gif: Meme, index: number) => (
-        <img key={index} alt={gif.title} src={gif.url} />
-      ))}
+      <div className="guif-container">
+        {gifs.map((gif: Meme, index: number) => (
+          <div className="guif-wrapper">
+            <img
+              className="guif-image"
+              key={index}
+              alt={gif.title}
+              src={gif.url}
+            />
+          </div>
+        ))}
+      </div>
     </>
   );
 };
