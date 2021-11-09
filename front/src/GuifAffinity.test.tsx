@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import GuifCard from './components/GuiffCard';
+import memes from '../../material/db.json'
 
 describe('GuifAffinity', () => {
   it('shows the alt tag of a guif', () => {
