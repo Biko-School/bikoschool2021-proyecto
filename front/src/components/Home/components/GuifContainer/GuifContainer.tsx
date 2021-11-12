@@ -16,7 +16,13 @@ export const GuifContainer = (props: any) => {
       <div className='guif-container'>
         {props.gifs.map((gif: Meme, index: number) => (
           <div className='guif-wrapper' key={index}>
-            <img className='guif-image' alt={gif.title} src={gif.url} />
+            <img
+              width='200'
+              height='200'
+              className='guif-image'
+              alt={gif.title}
+              src={gif.url}
+            />
           </div>
         ))}
       </div>

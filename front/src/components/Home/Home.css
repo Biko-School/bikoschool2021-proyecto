@@ -1,0 +1,13 @@
+.home-container {
+  max-width: var(--desktop-large-container-max-width);
+  margin: 0 auto;
+}
+
+.home-title {
+  margin-bottom: 30px;
+  font-size: var(--h2-font-size);
+  line-height: var(--h2-line-height);
+  color: var(--color-white);
+  font-weight: var(--bold-font-weight);
+  letter-spacing: -1.5;
+}

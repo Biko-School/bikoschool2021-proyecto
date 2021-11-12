@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Home.css';
 import axios from 'axios';
 import { GuifContainer } from './components/GuifContainer';
+import trending from './../../assets/img/trending.svg';
 
 export interface Meme {
   id: string;
@@ -25,11 +26,17 @@ export const Home = () => {
 
   return (
     <>
-      <GuifContainer
-        gifs={gifs}
-        loading={loading}
-        error={error}
-      ></GuifContainer>
+      <div className='home-container'>
+        <h2 className='home-title'>
+          <img alt='trending' src={trending}></img>
+          Los guif más trendings del momento
+        </h2>
+        <GuifContainer
+          gifs={gifs}
+          loading={loading}
+          error={error}
+        ></GuifContainer>
+      </div>
     </>
   );
 };
