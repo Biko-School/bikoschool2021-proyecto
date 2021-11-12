@@ -8,7 +8,7 @@
 .home-header {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: var(--small-space);
 
   font-size: var(--h1-font-size);
   line-height: var(--h2-line-height);

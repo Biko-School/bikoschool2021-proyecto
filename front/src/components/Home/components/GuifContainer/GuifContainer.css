@@ -4,8 +4,6 @@
   justify-content: center;
   gap: 33px;
 
-  padding: 0 var(--mobile-breakpoints-lateral-gap);
-
   width: 100%;
   height: 100%;
 }
