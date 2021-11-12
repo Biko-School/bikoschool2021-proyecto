@@ -1,4 +1,4 @@
-export class MemeImage{
+export class MemeDataImage{
     public readonly width : number;
     public readonly height : number;
     public readonly url : string;
@@ -12,7 +12,7 @@ export class MemeImage{
 }
 
 
-export class Meme{
+export class MemeData{
     public readonly id : string;
     public readonly slug : string;
     public readonly giphyUrl : string;
@@ -20,8 +20,8 @@ export class Meme{
     public readonly importDatetime : Date;
     public readonly tags : string[];
 
-    public readonly originalImage : MemeImage;
-    public readonly smallImage : MemeImage;
+    public readonly originalImage : MemeDataImage;
+    public readonly smallImage : MemeDataImage;
 
     constructor (jsonData : JSON){
         this.id = jsonData['id'];
@@ -29,8 +29,8 @@ export class Meme{
         this.giphyUrl = jsonData['giphyUrl'];
         this.title = jsonData['title'];
         this.importDatetime = new Date(jsonData['import_datetime']);
-        this.originalImage = new MemeImage(jsonData["images"]["original"]);
-        this.smallImage = new MemeImage(jsonData["images"]["small"]);
+        this.originalImage = new MemeDataImage(jsonData["images"]["original"]);
+        this.smallImage = new MemeDataImage(jsonData["images"]["small"]);
         this.tags = jsonData["tags"]
 
     }

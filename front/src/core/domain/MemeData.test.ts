@@ -1,10 +1,10 @@
-import { Meme } from "./MemeData";
+import { MemeData } from "./MemeData";
 import memes from '../../../../material/db.json'
 
 describe('Meme', () => {
 
     it('Has meme values', () => {
-        const meme = new Meme(memes[0])
+        const meme = new MemeData(memes[0])
 
         expect(meme.id).toBe("YleuWir5NTNVXkflSp")
         expect(meme.slug).toBe("moodman-movie-brazil-the-YleuWir5NTNVXkflSp")
