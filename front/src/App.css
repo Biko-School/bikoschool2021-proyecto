@@ -1,11 +1,10 @@
 @import url('_reset.css');
 .gif__grid {
-    display: grid;
-    grid-template-columns: repeat(6,200px);
-    gap: 33px;
+    display: flex;
+    flex-wrap: wrap;
 }
 .gif__card{
     width: 200px;
     height: 200px;
-    border-radius: 5px;
+    border-radius: 50%;
 }
