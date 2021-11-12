@@ -1,21 +1,15 @@
+import { response } from "msw";
 import React, { useState, useEffect } from "react";
 import { Meme } from "../core/domain/Meme";
+import fetchMemes from "../core/infrastructure/fetchMemes";
 function App() {
   const [memesData, setMemesData] = useState<Meme[]>([]);
 
   useEffect(() => {
-    fetch("http://localhost:3010/api/memes", { mode: "no-cors" })
-      .then((response) => {
-        if (!response.ok) {
-          return Promise.reject("Error");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setMemesData(data.memes);
-      });
+    fetchMemes().then((response) => {
+      setMemesData(response.memes);
+    });
   }, []);
-  console.log(memesData);
 
   if (memesData.length === 0) {
     return <>Loading...</>;
