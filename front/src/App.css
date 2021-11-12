@@ -28,19 +28,22 @@
 .App__SearchBar--bar {
   width: 100%;
   margin-right: 10px;
+  margin-left: 10px;
   border-style: hidden;
+  outline-width: inherit;
 }
 
 .App__SearchBar--button {
   position: relative;
-  margin: 10px;
+  height: 40px;
   background: linear-gradient(
     to bottom right,
     #fff35cc4 10%,
     #00ccff75 40%,
     #00ff995e 90%
   );
-  border-right: 10px;
+  border-radius: 0px 10px 10px 0px;
+  border-style: hidden;
 }
 
 .App__SectionTitle {
@@ -56,6 +59,17 @@
   margin-left: 5px;
 }
 
-.App__GridGifs {
+.App__GridGiffs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   margin-top: 30px;
+}
+
+.App__GridGiffs--Giff {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  margin: 15px;
+  object-fit: cover;
 }

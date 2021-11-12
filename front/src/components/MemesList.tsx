@@ -33,7 +33,7 @@ function memesMapping(memesJSON: any) {
 
 export const MemessList: React.FC = () => {
   const [memes, setMemes] = useState<Meme[]>([]);
-  const [name, setName] = useState("");
+  // const [name, setName] = useState("");
 
   useEffect(() => {
     (async () => {
@@ -53,24 +53,25 @@ export const MemessList: React.FC = () => {
       <div className="App__SearchBar">
         <input
           className="App__SearchBar--bar"
-          onChange={(event) => setName(event.target.value)}
-          value={name}
+          placeholder="¿Qué quieres buscar? ¡Encuéntralo"
         />
-        <div className="App__SearchBar--button">
+        <button className="App__SearchBar--button">
           <img src={lens} alt="Lens" width="25px" height="25px" />
-        </div>
+        </button>
       </div>
       <div className="App__SectionTitle">
-        <img src={arrow} alt="logo" width="25" height="25" />
+        <img src={arrow} alt="logo" width="20" height="25" />
         <div className="App__SectionTitle--Title">
           Los giffs más trendings del momento
         </div>
       </div>
-      <div className="App__GridGifs">
+      <div className="App__GridGiffs">
         {memes.map((meme) => (
-          <div key={meme.img}>
-            <img src={meme.img} alt={meme.title} width="25%" height="25%"></img>
-          </div>
+          <img
+            className="App__GridGiffs--Giff"
+            src={meme.img}
+            alt={meme.title}
+          ></img>
         ))}
       </div>
     </div>
