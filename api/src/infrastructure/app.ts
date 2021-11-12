@@ -2,7 +2,7 @@ import express, { Express } from "express";
 import morgan from "morgan";
 import low from "lowdb";
 import { routes } from "./routes";
-import { DbSchema } from "./DbSchema";
+import { DbSchema } from "../domain/DbSchema";
 
 export const createApp = (db: low.LowdbSync<DbSchema>) => {
   const app = express();

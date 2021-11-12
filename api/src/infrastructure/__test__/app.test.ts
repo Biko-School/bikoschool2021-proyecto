@@ -1,10 +1,10 @@
-import { createApp } from "./app";
+import { createApp } from "../app";
 import request from "supertest";
 import { response } from "express";
 import low from "lowdb";
 import Memory from "lowdb/adapters/Memory";
-import { DbSchema } from "./DbSchema";
-import dbData from "./fixtures/db.json";
+import { DbSchema } from "../../domain/DbSchema";
+import dbData from "../../fixtures/db.json";
 
 describe("/api/memes", () => {
   let app;
