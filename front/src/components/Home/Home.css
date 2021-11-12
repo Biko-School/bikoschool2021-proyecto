@@ -4,10 +4,18 @@
 }
 
 .home-title {
+  display: flex;
+  align-items: center;
+
   margin-bottom: 30px;
   font-size: var(--h2-font-size);
   line-height: var(--h2-line-height);
   color: var(--color-white);
   font-weight: var(--bold-font-weight);
   letter-spacing: -1.5;
+}
+
+.home-title-icon {
+  width: 40px;
+  margin-right: 20px;
 }

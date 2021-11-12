@@ -28,7 +28,7 @@ export const Home = () => {
     <>
       <div className='home-container'>
         <h2 className='home-title'>
-          <img alt='trending' src={trending}></img>
+          <img className='home-title-icon' alt='trending' src={trending}></img>
           Los guif más trendings del momento
         </h2>
         <GuifContainer
