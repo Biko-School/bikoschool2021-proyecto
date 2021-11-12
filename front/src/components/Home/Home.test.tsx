@@ -28,12 +28,11 @@ describe('show 50 gifs', () => {
     expect(errorElement).toBeInTheDocument();
   });
 
-  it('show json gifs', async () => {
+  it('Muestra los 50 memes más trending del momento en la página principal', async () => {
     render(<Home />);
-    const gifElements = await screen.findAllByRole('img');
 
     for (let i = 0; i < gifs.length; i++) {
-      expect(gifElements[i]).toHaveAttribute('alt', gifs[i].title);
+      await screen.findByRole('img', { name: gifs[i].title });
     }
   });
 });
