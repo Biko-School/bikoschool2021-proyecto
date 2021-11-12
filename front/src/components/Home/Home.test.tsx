@@ -5,15 +5,15 @@ import { rest } from 'msw';
 import gifs from './../../gif.json';
 import { server } from '../../mocks/server';
 
-describe('show 50 gifs', () => {
-  it('show loading', async () => {
+describe('Funcionamiento de la página principal', () => {
+  it('Muestra un texto "Cargando" mientras los memes cargan', async () => {
     render(<Home />);
     const loadingElement = await screen.findByText(/Cargando.../i);
 
     expect(loadingElement).toBeInTheDocument();
   });
 
-  it('show error when api gives error', async () => {
+  it('Muestra un mensaje de error cuando la solicitud no carga', async () => {
     server.use(
       rest.get('http://localhost:4200/api/memes', (req, res, ctx) => {
         return res(ctx.status(500), ctx.json({ error: 'Server Error' }));
