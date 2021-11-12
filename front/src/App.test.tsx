@@ -24,10 +24,10 @@ describe('Guifaffinity', () => {
     expect(await screen.findByText(/guifaffinity/i)).toBeInTheDocument()
   })
 
-  it('There is a meme on the page', async () => {
+  /*it('There is a meme on the page', async () => {
     render(<App/>)
     expect(await screen.findAllByText(/Soy un meme/i)).toBeInTheDocument()
-  })
+  })*/
 
   /* Este test no lo estamos usando.
   it('There is not a meme on the page', () => {
@@ -42,10 +42,11 @@ describe('Guifaffinity', () => {
 
   it('There is a meme title', async () => {
     render(<App/>)
-
-
+    
     for (let meme of api) {
-      expect(await screen.findAllByText(meme.title)).toBeInTheDocument()
+      console.log({meme})
+      expect((await screen.findAllByText(meme.title))[0]).toBeInTheDocument()
+      
     }
     
   })

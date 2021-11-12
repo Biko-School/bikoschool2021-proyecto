@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './reset.css';
 import './App.css';
 //import getMemes from './getMemes'
-import hey from "./images/Image5_.png"
+
 
 
 function App() {
