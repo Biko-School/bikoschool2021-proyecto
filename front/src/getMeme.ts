@@ -7,6 +7,14 @@ const getMeme: any = () => {
   };
 };
 
+const api = {
+  memes: async () => {
+    const response = await fetch("/api/meme");
+    return response.json();
+  },
+};
+
 export const memeService = {
   getMeme,
+  api,
 };
