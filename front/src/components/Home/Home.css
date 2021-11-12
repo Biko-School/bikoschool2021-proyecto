@@ -1,7 +1,8 @@
 .home-container {
   max-width: var(--desktop-large-container-max-width);
   margin: 0 auto;
-  padding: 48px 0;
+
+  padding: var(--large-space) var(--mobile-breakpoints-lateral-gap);
 }
 
 .home-header {
@@ -14,14 +15,14 @@
   font-weight: var(--extrabold-font-weight);
   color: var(--color-white);
   letter-spacing: var(--letter-spacing);
-  margin-bottom: 66px;
+  margin-bottom: var(--large-space);
 }
 
 .home-title {
   display: flex;
   align-items: center;
 
-  margin-bottom: 30px;
+  margin-bottom: var(--medium-space);
   font-size: var(--h2-font-size);
   line-height: var(--h2-line-height);
   color: var(--color-white);
@@ -31,5 +32,5 @@
 
 .home-title-icon {
   width: 40px;
-  margin-right: 20px;
+  margin-right: var(--base-space);
 }
