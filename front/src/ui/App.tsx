@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Meme } from "../core/domain/Meme";
+import { MemeType } from "../core/domain/Meme";
 import fetchMemes from "../core/infrastructure/fetchMemes";
+import Meme from "./components/Meme/Meme";
 
 function App() {
-  const [memesData, setMemesData] = useState<Meme[]>([]);
+  const [memesData, setMemesData] = useState<MemeType[]>([]);
 
   useEffect(() => {
     fetchMemes().then((response) => {
@@ -11,15 +12,18 @@ function App() {
     });
   }, []);
 
-  // console.log("*****", memesData);
   if (memesData.length === 0) {
     return <>Loading...</>;
   }
 
   return (
-    <div>
+    <div className="memes_grid">
       {memesData.map((result) => (
-        <img src={result.images.small.url} alt={result.title} key={result.id} />
+        <Meme
+          title={result.title}
+          id={result.id}
+          imageUrl={result.images.small.url}
+        />
       ))}
     </div>
   );

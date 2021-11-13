@@ -1,4 +1,4 @@
-export interface Meme {
+export interface MemeType {
   id: string;
   type: string;
   slug: string;
