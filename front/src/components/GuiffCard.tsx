@@ -1,26 +1,13 @@
-import { useState, useEffect } from "react";
+
 // import Tag from "./Tag";
-import { api } from "./../core/infrastructure/ApiService";
+import React from "react";
 import { StoredMemeData } from "../core/domain/StoredMemeData";
 
-const GuiffCard = () => {
-  const [memes, setMemes] = useState<StoredMemeData[]>([]);
-
-  const fetchMeme = async () => {
-    const rawMemes = await api.memes();
-    setMemes(rawMemes);
-  };
-
-  useEffect(() => {
-    fetchMeme();
-  }, []);
-
-  if (memes.length === 0) {
-    return <p>Cargando...</p>;
-  }
+const GuiffCard:React.VFC<{meme:StoredMemeData}> = (props) => {
+  const{ meme } = props
   return (
     <>
-      <img src={memes[0].images.original.url} alt="guif" />
+      <img src={meme.images.original.url} alt="guif" />
       {/* <Tag /> */}
       {/* {<pre>{JSON.stringify(memes[0].images.original.url, null, "\t")}</pre>} */}
     </>
