@@ -7,10 +7,11 @@ function App() {
 
   useEffect(() => {
     fetchMemes().then((response) => {
-      setMemesData(response.memes);
+      setMemesData(response);
     });
   }, []);
 
+  console.log("*****", memesData);
   if (memesData.length === 0) {
     return <>Loading...</>;
   }
