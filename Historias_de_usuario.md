@@ -15,11 +15,14 @@ Pablo es un usuario.
 
 - Pablo accede a GuifAffinity. => Se ven los 50 memes más recientes
 
+- [x] Hecho
+
 **Ejemplo R1:**
 
 - No se muestran los 50 memes más recientes.
 
 - Pablo accede a GuifAffinity. => Se muestra un error.
+- [x] Hecho
 
 > R1 La longitud de un término de búsqueda para que devuelva resultados es de 3 caracteres
 
