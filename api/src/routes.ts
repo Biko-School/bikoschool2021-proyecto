@@ -1,6 +1,4 @@
-import express, { Express, Request, Response, Router } from "express";
-import low from "lowdb";
-import DatabaseSchema from "DatabaseSchema";
+import { Request, Response, Router } from "express";
 
 export let routes = Router();
 

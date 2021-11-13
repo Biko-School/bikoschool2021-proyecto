@@ -3,7 +3,7 @@ import request from "supertest";
 
 import low from "lowdb";
 import Memory from "lowdb/adapters/Memory";
-import DatabaseSchema from "DatabaseSchema";
+import DatabaseSchema from "core/domain/model/DatabaseSchema";
 import { Express } from "express";
 
 import dbData from "./fixtures/db.json";

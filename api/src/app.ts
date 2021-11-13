@@ -2,12 +2,11 @@ import express, {
   Express,
   Request,
   Response,
-  Router,
   NextFunction,
 } from "express";
 import morgan from "morgan";
 import low from "lowdb";
-import DatabaseSchema from "DatabaseSchema";
+import DatabaseSchema from "core/domain/model/DatabaseSchema";
 
 import { routes } from "./routes";
 

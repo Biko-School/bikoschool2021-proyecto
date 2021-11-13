@@ -3,7 +3,7 @@ import { createApp } from "./app";
 
 import low from "lowdb";
 import FileSync from "lowdb/adapters/FileSync";
-import DatabaseSchema from "DatabaseSchema";
+import DatabaseSchema from "core/domain/model/DatabaseSchema";
 
 const adapter = new FileSync<DatabaseSchema>("./database/db.json");
 const db = low(adapter);
