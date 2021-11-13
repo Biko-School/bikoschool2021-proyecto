@@ -1,7 +1,7 @@
-import { response } from "msw";
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Meme } from "../core/domain/Meme";
 import fetchMemes from "../core/infrastructure/fetchMemes";
+
 function App() {
   const [memesData, setMemesData] = useState<Meme[]>([]);
 
