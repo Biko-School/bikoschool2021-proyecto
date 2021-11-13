@@ -4,6 +4,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import { rest } from 'msw';
 import gifs from './../../gif.json';
 import { server } from '../../mocks/server';
+import userEvent from '@testing-library/user-event';
 
 describe('Funcionamiento de la página principal', () => {
   it('Muestra un texto "Cargando" mientras los memes cargan', async () => {
@@ -49,6 +50,22 @@ describe('Funcionamiento de la búsqueda de memes', () => {
 
     await waitFor(() => {
       expect(searchInput).toBeInTheDocument();
+    });
+  });
+
+  it('Se puede escribir en el input', async () => {
+    const inputValue = 'hola';
+
+    render(<Home />);
+
+    const searchInput = await screen.findByPlaceholderText(
+      '¿Qué quieres buscar? ¡Encuéntralo!'
+    );
+
+    userEvent.type(searchInput, inputValue);
+
+    await waitFor(() => {
+      expect(searchInput).toHaveValue(inputValue);
     });
   });
 });
