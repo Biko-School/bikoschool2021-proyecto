@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { useEffect } from "react";
-import { memeService } from "./getMeme";
+import { memeService } from "./services/getMeme";
 import { DatabaseSchema } from "../../api/src/DatabaseSchema";
 
 export const App: React.FC = () => {
@@ -18,13 +18,13 @@ export const App: React.FC = () => {
     });
   }, []);
 
-  useEffect(() => {
-    const getMemes = async () => {
-      const memes = await memeService.api.memes();
-      setMeme50(memes);
-    };
-    getMemes();
-  }, []);
+  // useEffect(() => {
+  //   const getMemes = async () => {
+  //     const memes = await memeService.api.memes();
+  //     setMeme50(memes);
+  //   };
+  //   getMemes();
+  // }, []);
 
   // Realizar llamada a la API
   // Mapear la llamada al html
@@ -34,6 +34,7 @@ export const App: React.FC = () => {
       {titleMeme && gifImage ? (
         <>
           <h1>{titleMeme.title}</h1>
+          <div>{meme50}</div>
           <img src={gifImage} alt="gifImage" id="2"></img>
         </>
       ) : (
