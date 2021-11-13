@@ -12,6 +12,71 @@ html {
   background-size: cover;
 }
 
+.app_container {
+  margin: 0 48px;
+}
+.header {
+  display: flex;
+  align-items: baseline;
+  margin-top: 48px;
+}
+
+.header_title {
+  font-family: "Open Sans", sans-serif;
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 57px;
+  letter-spacing: -0.015em;
+  text-align: left;
+  color: #fff;
+}
+
+.search {
+  display: flex;
+  margin: 60px 0;
+}
+.input_search {
+  width: 100%;
+  background: #fff;
+  border-radius: 15px 0 0 15px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: -0.015em;
+  text-align: left;
+  border: 0;
+  padding-left: 24px;
+}
+.search_icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 0 15px 15px 0;
+  background: linear-gradient(
+      135deg,
+      rgba(255, 243, 92, 0.77) 0%,
+      rgba(0, 204, 255, 0.46) 51.04%,
+      rgba(0, 255, 153, 0.37) 100%
+    ),
+    linear-gradient(0deg, #c4c4c4, #c4c4c4);
+}
+.subtitle {
+  display: flex;
+}
+.subtitle_text {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36.41px;
+  line-height: 50px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.015em;
+  color: #fff;
+  margin-left: 15px;
+}
 .meme {
   width: 200px;
   height: 200px;
@@ -24,4 +89,6 @@ html {
   display: flex;
   flex-wrap: wrap;
   gap: 33px;
+  justify-content: space-between;
+  margin-top: 30px;
 }
