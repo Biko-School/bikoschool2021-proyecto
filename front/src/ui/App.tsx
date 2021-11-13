@@ -11,7 +11,7 @@ function App() {
     });
   }, []);
 
-  console.log("*****", memesData);
+  // console.log("*****", memesData);
   if (memesData.length === 0) {
     return <>Loading...</>;
   }
