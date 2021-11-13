@@ -38,6 +38,7 @@ export const Home = () => {
           />
           <h1>GUIFAFFINITY</h1>
         </header>
+        <input type="text" placeholder="¿Qué quieres buscar? ¡Encuéntralo!" />
         <h2 className="home-title">
           <img
             className="home-title-icon"
