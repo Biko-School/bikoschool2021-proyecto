@@ -21,7 +21,7 @@ const GuiffCard = () => {
   return (
     <>
       <img src={memes[0].images.original.url} alt="guif" />
-      <Tag />
+      {/* <Tag /> */}
       {/* {<pre>{JSON.stringify(memes[0].images.original.url, null, "\t")}</pre>} */}
     </>
   );
