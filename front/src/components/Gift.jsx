@@ -1,8 +1,9 @@
 import "./reset.css";
 import "./reboot.css";
 import "./App.css";
+import { Gift } from "../entities/Gift";
 
-function Gift() {
+function returnGifts() {
   // return()
 }
-export default Gift;
+export default returnGifts();
