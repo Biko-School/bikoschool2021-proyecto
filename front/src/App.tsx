@@ -31,15 +31,16 @@ export const App: React.FC = () => {
 
   return (
     <>
-      {titleMeme && gifImage ? (
-        <>
-          <h1>{titleMeme.title}</h1>
-          <div>{meme50}</div>
-          <img src={gifImage} alt="gifImage" id="2"></img>
-        </>
-      ) : (
-        <div>There are not availables gifs</div>
-      )}
+      <div className="app">
+        {titleMeme && gifImage ? (
+          <>
+            <h1>{titleMeme.title}</h1>
+            <img src={gifImage} alt="gifImage" id="2"></img>
+          </>
+        ) : (
+          <div>There are not availables gifs</div>
+        )}
+      </div>
     </>
   );
 };

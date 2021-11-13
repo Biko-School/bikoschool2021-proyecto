@@ -1,0 +1,13 @@
+.app {
+  background: linear-gradient(
+      157.12deg,
+      rgba(65, 88, 208, 0.6) 34.86%,
+      rgba(200, 80, 192, 0.444) 77.43%,
+      rgba(255, 204, 112, 0.516) 100%
+    ),
+    #ffffff;
+
+  position: relative;
+  width: 1440px;
+  height: 2254px;
+}

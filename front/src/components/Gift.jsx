@@ -1,10 +1,8 @@
-import "./reset.css"
-import "./reboot.css"
-import "./App.css"
+import "./reset.css";
+import "./reboot.css";
+import "./App.css";
 
 function Gift() {
-    return(
-
-    )
+  // return()
 }
 export default Gift;
