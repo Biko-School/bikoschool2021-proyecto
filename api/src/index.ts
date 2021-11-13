@@ -1,8 +1,8 @@
 import http, { Server } from "http";
-import { createApp } from "../infrastructure/app";
+import { createApp } from "./infrastructure/app";
 import low from "lowdb";
 import FileSync from "lowdb/adapters/FileSync";
-import { DbSchema } from "../domain/DbSchema";
+import { DbSchema } from "./domain/DbSchema";
 
 const adapter = new FileSync<DbSchema>("./db/db.json");
 const db = low(adapter);
