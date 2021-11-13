@@ -1,23 +1,30 @@
-import { useState, useEffect } from 'react';
-import Tag from './Tag';
-import { api } from './../core/ApiService';
+import { useState, useEffect } from "react";
+import Tag from "./Tag";
+import { api } from "./../core/ApiService";
+import { StoredMemeData } from "../core/domain/StoredMemeData";
 
 const GuiffCard = () => {
-    const [meme, setMeme] = useState('');
+  const [memes, setMemes] = useState<StoredMemeData[]>([]);
 
-    const fetchMeme = async() => {
-        setMeme( await api.memes() );
-    }
+  const fetchMeme = async () => {
+    const rawMemes = await api.memes();
+    setMemes(rawMemes);
+  };
 
-    useEffect( () => {fetchMeme()}, [] );
-    console.log(meme);
+  useEffect(() => {
+    fetchMeme();
+  }, []);
 
-    return (
-        <>
-            <img src="" alt="guif" />
-            <Tag/>
-        </>
-    )
-}
+  if (memes.length === 0) {
+    return <p>Cargando...</p>;
+  }
+  return (
+    <>
+      <img src={memes[0].images.original.url} alt="guif" />
+      <Tag />
+      {/* {<pre>{JSON.stringify(memes[0].images.original.url, null, "\t")}</pre>} */}
+    </>
+  );
+};
 
 export default GuiffCard;
