@@ -8,9 +8,9 @@ import { server } from '../../mocks/server';
 describe('Funcionamiento de la página principal', () => {
   it('Muestra un texto "Cargando" mientras los memes cargan', async () => {
     render(<Home />);
-    const loadingElement = await screen.findByText(/Cargando.../i);
+    const searchInput = await screen.findByText(/Cargando.../i);
 
-    expect(loadingElement).toBeInTheDocument();
+    expect(searchInput).toBeInTheDocument();
   });
 
   it('Muestra un mensaje de error cuando la solicitud no carga', async () => {
@@ -34,5 +34,16 @@ describe('Funcionamiento de la página principal', () => {
     for (let i = 0; i < gifs.length; i++) {
       await screen.findByRole('img', { name: gifs[i].title });
     }
+  });
+});
+
+describe('Funcionamiento de la búsqueda de memes', () => {
+  it('Muestra un input para buscar', async () => {
+    render(<Home />);
+    const searchInput = await screen.findByRole('input', {
+      name: '¿Qué quieres buscar? ¡Encuéntralo!',
+    });
+
+    expect(searchInput).toBeInTheDocument();
   });
 });
