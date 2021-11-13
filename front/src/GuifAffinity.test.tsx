@@ -1,23 +1,12 @@
 import { render, screen, waitFor } from "@testing-library/react";
-import GuifCard from "./components/GuiffCard";
+import GuifAffinity from "./GuifAffinity";
 
 describe("GuifAffinity", () => {
-  it("shows the alt tag of a guif", async () => {
+  it("makes a request from the main application and render image", async () => {
     // Arrange
 
     // Act
-    render(<GuifCard />);
-
-    // Assert
-    await waitFor(() =>
-      expect(screen.getByAltText(/guif/i)).toBeInTheDocument()
-    );
-  });
-  it("shows an image", async () => {
-    // Arrange
-
-    // Act
-    render(<GuifCard />);
+    render(<GuifAffinity />);
 
     // Assert
     await waitFor(() => {

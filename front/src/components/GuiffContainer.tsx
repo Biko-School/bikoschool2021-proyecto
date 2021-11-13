@@ -1,11 +1,5 @@
-import GuiffCard from './GuiffCard';
-
 export const GuiffContainer = () => {
-    return (
-        <>
-            <GuiffCard/>
-        </>
-    )
-}
+  return <></>;
+};
 
 export default GuiffContainer;

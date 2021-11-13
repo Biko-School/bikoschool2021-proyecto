@@ -1,11 +1,11 @@
-import './GuifAffinity.css';
-import GuiffCard from './components/GuiffCard';
+import "./GuifAffinity.css";
+import GuiffContainer from "./components/GuiffContainer";
 
 function GuifAffinity() {
   return (
-        <>
-            <GuiffCard/>
-        </>
+    <>
+      <GuiffContainer />
+    </>
   );
 }
 
