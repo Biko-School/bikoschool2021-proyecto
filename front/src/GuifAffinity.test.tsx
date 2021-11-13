@@ -15,8 +15,6 @@ describe("GuifAffinity", () => {
   });
   it("shows an image", async () => {
     // Arrange
-    //TODO: hacer mock
-    //await waitFor(() => expect(mockAPI).toHaveBeenCalledTimes(1));
 
     // Act
     render(<GuifCard />);
