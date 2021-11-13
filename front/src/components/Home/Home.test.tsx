@@ -30,7 +30,6 @@ describe('Funcionamiento de la página principal', () => {
 
   it('Muestra los 50 memes más trending del momento en la página principal', async () => {
     render(<Home />);
-
     for (let i = 0; i < gifs.length; i++) {
       await screen.findByRole('img', { name: gifs[i].title });
     }
@@ -40,9 +39,10 @@ describe('Funcionamiento de la página principal', () => {
 describe('Funcionamiento de la búsqueda de memes', () => {
   it('Muestra un input para buscar', async () => {
     render(<Home />);
-    const searchInput = await screen.findByRole('input', {
-      name: '¿Qué quieres buscar? ¡Encuéntralo!',
-    });
+
+    const searchInput = screen.getByPlaceholderText(
+      '¿Qué quieres buscar? ¡Encuéntralo!'
+    );
 
     expect(searchInput).toBeInTheDocument();
   });
