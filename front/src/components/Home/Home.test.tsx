@@ -1,6 +1,6 @@
 import React from 'react';
 import { Home } from './Home';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import { rest } from 'msw';
 import gifs from './../../gif.json';
 import { server } from '../../mocks/server';
@@ -9,8 +9,9 @@ describe('Funcionamiento de la página principal', () => {
   it('Muestra un texto "Cargando" mientras los memes cargan', async () => {
     render(<Home />);
     const searchInput = await screen.findByText(/Cargando.../i);
-
-    expect(searchInput).toBeInTheDocument();
+    await waitFor(() => {
+      expect(searchInput).toBeInTheDocument();
+    });
   });
 
   it('Muestra un mensaje de error cuando la solicitud no carga', async () => {
@@ -25,7 +26,9 @@ describe('Funcionamiento de la página principal', () => {
       /No se han podido mostrar los gifs./i
     );
 
-    expect(errorElement).toBeInTheDocument();
+    await waitFor(() => {
+      expect(errorElement).toBeInTheDocument();
+    });
   });
 
   it('Muestra los 50 memes más trending del momento en la página principal', async () => {
@@ -40,10 +43,12 @@ describe('Funcionamiento de la búsqueda de memes', () => {
   it('Muestra un input para buscar', async () => {
     render(<Home />);
 
-    const searchInput = screen.getByPlaceholderText(
+    const searchInput = await screen.findByPlaceholderText(
       '¿Qué quieres buscar? ¡Encuéntralo!'
     );
 
-    expect(searchInput).toBeInTheDocument();
+    await waitFor(() => {
+      expect(searchInput).toBeInTheDocument();
+    });
   });
 });
