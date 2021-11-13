@@ -1,4 +1,4 @@
-import { StoredMemeData } from "./MemeData";
+import { StoredMemeData } from "./StoredMemeData";
 import db from '../../../../material/db.json'
 
 describe('Meme', () => {
