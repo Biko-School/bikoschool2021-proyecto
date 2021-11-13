@@ -1,4 +1,4 @@
-import { StoredMemeData } from "./domain/StoredMemeData";
+import { StoredMemeData } from "../domain/StoredMemeData";
 
 export const api = {
   memes: async (): Promise<StoredMemeData[]> => {

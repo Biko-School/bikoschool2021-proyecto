@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import Tag from "./Tag";
-import { api } from "./../core/ApiService";
+// import Tag from "./Tag";
+import { api } from "./../core/infrastructure/ApiService";
 import { StoredMemeData } from "../core/domain/StoredMemeData";
 
 const GuiffCard = () => {
