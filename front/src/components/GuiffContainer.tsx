@@ -4,7 +4,17 @@ import { StoredMemeData } from "../core/domain/StoredMemeData";
 import GuiffCard from "./GuiffCard";
 
 export const GuiffContainer:React.VFC<{memes:StoredMemeData[]}> = ({memes}) => {
-  return <GuiffCard meme={memes[0]} />;
+
+  const JsxMemesArray = [];
+
+  for (let i=0; i<memes.length; i++){
+    JsxMemesArray.push(<GuiffCard meme={memes[i]} />);
+  }
+  return (
+    <>
+    {JsxMemesArray}
+    </>
+  );
 };
 
 export default GuiffContainer;
