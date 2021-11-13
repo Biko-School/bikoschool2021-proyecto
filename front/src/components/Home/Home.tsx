@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import './Home.css';
 import axios from 'axios';
 import { GuifContainer } from './components/GuifContainer';
+
 import trending from './../../assets/img/trending.svg';
 import logoGuifaffinity from './../../assets/img/logoGuifaffinity.svg';
+import search from './../../assets/img/search.svg';
 
 export interface Meme {
   id: string;
@@ -38,7 +40,23 @@ export const Home = () => {
           />
           <h1>GUIFAFFINITY</h1>
         </header>
-        <input type="text" placeholder="¿Qué quieres buscar? ¡Encuéntralo!" />
+        <label className="home-searchbar">
+          <input
+            className="home-searchbar-input"
+            type="text"
+            placeholder="¿Qué quieres buscar? ¡Encuéntralo!"
+          />
+          <button className="home-searchbar-button">
+            <img
+              className="home-searchbar-button-img"
+              alt="search"
+              src={search}
+              width="42"
+              height="42"
+            />
+          </button>
+        </label>
+
         <h2 className="home-title">
           <img
             className="home-title-icon"
