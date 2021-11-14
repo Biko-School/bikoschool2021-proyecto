@@ -1,11 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import MemeRepository from "../domain/MemeRepository";
+import { Meme } from "../domain/meme"
 
+let variable: Promise<Meme[]>;
+//{'title': '', 'images': {'original': {'url': ''}}}
 function renderMemes(repository: MemeRepository ) {
 
-    const [memes, setMemes] = useState([{'title': '', 'images': {'original': {'url': ''}}}]);
-    const memes = repository.getMemes("http://localhost:3001/api/memes")
+    const [memes, setMemes] = useState([]);
 
+    variable = repository.getMemes("http://localhost:3001/api/memes")
+
+    useEffect(() => {
+      setMemes(variable)
+       }, []);
+
+       
+    
     return(
         <div>
         <h1>Guifaffinity</h1>
