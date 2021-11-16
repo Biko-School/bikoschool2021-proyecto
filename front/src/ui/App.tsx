@@ -12,10 +12,6 @@ function App() {
     });
   }, []);
 
-  if (memesData.length === 0) {
-    return <>Loading...</>;
-  }
-
   const first50Memes: MemeType[] = memesData.slice(0, 50);
 
   return (
@@ -42,13 +38,16 @@ function App() {
       </div>
 
       <div className="memes_grid">
-        {first50Memes.map((result) => (
-          <Meme
-            title={result.title}
-            id={result.id}
-            imageUrl={result.images.small.url}
-          />
-        ))}
+        {first50Memes.length === 0 && <div>Loading...</div>}
+
+        {first50Memes.length !== 0 &&
+          first50Memes.map((result) => (
+            <Meme
+              title={result.title}
+              id={result.id}
+              imageUrl={result.images.small.url}
+            />
+          ))}
       </div>
     </div>
   );
