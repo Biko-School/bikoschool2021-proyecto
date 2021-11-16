@@ -68,7 +68,13 @@
   margin-right: var(--base-space);
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1132px) {
+  .home-container {
+    padding: var(--large-space);
+  }
+}
+
+@media screen and (min-width: 1228px) {
   .home-container {
     padding: var(--large-space) 0;
   }
