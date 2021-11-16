@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Meme } from "../../../core/domain/model/Meme/Meme";
 import { fechAllMemes } from "../../../core/service/Meme";
-import logo from "../../../images/Logo.png";
-import arrow from "../../../images/Arrow.png";
+
 import lens from "../../../images/Lens.png";
 import { ApiMemeRepository } from "../../../core/infrastructure/ApiMemeRepository";
-import Title from "../../components/Title/Title";
+import Header from "../../components/Header/Header";
 import Input from "../../components/Input/Input";
+import SectionTitle from "../../components/Title/Title";
 
 export const MemessList: React.FC = () => {
   const [filter, setFilter] = useState("");
@@ -26,15 +26,7 @@ export const MemessList: React.FC = () => {
 
   return (
     <div className="App">
-      <Title
-        className="App__AppTitle"
-        src={logo}
-        alt="logo"
-        width="55.88"
-        height="61.75"
-        textClassName="App__AppTitle--Title"
-        textChildren="GIFFAFFINITY"
-      />
+      <Header />
 
       <div className="App__SearchBar">
         <Input
@@ -54,15 +46,7 @@ export const MemessList: React.FC = () => {
         </button>
       </div>
 
-      <Title
-        className="App__SectionTitle"
-        src={arrow}
-        alt="logo"
-        width="20"
-        height="25"
-        textClassName="App__SectionTitle--Title"
-        textChildren="Los giffs más trendings del momento"
-      />
+      <SectionTitle />
 
       <div className="App__GridGiffs">
         {memes.map((meme) => (

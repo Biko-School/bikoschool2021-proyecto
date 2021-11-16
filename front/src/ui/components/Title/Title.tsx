@@ -1,19 +1,11 @@
-import { Image } from "../Image/Image";
 import { Text } from "../Text/Text";
+import arrow from "../../../images/Arrow.png";
 
-export const Title = ({
-  className = "",
-  src = "",
-  alt = "",
-  width = "50",
-  height = "50",
-  textClassName = "",
-  textChildren = "",
-}) => (
-  <div className={className}>
-    <Image src={src} alt={alt} width={width} height={height} />
-    <Text className={textClassName} children={textChildren} />
+export const SectionTitle = () => (
+  <div className="App__SectionTitle">
+    <img src={arrow} alt="logo" width="25" height="20" />
+    <Text size="H3" weight="Bold" text="Los giffs más trendings del momento" />
   </div>
 );
 
-export default Title;
+export default SectionTitle;
