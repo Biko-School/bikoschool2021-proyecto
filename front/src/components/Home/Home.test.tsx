@@ -69,17 +69,18 @@ describe('Funcionamiento de la búsqueda de memes', () => {
   });
 
   it('Al escribir "retro" muestra el meme que coincide con la búsqueda', async () => {
-    const userSearch = /retro/i;
+    const userSearchRegExp = /retro/i;
+    const userSearchString = 'retro';
     render(<Home />);
 
     const searchInput = await screen.findByPlaceholderText(
       '¿Qué quieres buscar? ¡Encuéntralo!'
     );
 
-    userEvent.type(searchInput, 'retro');
+    userEvent.type(searchInput, userSearchString);
 
     const filterMeme = await screen.findAllByRole('img', {
-      name: userSearch,
+      name: userSearchRegExp,
     });
 
     await waitFor(() => {
