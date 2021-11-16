@@ -19,9 +19,12 @@ export const Home = () => {
   const [error, setError] = useState(false);
   const [filter, setFilter] = useState('');
 
-  const filteredMemes = gifs.filter((meme: Meme) =>
-    meme.title.toLowerCase().includes(filter.toLowerCase())
-  );
+  const filteredMemes = gifs.filter((meme: Meme) => {
+    return (
+      filter.length < 3 ||
+      meme.title.toLowerCase().includes(filter.toLowerCase())
+    );
+  });
 
   useEffect(() => {
     setLoading(true);
