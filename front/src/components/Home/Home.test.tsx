@@ -34,7 +34,7 @@ describe('Funcionamiento de la página principal', () => {
   it('Muestra los 50 memes más trending del momento en la página principal', async () => {
     render(<Home />);
     for (let i = 0; i < memes.length; i++) {
-      await screen.findByRole('img', { name: memes[i].title });
+      await screen.findByTestId(memes[i].id);
     }
   });
 });
@@ -56,7 +56,7 @@ describe('Funcionamiento de la búsqueda de memes', () => {
     userEvent.type(searchInput, userSearch);
 
     for (let i = 0; i < memes.length; i++) {
-      await screen.findByRole('img', { name: memes[i].title });
+      await screen.findByTestId(memes[i].id);
     }
   });
 });
