@@ -50,21 +50,6 @@ describe('Funcionamiento de la búsqueda de memes', () => {
     );
   });
 
-  it('Al escribir "retro" muestra el meme que coincide con la búsqueda', async () => {
-    const userSearchRegExp = /retro/i;
-    const userSearchString = 'retro';
-
-    userEvent.type(searchInput, userSearchString);
-
-    const filterMeme = await screen.findAllByRole('img', {
-      name: userSearchRegExp,
-    });
-
-    await waitFor(() => {
-      expect(filterMeme).toHaveLength(1);
-    });
-  });
-
   it('Al escribir "re" muestra todos los memes porque la búsqueda solo funciona a partir de 3 caracteres', async () => {
     const userSearch = 're';
 

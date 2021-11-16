@@ -20,10 +20,7 @@ export const Home = () => {
   const [filter, setFilter] = useState('');
 
   const filteredMemes = gifs.filter((meme: Meme) => {
-    return (
-      filter.length < 3 ||
-      meme.title.toLowerCase().includes(filter.toLowerCase())
-    );
+    return filter.length < 3;
   });
 
   useEffect(() => {
