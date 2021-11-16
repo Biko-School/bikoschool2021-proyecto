@@ -5,4 +5,7 @@ describe("Filter memes", () => {
     const array = filterMemesByName("", []);
     expect(Array.isArray(array)).toBe(true);
   });
+  it("should return an array with one item in it", () => {
+    expect(filterMemesByName("Movie", [])).toHaveLength(1);
+  });
 });
