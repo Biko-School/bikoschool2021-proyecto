@@ -1,7 +1,7 @@
 import { MemeType } from "./../domain/Meme";
 
-const fetchMemes = async () => {
-  const response = await fetch("http://localhost:3010/api/memes");
+const fetchMemes = async (url: string) => {
+  const response = await fetch(url);
   const memes: MemeType[] = await response.json();
   console.log(memes);
 

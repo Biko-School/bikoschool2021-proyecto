@@ -7,7 +7,7 @@ function App() {
   const [memesData, setMemesData] = useState<MemeType[]>([]);
 
   useEffect(() => {
-    fetchMemes().then((response) => {
+    fetchMemes("http://localhost:3010/api/memes/all").then((response) => {
       setMemesData(response);
     });
   }, []);
