@@ -51,6 +51,9 @@ html {
   padding-left: 24px;
 }
 .search_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 70px;
   height: 70px;
   border-radius: 0 15px 15px 0;
