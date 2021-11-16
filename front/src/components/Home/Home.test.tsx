@@ -89,22 +89,17 @@ describe('Funcionamiento de la búsqueda de memes', () => {
   });
 
   it('Al escribir "re" muestra todos los memes porque la búsqueda solo funciona a partir de 3 caracteres', async () => {
-    const userSearchRegExp = /re/i;
-    const userSearchString = 're';
+    const userSearch = 're';
     render(<Home />);
 
     const searchInput = await screen.findByPlaceholderText(
       '¿Qué quieres buscar? ¡Encuéntralo!'
     );
 
-    userEvent.type(searchInput, userSearchString);
+    userEvent.type(searchInput, userSearch);
 
-    const filterMeme = await screen.findAllByRole('img', {
-      name: userSearchRegExp,
-    });
-
-    await waitFor(() => {
-      expect(filterMeme).toHaveLength(2);
-    });
+    for (let i = 0; i < gifs.length; i++) {
+      await screen.findByRole('img', { name: gifs[i].title });
+    }
   });
 });
