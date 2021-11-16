@@ -1,35 +1,33 @@
-import './_reset.css'
+import "./_reset.css";
 import "./GuifAffinity.css";
 import GuiffContainer from "./ui/components/GuiffContainer";
 import { useState, useEffect } from "react";
-import { api } from "./core/infrastructure/ApiService";
 import { StoredMemeData } from "./core/domain/StoredMemeData";
-
+import { fetchAllMemes } from "./core/service/ApiService";
 
 function GuifAffinity() {
-
   const [memes, setMemes] = useState<StoredMemeData[]>([]);
 
-  const fetchMeme = async () => {
-    const rawMemes = await api.memes();
-    setMemes(rawMemes);
+  const getMemes = async () => {
+    const response = await fetchAllMemes();
+    setMemes(response);
   };
 
   useEffect(() => {
-    fetchMeme();
+    getMemes();
   }, []);
 
-  if (memes.length === 0){
-    return(
-    <>
-      <p>Cargando...</p>
-    </>
+  if (memes.length === 0) {
+    return (
+      <>
+        <p>Cargando...</p>
+      </>
     );
   }
-  
+
   return (
     <>
-      <GuiffContainer memes={memes}/>
+      <GuiffContainer memes={memes} />
     </>
   );
 }
