@@ -10,8 +10,8 @@ describe("GuifAffinity", () => {
 
     // Assert
     await waitFor(() => {
-      const image = screen.getByAltText("guif");
-      expect(image).toHaveAttribute(
+      const image = screen.getAllByRole("img");
+      expect(image[0]).toHaveAttribute(
         "src",
         expect.stringMatching("https://media4.giphy.com/media")
       );
