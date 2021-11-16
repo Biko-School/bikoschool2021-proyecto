@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { MemeType } from "../core/domain/Meme";
+import { MemeType } from "../core/domain/MemeType";
 import fetchAllMemes from "../core/infrastructure/fetchMemes";
 import Meme from "./components/Meme/Meme";
 
