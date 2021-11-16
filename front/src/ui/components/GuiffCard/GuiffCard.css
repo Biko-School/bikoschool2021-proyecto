@@ -1,17 +1,15 @@
-
-.guif-card{
-    width : 200px;
-    height: 200px;
-    border-radius: 10px;
-
+.guif-card {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
 }
 
-.guif-card__joined-tags{
-    width: 200px;
-    position: absolute;
-    z-index: 2;
-    left: 0px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
+.guif-card__joined-tags {
+  width: 200px;
+  position: absolute;
+  z-index: 2;
+  left: 0px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
