@@ -5,3 +5,13 @@
     border-radius: 10px;
 
 }
+
+.guif-card__joined-tags{
+    width: 200px;
+    position: absolute;
+    z-index: 2;
+    left: 0px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
