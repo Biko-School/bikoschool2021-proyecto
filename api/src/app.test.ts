@@ -50,6 +50,8 @@ describe('/api/memes', () => {
           id: 'testID',
           url: 'testURL',
           title: 'testTitle',
+          username: 'testUser',
+          tags: ['testTag1', 'testTag2'],
         };
         const firstMeme = res.body[0];
 
@@ -72,6 +74,8 @@ describe('/api/memes', () => {
           id: 'YleuWir5NTNVXkflSp',
           url: 'https://media4.giphy.com/media/YleuWir5NTNVXkflSp/giphy.gif?cid=be655fb7f245f7d29df0fc743b70e3ee884dbaf31956e789&rid=giphy.gif',
           title: 'Movie Brazil GIF by MOODMAN',
+          username: '',
+          tags: ['#movie', '#brazil', '#brazil the movie'],
         };
         const firstMeme = res.body[0];
 
