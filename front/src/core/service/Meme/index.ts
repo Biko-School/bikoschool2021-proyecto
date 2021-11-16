@@ -1,0 +1,1 @@
+export { fechAllMemes } from "./fechAllMemes";

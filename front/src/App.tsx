@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { MemessList } from "./components/MemesList";
+import { MemessList } from "./ui/views/MemesList/MemesList";
 
 function App() {
   return <MemessList />;
