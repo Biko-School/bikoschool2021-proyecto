@@ -1,5 +1,6 @@
+import './_reset.css'
 import "./GuifAffinity.css";
-import GuiffContainer from "./components/GuiffContainer";
+import GuiffContainer from "./ui/components/GuiffContainer";
 import { useState, useEffect } from "react";
 import { api } from "./core/infrastructure/ApiService";
 import { StoredMemeData } from "./core/domain/StoredMemeData";
