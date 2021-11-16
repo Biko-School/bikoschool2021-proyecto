@@ -1,6 +1,4 @@
-import { Meme } from "../../../api/src/DatabaseSchema";
-
-const getMeme: Meme = () => {
+const getMeme: any = () => {
   return {
     title: "irrelevant",
     id: "irrelevant",
