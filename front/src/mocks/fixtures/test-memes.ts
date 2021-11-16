@@ -1,4 +1,4 @@
-import Meme from "../../meme";
+import Meme from "../../core/domain/model/Meme";
 
 const memes: Array<Meme> = [{
     "id": "YleuWir5NTNVXkflSp",

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import Meme from "./meme";
+import Meme from "./core/domain/model/Meme";
 
 function App() {
   const [memes, setMemes] = useState(new Array<Meme>());
