@@ -9,6 +9,7 @@ test.concurrent.each(testMemes)('Muestra el meme #%#', async (meme) => {
   const memeElement = await screen.findByRole("img", {
     name: meme.title,
   });
+  
   expect(memeElement).toBeInTheDocument();
   expect(memeElement).toHaveAttribute("src", meme.images.original.url);
 });
