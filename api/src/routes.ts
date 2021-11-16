@@ -5,5 +5,13 @@ export const routes = Router();
 routes.get("/memes", (req, res) => {
     const db = req.context.db;
     const memes = db.get("memes").take(50).value();
-    res.status(200).json(memes);
+    const response = memes.map((meme) => {
+        return {
+            id: meme.id,
+            title: meme.title,
+            image: meme.images.original.url,
+            tags: meme.tags
+        }
+    })
+    res.status(200).json(response);
 });

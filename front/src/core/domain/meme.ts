@@ -1,30 +1,30 @@
 export class Meme {
-    private readonly _id: string
-    private readonly _title: string
-    private readonly _image: string
-    private readonly _tags: string[]
+    public id: string
+    public title: string
+    public image: string
+    public tags: string[]
     //private  _votes: number
 
     constructor(id:string, title: string, image: string, tags: string[] ) {
-        this._id = id
-        this._title = title
-        this._image = image
-        this._tags = tags
+        this.id = id
+        this.title = title
+        this.image = image
+        this.tags = tags
     }
 
     getId(): string {
-        return this._id;
+        return this.id;
     }
 
     getTitle(): string {
-        return this._title
+        return this.title
     }
 
     getImage(): string {
-        return this._image
+        return this.image
     }
 
     getTags(): string[] {
-        return this._tags
+        return this.tags
     }
 }

@@ -1,30 +1,32 @@
 import { useEffect, useState } from "react";
-import MemeRepository from "../domain/MemeRepository";
 import { Meme } from "../domain/meme"
+import JsonMemes from "../infrastructure/JsonMemes"
 
-let variable: Promise<Meme[]>;
+let memesRepository: Meme[];
 //{'title': '', 'images': {'original': {'url': ''}}}
-function renderMemes(repository: MemeRepository ) {
+function RenderMemes() {
 
-    const [memes, setMemes] = useState([]);
+  let memeRepo = new JsonMemes("http://localhost:3001/api/memes")
 
-    variable = repository.getMemes("http://localhost:3001/api/memes")
+    const [memes, setMemes] = useState<Meme[]>([]);
 
     useEffect(() => {
-      setMemes(variable)
-       }, []);
+      async function getData() { 
+        memesRepository = await memeRepo.getMemes()
+        setMemes(memesRepository)
+      }
+      getData()
+      console.log(memes)
+    }, []);
 
-       
-    
     return(
         <div>
-        <h1>Guifaffinity</h1>
         {
           memes ? <div>
             <ul>{memes.map((meme)=> (
               <>
               <li key={meme.title}>{meme.title}</li>
-              <img src={meme.images.original.url} alt="meme"/>
+              <img src={meme.image} alt="meme"/>
               </>
               ))}
             </ul>
@@ -35,3 +37,5 @@ function renderMemes(repository: MemeRepository ) {
     )
 
 }
+
+export default RenderMemes;
