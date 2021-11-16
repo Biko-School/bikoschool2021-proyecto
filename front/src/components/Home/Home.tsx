@@ -17,6 +17,11 @@ export const Home = () => {
   const [gifs, setGifs] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  const [filter, setFilter] = useState('');
+
+  const filteredMemes = gifs.filter((meme: Meme) =>
+    meme.title.toLowerCase().includes(filter.toLowerCase())
+  );
 
   useEffect(() => {
     setLoading(true);
@@ -45,6 +50,8 @@ export const Home = () => {
             className="home-searchbar-input"
             type="text"
             placeholder="¿Qué quieres buscar? ¡Encuéntralo!"
+            value={filter}
+            onChange={(event) => setFilter(event.target.value)}
           />
           <button className="home-searchbar-button">
             <img
@@ -68,7 +75,7 @@ export const Home = () => {
           Los guif más trendings del momento
         </h2>
         <GuifContainer
-          gifs={gifs}
+          gifs={filteredMemes}
           loading={loading}
           error={error}
         ></GuifContainer>
