@@ -14,5 +14,5 @@
     "baseUrl": "./src",
     "resolveJsonModule": true
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*", "../front/src/core/utils.ts"]
 }
