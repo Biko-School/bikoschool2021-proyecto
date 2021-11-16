@@ -16,6 +16,8 @@ function App() {
     return <>Loading...</>;
   }
 
+  const first50Memes: MemeType[] = memesData.slice(0, 50);
+
   return (
     <div className="app_container">
       <div className="header">
@@ -40,7 +42,7 @@ function App() {
       </div>
 
       <div className="memes_grid">
-        {memesData.map((result) => (
+        {first50Memes.map((result) => (
           <Meme
             title={result.title}
             id={result.id}
