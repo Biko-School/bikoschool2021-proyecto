@@ -19,9 +19,9 @@ import api from "./api.json"
 
 describe('Guifaffinity', () => {
 
-  it('renders the title guifaffinity', async () => {
+  it('renders the title guifaffinity', () => {
     render(<App />)
-    expect(await screen.findByText(/guifaffinity/i)).toBeInTheDocument()
+    expect(screen.getByText(/guifaffinity/i)).toBeInTheDocument()
   })
 
   /*it('There is a meme on the page', async () => {
@@ -34,7 +34,7 @@ describe('Guifaffinity', () => {
     render(<App/>)
     
     expect(screen.getByText(/No hay memes/i)).toBeInTheDocument()
-  })*/
+  })
 
   it('The memes array have a length of 50 items', () => {
     expect(api).toHaveLength(50)
@@ -55,5 +55,5 @@ describe('Guifaffinity', () => {
     render(<App/>)
     expect(screen.getByRole('img')).toBeInTheDocument()
   })
-
+*/
 })
