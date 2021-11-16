@@ -1,4 +1,3 @@
-import React from 'react';
 import { Home } from './Home';
 import { render, screen, waitFor } from '@testing-library/react';
 import { rest } from 'msw';
@@ -66,6 +65,25 @@ describe('Funcionamiento de la búsqueda de memes', () => {
 
     await waitFor(() => {
       expect(searchInput).toHaveValue(inputValue);
+    });
+  });
+
+  it('Al escribir "retro" muestra el meme que coincide con la búsqueda', async () => {
+    const userSearch = /retro/i;
+    render(<Home />);
+
+    const searchInput = await screen.findByPlaceholderText(
+      '¿Qué quieres buscar? ¡Encuéntralo!'
+    );
+
+    userEvent.type(searchInput, 'retro');
+
+    const filterMeme = await screen.findAllByRole('img', {
+      name: userSearch,
+    });
+
+    await waitFor(() => {
+      expect(filterMeme).toHaveLength(1);
     });
   });
 });
