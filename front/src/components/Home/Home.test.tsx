@@ -1,7 +1,7 @@
 import { Home } from './Home';
 import { render, screen, waitFor } from '@testing-library/react';
 import { rest } from 'msw';
-import gifs from './../../gif.json';
+import memes from './../../memes.json';
 import { server } from '../../mocks/server';
 import userEvent from '@testing-library/user-event';
 
@@ -33,8 +33,8 @@ describe('Funcionamiento de la página principal', () => {
 
   it('Muestra los 50 memes más trending del momento en la página principal', async () => {
     render(<Home />);
-    for (let i = 0; i < gifs.length; i++) {
-      await screen.findByRole('img', { name: gifs[i].title });
+    for (let i = 0; i < memes.length; i++) {
+      await screen.findByRole('img', { name: memes[i].title });
     }
   });
 });
@@ -55,8 +55,8 @@ describe('Funcionamiento de la búsqueda de memes', () => {
 
     userEvent.type(searchInput, userSearch);
 
-    for (let i = 0; i < gifs.length; i++) {
-      await screen.findByRole('img', { name: gifs[i].title });
+    for (let i = 0; i < memes.length; i++) {
+      await screen.findByRole('img', { name: memes[i].title });
     }
   });
 });

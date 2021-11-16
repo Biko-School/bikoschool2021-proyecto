@@ -14,12 +14,12 @@ export interface Meme {
 }
 
 export const Home = () => {
-  const [gifs, setGifs] = useState([]);
+  const [memes, setMemes] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [filter, setFilter] = useState('');
 
-  const filteredMemes = gifs.filter((meme: Meme) => {
+  const filteredMemes = memes.filter((meme: Meme) => {
     return filter.length < 3;
   });
 
@@ -27,7 +27,7 @@ export const Home = () => {
     setLoading(true);
     axios
       .get('http://localhost:4200/api/memes')
-      .then((response) => setGifs(response.data))
+      .then((response) => setMemes(response.data))
       .catch((error) => setError(true))
       .finally(() => setLoading(false));
   }, []);
@@ -75,7 +75,7 @@ export const Home = () => {
           Los guif más trendings del momento
         </h2>
         <GuifContainer
-          gifs={filteredMemes}
+          memes={filteredMemes}
           loading={loading}
           error={error}
         ></GuifContainer>

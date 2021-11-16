@@ -1,8 +1,8 @@
 import { rest } from 'msw';
-import gifs from '../gif.json';
+import memes from '../memes.json';
 
 export const handlers = [
   rest.get('http://localhost:4200/api/memes', (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json(gifs));
+    return res(ctx.status(200), ctx.json(memes));
   }),
 ];
