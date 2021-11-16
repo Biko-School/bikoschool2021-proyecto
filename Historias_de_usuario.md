@@ -22,9 +22,18 @@ Pablo es un usuario.
 - No se muestran los 50 memes más recientes.
 
 - Pablo accede a GuifAffinity. => Se muestra un error.
+-
 - [x] Hecho
 
+---
+
+- COMO usuario
+- QUIERO poder buscar memes que me interesan
+- PARA usarlos en mis redes sociales
+
 > R1 La longitud de un término de búsqueda para que devuelva resultados es de 3 caracteres
+
+- [ x ] Hecho
 
 > R2 Serán parte del resultado de búsqueda aquellos memes con etiqueta idéntica al término de búsqueda
 
@@ -47,6 +56,7 @@ Bonus pack:
 - Si el término de búsqueda es idéntico a una etiqueta: +2
 
 - Si una etiqueta coincide parcialmente con el término de búsqueda: +1
+
   > R8b El resultado de búsqueda estará ordenado de mayor a menor peso primero y de más a menos reciente si el peso es idéntico.
 
 **Ejemplo R1:**
