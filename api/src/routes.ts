@@ -1,4 +1,4 @@
-import LowdbMemeRepository from "core/infrastructure/LowdbMemeRepository";
+import LowdbMemeRepository from "./core/infrastructure/LowdbMemeRepository";
 import { Request, Response, Router } from "express";
 import getSomeMemes from "./core/services/GetSomeMemes";
 
