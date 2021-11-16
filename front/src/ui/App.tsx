@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { MemeType } from "../core/domain/Meme";
-import fetchMemes from "../core/infrastructure/fetchMemes";
+import fetchAllMemes from "../core/infrastructure/fetchMemes";
 import Meme from "./components/Meme/Meme";
 
 function App() {
   const [memesData, setMemesData] = useState<MemeType[]>([]);
 
   useEffect(() => {
-    fetchMemes("http://localhost:3010/api/memes/all").then((response) => {
+    fetchAllMemes().then((response) => {
       setMemesData(response);
     });
   }, []);
