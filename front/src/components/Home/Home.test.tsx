@@ -59,4 +59,12 @@ describe('Funcionamiento de la búsqueda de memes', () => {
       await screen.findByTestId(memes[i].id);
     }
   });
+
+  it('Al escribir "retro" muestra los memes que tienen la tag "retro"', async () => {
+    const userSearchString = 'retro';
+    const memeID = 'k4N5AuZzd9bmo';
+
+    userEvent.type(searchInput, userSearchString);
+    await screen.findAllByTestId(memeID);
+  });
 });
