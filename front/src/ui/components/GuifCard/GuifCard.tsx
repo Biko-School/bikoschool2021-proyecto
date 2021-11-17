@@ -1,9 +1,9 @@
 //import Tag from "../Tag/Tag"
 import React from "react";
 import { StoredMemeData } from "../../../core/domain/StoredMemeData";
-import "./GuiffCard.css";
+import "./GuifCard.css";
 
-const GuiffCard: React.VFC<{ meme: StoredMemeData }> = (props) => {
+const GuifCard: React.VFC<{ meme: StoredMemeData }> = (props) => {
   const { meme } = props;
   let joinedTags: string = "";
 
@@ -26,4 +26,4 @@ const GuiffCard: React.VFC<{ meme: StoredMemeData }> = (props) => {
   );
 };
 
-export default GuiffCard;
+export default GuifCard;

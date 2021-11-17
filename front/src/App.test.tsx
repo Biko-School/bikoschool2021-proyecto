@@ -1,12 +1,12 @@
 import { render, screen, waitFor } from "@testing-library/react";
-import GuifAffinity from "./GuifAffinity";
+import App from "./App";
 
 describe("GuifAffinity", () => {
   it("makes a request from the main application and render image", async () => {
     // Arrange
 
     // Act
-    render(<GuifAffinity />);
+    render(<App />);
 
     // Assert
     await waitFor(() => {

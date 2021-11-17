@@ -1,11 +1,11 @@
 import "./_reset.css";
-import "./GuifAffinity.css";
-import GuiffContainer from "./ui/components/GuiffContainer/GuiffContainer";
+import "./App.css";
+import GuifContainer from "./ui/components/GuifContainer/GuifContainer";
 import { useState, useEffect } from "react";
 import { StoredMemeData } from "./core/domain/StoredMemeData";
 import { fetchAllMemes } from "./core/service/ApiService";
 
-function GuifAffinity() {
+function App() {
   const [memes, setMemes] = useState<StoredMemeData[]>([]);
 
   const getMemes = async () => {
@@ -27,9 +27,9 @@ function GuifAffinity() {
 
   return (
     <>
-      <GuiffContainer memes={memes} />
+      <GuifContainer memes={memes} />
     </>
   );
 }
 
-export default GuifAffinity;
+export default App;
