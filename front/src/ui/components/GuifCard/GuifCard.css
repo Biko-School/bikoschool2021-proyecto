@@ -1,6 +1,7 @@
 .guif-card {
   position: relative;
   display: flex;
+  padding: var(--spacing-mini);
 }
 .guif-card__img {
   width: 200px;
@@ -9,7 +10,8 @@
 }
 
 .guif-card__joined-tags {
-  padding: var(--spacing-tiny);
+  padding: calc(var(--spacing-mini) + var(--spacing-tiny));
+  padding-bottom: var(--spacing-tiny);
   align-self: flex-end;
   color: var(--color-white);
   font-size: var(--font-size-small);

@@ -6,4 +6,6 @@ body {
     rgba(200, 80, 192, 0.46) 49.58%,
     rgba(255, 204, 112, 0.58) 96.91%
   );
+  max-width: var(--desktop-max-width);
+  margin: 0 auto;
 }
