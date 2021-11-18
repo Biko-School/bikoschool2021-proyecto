@@ -1,8 +1,8 @@
 import React from 'react';
-import './GuifContainer.css';
-import { Meme } from './../../Home';
+import './MemesContainer.css';
+import { Meme } from '../../Home';
 
-export const GuifContainer = (props: any) => {
+export const MemesContainer = (props: any) => {
   if (props.loading) {
     return <p>Cargando...</p>;
   }
