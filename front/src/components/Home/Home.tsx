@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import './Home.css';
 import axios from 'axios';
 
-import { HomeMemesContainer } from './components/HomeMemesContainer';
+import { HomeMemesTitle } from './components/HomeMemesTitle';
 import { HomeHeader } from './components/HomeHeader';
+import { HomeMemesContainer } from './components/HomeMemesContainer';
 
-import trending from './../../assets/img/trending.svg';
 import search from './../../assets/img/search.svg';
 
 export interface Meme {
@@ -76,16 +76,7 @@ export const Home = () => {
           </button>
         </label>
 
-        <h2 className='home-title'>
-          <img
-            className='home-title-icon'
-            alt='trending'
-            src={trending}
-            width='41'
-            height='auto'
-          />
-          Los guif más trendings del momento
-        </h2>
+        <HomeMemesTitle></HomeMemesTitle>
         <HomeMemesContainer
           memes={filteredMemes}
           loading={loading}
