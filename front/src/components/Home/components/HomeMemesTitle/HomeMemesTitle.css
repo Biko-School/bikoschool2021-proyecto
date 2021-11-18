@@ -1,0 +1,16 @@
+.home-title {
+  display: flex;
+  align-items: center;
+
+  margin-bottom: var(--medium-space);
+  font-size: var(--h2-font-size);
+  line-height: var(--h2-line-height);
+  color: var(--color-white);
+  font-weight: var(--bold-font-weight);
+  letter-spacing: var(--letter-spacing);
+}
+
+.home-title-icon {
+  width: 40px;
+  margin-right: var(--base-space);
+}
