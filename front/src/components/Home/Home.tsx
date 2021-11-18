@@ -21,10 +21,14 @@ export const Home = () => {
   const [error, setError] = useState(false);
   const [filter, setFilter] = useState('');
 
+  const formatedFilter: string = filter
+    .split(' ')
+    .filter((substring: string) => substring)
+    .join(' ');
   const filteredMemes = memes.filter((meme: Meme) => {
     return (
       filter.length < 3 ||
-      meme.tags.some((tag: string) => tag.includes(`#${filter}`))
+      meme.tags.some((tag: string) => tag.includes(formatedFilter))
     );
   });
 
