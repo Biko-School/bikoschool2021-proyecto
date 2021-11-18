@@ -65,6 +65,16 @@ describe('Funcionamiento de la búsqueda de memes', () => {
     const memeID = 'k4N5AuZzd9bmo';
 
     userEvent.type(searchInput, userSearchString);
+
+    await screen.findAllByTestId(memeID);
+  });
+
+  it('Al escribir "ret" muestra los memes que tienen tags que contienen "ret"', async () => {
+    const userSearchString = 'ret';
+    const memeID = 'k4N5AuZzd9bmo';
+
+    userEvent.type(searchInput, userSearchString);
+
     await screen.findAllByTestId(memeID);
   });
 });
