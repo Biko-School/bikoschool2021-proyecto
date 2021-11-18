@@ -37,7 +37,11 @@ Pablo es un usuario.
 
 > R2 Serán parte del resultado de búsqueda aquellos memes con etiqueta idéntica al término de búsqueda
 
+- [ x ] Hecho
+
 > R3 Serán parte del resultado de búsqueda aquellos memes donde la etiqueta coincida parcialmente con el término de búsqueda
+
+- [ x ] Hecho
 
 > R4 Se ignoran los espacios laterales y los espacios interiores mayores que 1 del término de búsqueda.
 

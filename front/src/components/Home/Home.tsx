@@ -22,7 +22,10 @@ export const Home = () => {
   const [filter, setFilter] = useState('');
 
   const filteredMemes = memes.filter((meme: Meme) => {
-    return filter.length < 3 || meme.tags.includes(`#${filter}`);
+    return (
+      filter.length < 3 ||
+      meme.tags.some((tag: string) => tag.includes(`#${filter}`))
+    );
   });
 
   useEffect(() => {
