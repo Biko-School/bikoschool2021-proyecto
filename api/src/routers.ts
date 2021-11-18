@@ -1,4 +1,4 @@
-import express, { Request, Response } from "express";
+import express, { Express, Request, Response, Router } from "express";
 import { MemeDTO } from "./interfaces/MemeDTO";
 
 export const routers = express.Router();

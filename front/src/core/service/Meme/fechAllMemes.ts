@@ -5,3 +5,4 @@ export async function fechAllMemes(memeRepository: MemeRepository):Promise<Meme[
     //const memesSorted = sortMemeByDate(memesMapped)
     return await memeRepository.fechAll()
 }
+

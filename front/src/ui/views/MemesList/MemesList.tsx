@@ -9,6 +9,7 @@ import Title from "../../components/Title/Title";
 import Input from "../../components/Input/Input";
 
 export const MemessList: React.FC = () => {
+
   const [filter, setFilter] = useState('')
   const [memes, setMemes] = useState<Meme[]>([]);  
 
@@ -16,38 +17,56 @@ export const MemessList: React.FC = () => {
     (async () => {
       const memeRepository = new ApiMemeRepository()
       setMemes(await fechAllMemes(memeRepository))
+
     })();
   }, []);
 
   function onSearchMemes() {
-    setFilter('')
-    setMemes([])
+    setFilter("");
+    setMemes([]);
+
   }
 
   return (
     <div className="App">
-      <Title 
+      
+      <Title
         className="App__AppTitle"
-        src={logo} alt="logo" width="55.88" height="61.75"
-        textClassName= "App__AppTitle--Title" textChildren = "GIFFAFFINITY"
+        src={logo}
+        alt="logo"
+        width="55.88"
+        height="61.75"
+        textClassName="App__AppTitle--Title"
+        textChildren="GIFFAFFINITY"
       />
 
       <div className="App__SearchBar">
-        <Input 
+        <Input
           className="App__SearchBar--bar"
           placeholder="¿Qué quieres buscar? ¡Encuéntralo"
-          onChange={event => setFilter(event.target.value)} 
+          onChange={(event) => setFilter(event.target.value)}
           value={filter}
-        /> 
+        />
         <button className="App__SearchBar--button">
-          <img src={lens} alt="Lens" width="25px" height="25px" onClick={onSearchMemes}/>
+          <img
+            src={lens}
+            alt="Lens"
+            width="25px"
+            height="25px"
+            onClick={onSearchMemes}
+          />
         </button>
       </div>
 
-      <Title 
+      <Title
         className="App__SectionTitle"
-        src={arrow} alt="logo" width="20" height="25"
-        textClassName= "App__SectionTitle--Title" textChildren = "Los giffs más trendings del momento"
+        src={arrow}
+        alt="logo"
+        width="20"
+        height="25"
+        textClassName="App__SectionTitle--Title"
+        textChildren="Los giffs más trendings del momento"
+
       />
 
       <div className="App__GridGiffs">

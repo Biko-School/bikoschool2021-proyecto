@@ -4,3 +4,4 @@ export interface MemeRepository {
     fechAll: () => Promise<Meme[]>
     fechByTag: (tag: string) => Promise<Meme[]>
 }
+
