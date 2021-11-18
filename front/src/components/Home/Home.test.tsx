@@ -95,4 +95,25 @@ describe('Funcionamiento de la búsqueda de memes', () => {
 
     await screen.findAllByTestId(memeID);
   });
+
+  it('El resultado de búsqueda estará ordenado de más a menos reciente', async () => {
+    const userSearchString = 'sport';
+    const firstMemeID: string = 'gg2z9cvyaeP3if9bvA';
+    const secondtMemeID: string = 'd9If6rSSdzmuCuOxIr';
+    const thirdtMemeID: string = 'cmrWgjzThoiLL75mBI';
+
+    const memeContainer: HTMLElement = await screen.findByTestId(
+      'meme-container'
+    );
+
+    userEvent.type(searchInput, userSearchString);
+
+    const firstMeme = await screen.findByTestId(firstMemeID);
+    const secondMeme = await screen.findByTestId(secondtMemeID);
+    const thirdMeme = await screen.findByTestId(thirdtMemeID);
+
+    expect(memeContainer.childNodes[0].childNodes[0]).toBe(firstMeme);
+    expect(memeContainer.childNodes[1].childNodes[0]).toBe(secondMeme);
+    expect(memeContainer.childNodes[2].childNodes[0]).toBe(thirdMeme);
+  });
 });
