@@ -29,8 +29,8 @@ const getFontWeight = (weight: fontWeights) => {
     const weightMapper = {
         'Light':       300,
         'Normal':      400,
-        'Blod':        700,
-        'ExtremeBlod': 800
+        'Bold':        700,
+        'ExtremeBold': 800
       };
       return weightMapper[weight];
 }
