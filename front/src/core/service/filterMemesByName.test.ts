@@ -1,7 +1,8 @@
 import filterMemesByName from "./filterMemesByName";
+
 import memesObj from "./../../mocks/mockDb.json";
 
-describe("Filter memes", () => {
+describe("Filter memes by title", () => {
   it("should return an array", () => {
     const array = filterMemesByName("", []);
     expect(Array.isArray(array)).toBe(true);
