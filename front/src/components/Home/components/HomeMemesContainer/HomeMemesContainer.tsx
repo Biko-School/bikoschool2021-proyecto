@@ -18,7 +18,7 @@ export const HomeMemesContainer = (props: any) => {
           <img
             width='200'
             height='200'
-            className='memes-image'
+            className='meme-image'
             alt={meme.title}
             src={meme.url}
             key={index}
