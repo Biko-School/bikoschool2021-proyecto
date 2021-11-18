@@ -4,4 +4,5 @@ export interface Meme {
   title: string;
   username: string;
   tags: string[];
+  time: string;
 }

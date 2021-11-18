@@ -52,6 +52,7 @@ describe('/api/memes', () => {
           title: 'testTitle',
           username: 'testUser',
           tags: ['testTag1', 'testTag2'],
+          time: 'testTime',
         };
         const firstMeme = res.body[0];
 
@@ -76,6 +77,7 @@ describe('/api/memes', () => {
           title: 'Movie Brazil GIF by MOODMAN',
           username: '',
           tags: ['#movie', '#brazil', '#brazil the movie'],
+          time: '2020-08-20 02:24:22',
         };
         const firstMeme = res.body[0];
 

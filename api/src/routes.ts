@@ -14,6 +14,7 @@ routes.get('/memes', (req: Request, res: Response) => {
       title: DBMeme.title,
       username: DBMeme.username,
       tags: DBMeme.tags,
+      time: DBMeme.import_datetime,
     };
   });
   res.status(200).json(memes);

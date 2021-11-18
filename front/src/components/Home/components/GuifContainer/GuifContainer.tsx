@@ -13,7 +13,7 @@ export const GuifContainer = (props: any) => {
 
   return (
     <>
-      <div className='guif-container'>
+      <div className='guif-container' data-testid='meme-container'>
         {props.memes.map((meme: Meme, index: number) => (
           <div className='guif-wrapper' key={index}>
             <img
