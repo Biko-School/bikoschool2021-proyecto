@@ -1,9 +1,9 @@
 import React from "react";
-import { StoredMemeData } from "../../../core/domain/StoredMemeData";
+import Meme from "../../../core/domain/Meme";
 import GuifCard from "../GuifCard/GuifCard";
 import "./GuifContainer.css";
 
-export const GuifContainer: React.VFC<{ memes: StoredMemeData[] }> = ({
+export const GuifContainer: React.VFC<{ memes: Meme[] }> = ({
   memes,
 }) => {
   const JsxMemesArray = [];
