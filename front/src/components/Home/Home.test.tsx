@@ -50,67 +50,68 @@ describe('Funcionamiento de la búsqueda de memes', () => {
     );
   });
 
-  it('Al escribir "re" muestra todos los memes porque la búsqueda solo funciona a partir de 3 caracteres', async () => {
-    const userSearch = 're';
+  it('La longitud de un término de búsqueda para que devuelva resultados es de 3 caracteres', async () => {
+    const userSearchInput: string = 're';
 
-    userEvent.type(searchInput, userSearch);
+    userEvent.type(searchInput, userSearchInput);
 
     for (let i = 0; i < memes.length; i++) {
       await screen.findByTestId(memes[i].id);
     }
   });
 
-  it('Al escribir "retro" muestra los memes que tienen la tag "retro"', async () => {
-    const userSearchString = 'retro';
-    const memeID = 'k4N5AuZzd9bmo';
+  it('Serán parte del resultado de búsqueda aquellos memes con etiqueta idéntica al término de búsqueda', async () => {
+    const userSearchInput: string = 'retro';
+    const memeToSearchID: string = 'k4N5AuZzd9bmo';
 
-    userEvent.type(searchInput, userSearchString);
+    userEvent.type(searchInput, userSearchInput);
 
-    await screen.findAllByTestId(memeID);
+    await screen.findByTestId(memeToSearchID);
   });
 
-  it('Al escribir "ret" muestra los memes que tienen tags que contienen "ret"', async () => {
-    const userSearchString = 'ret';
-    const memeID = 'k4N5AuZzd9bmo';
+  it('Serán parte del resultado de búsqueda aquellos memes donde la etiqueta coincida parcialmente con el término de búsqueda', async () => {
+    const userSearchInput: string = 'ret';
+    const memeToSearchID: string = 'k4N5AuZzd9bmo';
 
-    userEvent.type(searchInput, userSearchString);
+    userEvent.type(searchInput, userSearchInput);
 
-    await screen.findAllByTestId(memeID);
+    await screen.findByTestId(memeToSearchID);
   });
 
-  it('Al escribir " zil    th  " muestra los memes que tienen tags que contienen "zil th"', async () => {
-    const userSearchString = ' zil    th  ';
-    const memeID = 'YleuWir5NTNVXkflSp';
+  it('Se ignoran los espacios laterales y los espacios interiores mayores que 1 del término de búsqueda.', async () => {
+    const userSearchInput: string = ' zil    th  ';
+    const memeToSearchID: string = 'YleuWir5NTNVXkflSp';
 
-    userEvent.type(searchInput, userSearchString);
+    userEvent.type(searchInput, userSearchInput);
 
-    await screen.findAllByTestId(memeID);
+    await screen.findByTestId(memeToSearchID);
   });
 
-  it('Al escribir " ZiL    tH  " muestra los memes que tienen tags que contienen "zil th"', async () => {
-    const userSearchString = ' ZiL    tH  ';
-    const memeID = 'YleuWir5NTNVXkflSp';
+  it('Se ignoran las mayúsculas y minúsculas', async () => {
+    const userSearchInput: string = ' ZiL    tH  ';
+    const memeToSearchID: string = 'YleuWir5NTNVXkflSp';
 
-    userEvent.type(searchInput, userSearchString);
+    userEvent.type(searchInput, userSearchInput);
 
-    await screen.findAllByTestId(memeID);
+    await screen.findByTestId(memeToSearchID);
   });
 
   it('El resultado de búsqueda estará ordenado de más a menos reciente', async () => {
-    const userSearchString = 'sport';
-    const firstMemeID: string = 'gg2z9cvyaeP3if9bvA';
-    const secondtMemeID: string = 'd9If6rSSdzmuCuOxIr';
-    const thirdtMemeID: string = 'cmrWgjzThoiLL75mBI';
+    const firstmemeToSearchID: string = 'gg2z9cvyaeP3if9bvA';
+    const secondtmemeToSearchID: string = 'd9If6rSSdzmuCuOxIr';
+    const thirdtmemeToSearchID: string = 'cmrWgjzThoiLL75mBI';
+
+    const userSearchInput: string = 'sport';
 
     const memeContainer: HTMLElement = await screen.findByTestId(
       'meme-container'
     );
 
-    userEvent.type(searchInput, userSearchString);
+    userEvent.type(searchInput, userSearchInput);
 
-    const firstMeme = await screen.findByTestId(firstMemeID);
-    const secondMeme = await screen.findByTestId(secondtMemeID);
-    const thirdMeme = await screen.findByTestId(thirdtMemeID);
+    const firstMeme = await screen.findByTestId(firstmemeToSearchID);
+    const secondMeme = await screen.findByTestId(secondtmemeToSearchID);
+    const thirdMeme = await screen.findByTestId(thirdtmemeToSearchID);
 
     expect(memeContainer.childNodes[0].childNodes[0]).toBe(firstMeme);
     expect(memeContainer.childNodes[1].childNodes[0]).toBe(secondMeme);
