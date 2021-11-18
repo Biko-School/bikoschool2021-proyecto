@@ -9,13 +9,6 @@
   align-items: center;
 }
 
-.App__AppTitle--Title {
-  color: white;
-  font-weight: 800;
-  font-size: 40px;
-  margin-left: 5px;
-}
-
 .App__SearchBar {
   display: flex;
   align-items: center;
@@ -52,18 +45,10 @@
   margin-top: 66px;
 }
 
-.App__SectionTitle--Title {
-  color: white;
-  font-weight: 700;
-  font-size: 25px;
-  margin-left: 5px;
-}
-
 .App__GridGiffs {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin-top: 30px;
 }
 
 .App__GridGiffs--Giff {
