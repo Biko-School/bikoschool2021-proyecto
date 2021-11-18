@@ -6,4 +6,8 @@ describe("Filter Memes By name or tag", () => {
     const filteredMemes = filterMemesByNameOrTags("lol", memesObject.memes);
     expect(Array.isArray(filteredMemes)).toBe(true);
   });
+  it("should return 3 elements", () => {
+    const filteredMemes = filterMemesByNameOrTags("lol", memesObject.memes);
+    expect(filteredMemes).toHaveLength(3);
+  });
 });
