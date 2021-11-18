@@ -1,8 +1,8 @@
 import React from 'react';
-import './MemesContainer.css';
+import './HomeMemesContainer.css';
 import { Meme } from '../../Home';
 
-export const MemesContainer = (props: any) => {
+export const HomeMemesContainer = (props: any) => {
   if (props.loading) {
     return <p>Cargando...</p>;
   }

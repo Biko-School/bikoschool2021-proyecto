@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Home.css';
 import axios from 'axios';
-import { MemesContainer } from './components/MemesContainer';
+import { HomeMemesContainer } from './components/HomeMemesContainer';
 
 import trending from './../../assets/img/trending.svg';
 import logoGuifaffinity from './../../assets/img/logoGuifaffinity.svg';
@@ -94,11 +94,11 @@ export const Home = () => {
           />
           Los guif más trendings del momento
         </h2>
-        <MemesContainer
+        <HomeMemesContainer
           memes={filteredMemes}
           loading={loading}
           error={error}
-        ></MemesContainer>
+        ></HomeMemesContainer>
       </div>
     </>
   );

@@ -1,1 +1,0 @@
-export { MemesContainer } from './MemesContainer';
