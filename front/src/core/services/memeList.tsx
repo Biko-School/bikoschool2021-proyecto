@@ -4,7 +4,7 @@ import JsonMemes from "../infrastructure/JsonMemes"
 
 let memesRepository: Meme[];
 //{'title': '', 'images': {'original': {'url': ''}}}
-function RenderMemes() {
+function MemeList() {
 
   let memeRepo = new JsonMemes("http://localhost:3001/api/memes")
 
@@ -19,23 +19,7 @@ function RenderMemes() {
       console.log(memes)
     }, []);
 
-    return(
-        <div>
-        {
-          memes ? <div>
-            <ul>{memes.map((meme)=> (
-              <>
-              <li key={meme.title}>{meme.title}</li>
-              <img src={meme.image} alt="meme"/>
-              </>
-              ))}
-            </ul>
-            
-            </div> : <span>No hay memes</span>
-        }
-      </div>
-    )
-
+    return(memes)
 }
 
-export default RenderMemes;
+export default MemeList;
