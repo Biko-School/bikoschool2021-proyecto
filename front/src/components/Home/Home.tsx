@@ -11,6 +11,8 @@ export interface Meme {
   id: string;
   url: string;
   title: string;
+  username: string;
+  tags: string[];
 }
 
 export const Home = () => {
@@ -20,7 +22,7 @@ export const Home = () => {
   const [filter, setFilter] = useState('');
 
   const filteredMemes = memes.filter((meme: Meme) => {
-    return filter.length < 3;
+    return filter.length < 3 || meme.tags.includes(`#${filter}`);
   });
 
   useEffect(() => {
@@ -34,43 +36,43 @@ export const Home = () => {
 
   return (
     <>
-      <div className="home-container">
-        <header className="home-header">
+      <div className='home-container'>
+        <header className='home-header'>
           <img
-            className=""
-            alt="Logo Guifaffinity"
+            className=''
+            alt='Logo Guifaffinity'
             src={logoGuifaffinity}
-            width="56"
-            height="61"
+            width='56'
+            height='61'
           />
           <h1>GUIFAFFINITY</h1>
         </header>
-        <label className="home-searchbar">
+        <label className='home-searchbar'>
           <input
-            className="home-searchbar-input"
-            type="text"
-            placeholder="¿Qué quieres buscar? ¡Encuéntralo!"
+            className='home-searchbar-input'
+            type='text'
+            placeholder='¿Qué quieres buscar? ¡Encuéntralo!'
             value={filter}
             onChange={(event) => setFilter(event.target.value)}
           />
-          <button className="home-searchbar-button">
+          <button className='home-searchbar-button'>
             <img
-              className="home-searchbar-button-img"
-              alt="search"
+              className='home-searchbar-button-img'
+              alt='search'
               src={search}
-              width="42"
-              height="42"
+              width='42'
+              height='42'
             />
           </button>
         </label>
 
-        <h2 className="home-title">
+        <h2 className='home-title'>
           <img
-            className="home-title-icon"
-            alt="trending"
+            className='home-title-icon'
+            alt='trending'
             src={trending}
-            width="41"
-            height="auto"
+            width='41'
+            height='auto'
           />
           Los guif más trendings del momento
         </h2>
