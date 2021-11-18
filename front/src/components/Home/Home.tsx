@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import './Home.css';
 import axios from 'axios';
+
 import { HomeMemesContainer } from './components/HomeMemesContainer';
+import { HomeHeader } from './components/HomeHeader';
 
 import trending from './../../assets/img/trending.svg';
-import logoGuifaffinity from './../../assets/img/logoGuifaffinity.svg';
 import search from './../../assets/img/search.svg';
 
 export interface Meme {
@@ -55,16 +56,7 @@ export const Home = () => {
   return (
     <>
       <div className='home-container'>
-        <header className='home-header'>
-          <img
-            className=''
-            alt='Logo Guifaffinity'
-            src={logoGuifaffinity}
-            width='56'
-            height='61'
-          />
-          <h1>GUIFAFFINITY</h1>
-        </header>
+        <HomeHeader></HomeHeader>
         <label className='home-searchbar'>
           <input
             className='home-searchbar-input'

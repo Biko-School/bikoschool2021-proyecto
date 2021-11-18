@@ -5,19 +5,6 @@
   padding: var(--large-space) var(--mobile-breakpoints-lateral-gap);
 }
 
-.home-header {
-  display: flex;
-  align-items: center;
-  gap: var(--small-space);
-
-  font-size: var(--h1-font-size);
-  line-height: var(--h2-line-height);
-  font-weight: var(--extrabold-font-weight);
-  color: var(--color-white);
-  letter-spacing: var(--letter-spacing);
-  margin-bottom: var(--large-space);
-}
-
 .home-searchbar {
   display: flex;
   align-items: center;
