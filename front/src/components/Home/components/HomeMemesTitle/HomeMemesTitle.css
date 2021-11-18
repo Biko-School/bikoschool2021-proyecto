@@ -1,4 +1,4 @@
-.home-title {
+.home-memes-title {
   display: flex;
   align-items: center;
 
@@ -10,7 +10,7 @@
   letter-spacing: var(--letter-spacing);
 }
 
-.home-title-icon {
+.home-memes-title-icon {
   width: 40px;
   margin-right: var(--base-space);
 }

@@ -113,8 +113,8 @@ describe('Funcionamiento de la búsqueda de memes', () => {
     const secondMeme = await screen.findByTestId(secondtmemeToSearchID);
     const thirdMeme = await screen.findByTestId(thirdtmemeToSearchID);
 
-    expect(memeContainer.childNodes[0].childNodes[0]).toBe(firstMeme);
-    expect(memeContainer.childNodes[1].childNodes[0]).toBe(secondMeme);
-    expect(memeContainer.childNodes[2].childNodes[0]).toBe(thirdMeme);
+    expect(memeContainer.childNodes[0]).toBe(firstMeme);
+    expect(memeContainer.childNodes[1]).toBe(secondMeme);
+    expect(memeContainer.childNodes[2]).toBe(thirdMeme);
   });
 });

@@ -3,9 +3,9 @@ import './HomeMemesTitle.css';
 import trending from './../../../../assets/img/trending.svg';
 
 export const HomeMemesTitle = () => (
-  <h2 className='home-title'>
+  <h2 className='home-memes-title'>
     <img
-      className='home-title-icon'
+      className='home-memes-title-icon'
       alt='trending'
       src={trending}
       width='41'

@@ -13,18 +13,17 @@ export const HomeMemesContainer = (props: any) => {
 
   return (
     <>
-      <div className='guif-container' data-testid='meme-container'>
+      <div className='memes-container' data-testid='meme-container'>
         {props.memes.map((meme: Meme, index: number) => (
-          <div className='guif-wrapper' key={index}>
-            <img
-              width='200'
-              height='200'
-              className='guif-image'
-              alt={meme.title}
-              src={meme.url}
-              data-testid={meme.id}
-            />
-          </div>
+          <img
+            width='200'
+            height='200'
+            className='memes-image'
+            alt={meme.title}
+            src={meme.url}
+            key={index}
+            data-testid={meme.id}
+          />
         ))}
       </div>
     </>
