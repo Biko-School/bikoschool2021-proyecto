@@ -2,9 +2,12 @@ import React, { useEffect, useState } from "react";
 import { MemeType } from "../core/domain/MemeType";
 import fetchAllMemes from "../core/infrastructure/fetchMemes";
 import Meme from "./components/Meme/Meme";
+import filterMemesByNameOrTags from "../core/service/filterMemesByNameOrTag";
 
 function App() {
   const [memesData, setMemesData] = useState<MemeType[]>([]);
+  const [searchText, setSearchText] = useState("");
+  const filteredMemes = filterMemesByNameOrTags(searchText, memesData);
 
   useEffect(() => {
     fetchAllMemes().then((response) => {
@@ -12,7 +15,7 @@ function App() {
     });
   }, []);
 
-  const first50Memes: MemeType[] = memesData.slice(0, 50);
+  const first50Memes: MemeType[] = filteredMemes.slice(0, 50);
 
   return (
     <div className="app_container">
@@ -26,6 +29,8 @@ function App() {
           type="text"
           placeholder="¿Que quieres buscar? ¡Encuentralo!"
           className="input_search"
+          onChange={(event) => setSearchText(event.target.value)}
+          value={searchText}
         />
         <div className="search_icon">
           <img src="/img/searchIcon.svg" alt="Search" />
