@@ -79,7 +79,7 @@ describe('Funcionamiento de la búsqueda de memes', () => {
   });
 
   it('Al escribir " zil    th  " muestra los memes que tienen tags que contienen "zil th"', async () => {
-    const userSearchString = 'ret';
+    const userSearchString = ' zil    th  ';
     const memeID = 'YleuWir5NTNVXkflSp';
 
     userEvent.type(searchInput, userSearchString);
