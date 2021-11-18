@@ -2,11 +2,10 @@ import React, { useEffect, useState } from 'react';
 import './Home.css';
 import axios from 'axios';
 
-import { HomeMemesTitle } from './components/HomeMemesTitle';
 import { HomeHeader } from './components/HomeHeader';
+import { HomeMemesTitle } from './components/HomeMemesTitle';
+import { HomeMemesSearchbar } from './components/HomeMemesSearchbar';
 import { HomeMemesContainer } from './components/HomeMemesContainer';
-
-import search from './../../assets/img/search.svg';
 
 export interface Meme {
   id: string;
@@ -57,25 +56,10 @@ export const Home = () => {
     <>
       <div className='home-container'>
         <HomeHeader></HomeHeader>
-        <label className='home-searchbar'>
-          <input
-            className='home-searchbar-input'
-            type='text'
-            placeholder='¿Qué quieres buscar? ¡Encuéntralo!'
-            value={filter}
-            onChange={(event) => setFilter(event.target.value)}
-          />
-          <button className='home-searchbar-button'>
-            <img
-              className='home-searchbar-button-img'
-              alt='search'
-              src={search}
-              width='42'
-              height='42'
-            />
-          </button>
-        </label>
-
+        <HomeMemesSearchbar
+          onFilter={(event: any) => setFilter(event.target.value)}
+          filter={filter}
+        ></HomeMemesSearchbar>
         <HomeMemesTitle></HomeMemesTitle>
         <HomeMemesContainer
           memes={filteredMemes}

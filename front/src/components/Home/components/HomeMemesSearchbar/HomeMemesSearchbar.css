@@ -1,0 +1,32 @@
+.home-searchbar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 66px;
+}
+
+.home-searchbar-input {
+  height: 70px;
+  background: white;
+  width: 100%;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  padding-left: 24px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.home-searchbar-button {
+  display: grid;
+  place-content: center;
+  height: 70px;
+  width: 70px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background: linear-gradient(
+      135deg,
+      rgba(255, 243, 92, 0.77) 0%,
+      rgba(0, 204, 255, 0.46) 51.04%,
+      rgba(0, 255, 153, 0.37) 100%
+    ),
+    #c4c4c4;
+}
