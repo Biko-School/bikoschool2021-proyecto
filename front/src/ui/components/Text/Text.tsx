@@ -1,5 +1,5 @@
 type fontSizes = 'H1' | 'H2' | 'H3' | 'Base' | 'Small'
-type fontWeights = 'Light' | 'Normal'| 'Bold' | 'ExtremeBold'
+type fontWeights = 'Light' | 'Normal'| 'Bold' | 'ExtraBold'
 
 interface TextProps {
     size: fontSizes
@@ -27,10 +27,10 @@ const getFontSize = (size: fontSizes) => {
 
 const getFontWeight = (weight: fontWeights) => {
     const weightMapper = {
-        'Light':       300,
-        'Normal':      400,
-        'Bold':        700,
-        'ExtremeBold': 800
+        'Light':     300,
+        'Normal':    400,
+        'Bold':      700,
+        'ExtraBold': 800
       };
       return weightMapper[weight];
 }

@@ -18,13 +18,13 @@
   background-color: white;
 }
 
-.App__SearchBar--bar {
+/* .App__SearchBar--bar {
   width: 100%;
   margin-right: 10px;
   margin-left: 10px;
   border-style: hidden;
   outline-width: inherit;
-}
+} */
 
 .App__SearchBar--button {
   position: relative;
