@@ -6,7 +6,9 @@ describe("Filter memes", () => {
     const array = filterMemesByName("", []);
     expect(Array.isArray(array)).toBe(true);
   });
-  it("should return an array with one item in it", () => {
-    expect(filterMemesByName("Movie", memesObj.memes)).toHaveLength(1);
+  it('should return Movie Brazil GIF by MOODMAN searching "Movie"', () => {
+    const filteredMemes = filterMemesByName("Movie", memesObj.memes);
+    expect(filteredMemes).toHaveLength(1);
+    expect(filteredMemes[0].title).toEqual("Movie Brazil GIF by MOODMAN");
   });
 });
