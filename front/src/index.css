@@ -63,3 +63,7 @@ body,
   background: var(--background-linear-gradient);
   font-family: var(--font-family);
 }
+
+body {
+  overflow-y: scroll;
+}
