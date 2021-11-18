@@ -53,6 +53,8 @@ Pablo es un usuario.
 
 > R8a El resultado de búsqueda estará ordenado de más a menos reciente
 
+- [ x ] Hecho
+
 > R9 Gestión errores de búsqueda
 
 Bonus pack:
