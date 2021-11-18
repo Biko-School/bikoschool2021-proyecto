@@ -1,5 +1,5 @@
 type fontSizes = 'H1' | 'H2' | 'H3' | 'Base' | 'Small'
-type fontWeights = 'Light' | 'Normal'| 'Blod' | 'ExtremeBlod'
+type fontWeights = 'Light' | 'Normal'| 'Bold' | 'ExtremeBold'
 
 interface TextProps {
     size: fontSizes
