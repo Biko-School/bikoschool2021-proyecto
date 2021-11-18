@@ -24,7 +24,6 @@ export const MemessList: React.FC = () => {
   function onSearchMemes() {
     setFilter("");
     setMemes([]);
-
   }
 
   return (
