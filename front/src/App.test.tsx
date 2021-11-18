@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react';
 import App from './App';
 //import getMemes from './getMemes'
 import api from "./api.json"
+import Home from "../src/screens/home"
 
 /*test('renders learn react link', () => {
   render(<App />);
@@ -24,13 +25,13 @@ describe('Guifaffinity', () => {
     expect(screen.getByText(/guifaffinity/i)).toBeInTheDocument()
   })
 
-  /*it('There is a meme on the page', async () => {
+  it.skip('There is a meme on the page', async () => {
     render(<App/>)
     expect(await screen.findAllByText(/Soy un meme/i)).toBeInTheDocument()
-  })*/
+  })
 
-  /* Este test no lo estamos usando.
-  it('There is not a meme on the page', () => {
+  
+  it.skip('There is not a meme on the page', () => {
     render(<App/>)
     
     expect(screen.getByText(/No hay memes/i)).toBeInTheDocument()
@@ -51,9 +52,16 @@ describe('Guifaffinity', () => {
     
   })
 
-  it('There is an img', () => {
-    render(<App/>)
-    expect(screen.getByRole('img')).toBeInTheDocument()
+  it('There is an img', async () => {
+    //render(<Home/>)
+    //expect(screen.getByRole('img')).toBeInTheDocument()
+
+    render(<App />)
+    for (let meme of api) {
+      console.log({meme})
+      expect((await screen.findAllByRole('img'))[0]).toBeInTheDocument()
+      
+    }
   })
-*/
+
 })
