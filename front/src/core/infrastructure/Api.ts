@@ -1,7 +1,7 @@
 import Meme from '../domain/Meme'
+import MemeRepository from '../domain/MemeRepository'
 
-
-export const api = {
+export const api : MemeRepository= {
   getAllMemes: async (): Promise<Meme[]> => {
     const response = await fetch("http://localhost:3000/api/memes");
     const allMemesData : StoredMemeData[] = await( response.json());
