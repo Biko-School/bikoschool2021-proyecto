@@ -24,11 +24,14 @@ export const Home = () => {
   const formatedFilter: string = filter
     .split(' ')
     .filter((substring: string) => substring)
-    .join(' ');
+    .join(' ')
+    .toLowerCase();
   const filteredMemes = memes.filter((meme: Meme) => {
     return (
       filter.length < 3 ||
-      meme.tags.some((tag: string) => tag.includes(formatedFilter))
+      meme.tags.some((tag: string) =>
+        tag.toLowerCase().includes(formatedFilter)
+      )
     );
   });
 

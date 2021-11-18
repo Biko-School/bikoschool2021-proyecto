@@ -45,7 +45,11 @@ Pablo es un usuario.
 
 > R4 Se ignoran los espacios laterales y los espacios interiores mayores que 1 del término de búsqueda.
 
+- [ x ] Hecho
+
 > R5 Se ignoran las mayúsculas y minúsculas
+
+- [ x ] Hecho
 
 > R8a El resultado de búsqueda estará ordenado de más a menos reciente
 
