@@ -9,6 +9,9 @@ body {
     #c850c075 46%,
     #ffcc7094 68%
   );
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
 }
 
 code {

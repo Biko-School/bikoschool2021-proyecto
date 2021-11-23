@@ -5,6 +5,8 @@ import { Meme } from "../../../../core/domain/model/Meme/Meme";
 export const List = ({ memes }: any) => {
   // const { from } = { from: { pathname: routes.MEME_DETAIL } }
 
+  // const { from } = { from: { pathname: routes.MEME_DETAIL } }
+
   // if (redirectToReferrer) {
   //     return
   // }

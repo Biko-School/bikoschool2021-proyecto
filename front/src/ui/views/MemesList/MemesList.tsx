@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Meme } from "../../../core/domain/model/Meme/Meme";
 import { fechAllMemes } from "../../../core/service/Meme";
-import lens from "../../../images/Lens.png";
+
 import arrow from "../../../images/Arrow.png";
 import { ApiMemeRepository } from "../../../core/infrastructure/ApiMemeRepository";
 import Header from "../../components/Header/Header";
 import { Input } from "../../components/Input/Input";
-import { Button } from "../../components/Button/Button";
+// import { Button } from "../../components/Button/Button";
 import { Title } from "../../components/Title/Title";
 import { List } from "./_components/List";
+import { Button } from "../../components/Button/Button";
 
 export const MemesList: React.FC = () => {
   const [filter, setFilter] = useState("");
@@ -35,7 +36,6 @@ export const MemesList: React.FC = () => {
           value={filter}
         />
         <Button onClick={(event) => console.log(event)} />
-        <img src={lens} alt="Lens" width="25px" height="25px" />
       </div>
 
       <div className="App__SectionTitle">

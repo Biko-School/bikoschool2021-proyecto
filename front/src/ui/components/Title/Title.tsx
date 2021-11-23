@@ -7,5 +7,7 @@ interface TitleProps {
 }
 
 export const Title = ({ size, weight, text }: TitleProps) => (
-  <Text size={size} weight={weight} color={"White"} text={text} />
+  <div style={{ marginLeft: "10px" }}>
+    <Text size={size} weight={weight} color={"White"} text={text} />
+  </div>
 );

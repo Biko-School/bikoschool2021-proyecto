@@ -1,5 +1,6 @@
 import logo from "../../../images/Logo.png";
 import { Title } from "../Title/Title";
+import "./Header.css";
 
 export const Header = () => (
   <div className="header">

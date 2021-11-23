@@ -4,12 +4,6 @@
   padding-right: 155px;
 }
 
-/* Movido a Header.css */
-/* .App__AppTitle {
-  display: flex;
-  align-items: center;
-} */
-
 .App__SearchBar {
   display: flex;
   align-items: center;
@@ -17,28 +11,6 @@
   height: 40px;
   border-radius: 10px;
   background-color: white;
-}
-
-/* Movido a Input.css */
-/* .App__SearchBar--bar {
-  width: 100%;
-  margin-right: 10px;
-  margin-left: 10px;
-  border-style: hidden;
-  outline-width: inherit;
-} */
-
-.App__SearchBar--button {
-  position: relative;
-  height: 40px;
-  background: linear-gradient(
-    to bottom right,
-    #fff35cc4 10%,
-    #00ccff75 40%,
-    #00ff995e 90%
-  );
-  border-radius: 0px 10px 10px 0px;
-  border-style: hidden;
 }
 
 .App__SectionTitle {
