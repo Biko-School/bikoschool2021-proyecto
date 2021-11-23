@@ -1,32 +1,40 @@
 import React, { useEffect, useState } from 'react';
 import Searchbar from './components/Searchbar';
+import { Meme } from './domain/Meme';
+import { ApiMemesRepository } from './infrastructure/ApiMemeRepository';
+import { MemeService } from './services/MemeService';
 import './styles/home.css';
 
-interface Meme {
-	memes: {
-		image: string;
-		id: string;
-		name: string;
-	}[];
-}
+
 
 function Home() {
-	const [memes, setMemes] = useState<Meme>();
+	const [memes, setMemes] = useState<Meme[]>();
 	const [value, setValue] = useState('');
+	const [error, setError] = useState('');
+	const filteredMemes = value.length > 3 ? memes?.filter((meme) => meme.tags.some(tag => tag.includes(value.trim().replace(/\s{1,}\s/g, ' ').toLowerCase()))) : memes;
 
 	useEffect(() => {
-		fetch('https://memeapi.com/api')
-			.then((response) => response.json())
-			.then((data) => setMemes(data))
-			.catch((error) => console.log(error.message));
+		const memeService = new MemeService(new ApiMemesRepository())
+		memeService.getMemes().then((memes) => setMemes(memes))
 	}, []);
 
-	return (
+	const onSearchHandler = (value:string) => {
+		const inputWithoutInitialSpaces = value.trim().replace(/\s{1,}\s/g, ' ')
+		if (inputWithoutInitialSpaces.length <= 3 && inputWithoutInitialSpaces.length > 0) {
+			setError('La longitud mínima de búsqueda son 3 caracteres.') 
+		} else {
+			setError('');	
+		}
+		setValue(value)	
+	}
+
+ return (
 		<div className="home">
-			<Searchbar onChange={(e) => setValue(e.target.value)} value={value} />
-			{memes?.memes.map((meme) => (
+			<Searchbar onChange={(e) => onSearchHandler(e.target.value)} value={value} />
+			<div>{error}</div>
+			{filteredMemes?.map((meme) => (
 				<img src={meme?.image} key={meme?.id} alt={meme?.name} />
-			))}
+			))}		
 		</div>
 	);
 }

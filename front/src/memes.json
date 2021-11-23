@@ -1,5 +1,4 @@
-{ 
-    "memes": [
+ [
         {
             "id": "1",
             "name": "mundo girando",
@@ -24,5 +23,4 @@
             "tags": ["bailar", "extraterrestre"],
             "image": "./et.gif"
         }
-    ]
-}    
+    ]   

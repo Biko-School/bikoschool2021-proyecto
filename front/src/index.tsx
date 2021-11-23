@@ -4,10 +4,10 @@ import './styles/index.css';
 import Home from './Home';
 import reportWebVitals from './reportWebVitals';
 
-if (process.env.NODE_ENV === 'development') {
+/* if (process.env.NODE_ENV === 'development') {
 	const { worker } = require('./mocks/browser');
 	worker.start();
-}
+} */
 
 ReactDOM.render(
 	<React.StrictMode>

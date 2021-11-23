@@ -1,23 +1,31 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import Home from '../Home';
-import { memes } from '../memes.json';
+import  memes  from '../memes.json';
 
 describe('Home page', () => {
-	/* it('no se muestran memes', async() => {
-        render(<Home />)
-        expect(await screen.findByText('Ha habido un error. Memes no disponibles.')).toBeInTheDocument()
-    }) */
-
-	it('se muestra un meme', async () => {
-		render(<Home />);
-		expect(await screen.findByAltText(memes[0].name)).toBeInTheDocument();
-	});
-
 	it('se muestra una lista de memes', async () => {
 		render(<Home />);
 		memes.map(async (meme) => {
 			expect(await screen.findByAltText(meme.name)).toBeInTheDocument();
 		});
 	});
+
+	it('si el usuario escribe menos de 3 caracteres mostrar error', () => {
+		render(<Home />);
+
+		const search = screen.getByPlaceholderText('buscador');
+		fireEvent.change(search, { target: { value: 'mo' } });
+
+		expect(screen.getByText('La longitud mínima de búsqueda son 3 caracteres.')).toBeInTheDocument();	
+	});
+
+	it('se muestran los memes filtrados cuyos tags coinciden exactamente con el valor exacto introducido por el usuario', async () => {
+		render(<Home />);
+
+		const search = screen.getByPlaceholderText('buscador');
+		fireEvent.change(search, { target: { value: 'humor' } });
+
+		expect(await screen.findAllByRole('img')).toHaveLength(1);	
+	});
+
 });
