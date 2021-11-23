@@ -5,7 +5,48 @@ import { useState, useEffect } from "react";
 import Meme from "./core/domain/Meme";
 import { fetchAllMemes } from "./core/service/ApiService";
 
+// Librerías requeridas para enrutar
+import React from "react";
+import {BrowserRouter as Router, Routes, Route,Link} from "react-router-dom";
+
+// La segunda página que vamos a renderizar
+import GifSheet from "./ui/components/GifSheet/GifSheet"
+
+
 function App() {
+
+  return(
+    <Router>
+
+      <div>
+      
+      <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/memeSheet">Sheet</Link>
+            </li>
+          </ul>
+        </nav>
+
+        <Routes>
+          <Route path="/" element={Home()} />
+          <Route path="/memeSheet" element={Sheet()} />
+
+        </Routes>
+      </div>
+
+
+    </Router>
+
+  )
+
+
+}
+
+function Home () {
   const [memes, setMemes] = useState<Meme[]>([]);
 
   const getMemes = async () => {
@@ -16,6 +57,7 @@ function App() {
   useEffect(() => {
     getMemes();
   }, []);
+
 
   if (memes.length === 0) {
     return (
@@ -30,6 +72,12 @@ function App() {
       <GuifContainer memes={memes} />
     </>
   );
+}
+
+function  Sheet() {
+  return(
+    <GifSheet/>
+  )
 }
 
 export default App;
