@@ -1,6 +1,7 @@
 import { useState } from "react";
 import MemeList from "../core/services/memeList"
 import Search from "../core/services/search"
+import "./home.css"
 
 function Home(){
     
@@ -18,12 +19,11 @@ function Home(){
         <div>
             {
             filteredMemes ? 
-            <div>
-                <ul>{filteredMemes.map((meme)=> (
-                <>
-                    <li key={meme.title}>{meme.title}</li>
-                    <img src={meme.image} alt="meme"/>
-                </>
+            <div className="meme-parent-container">
+                <ul className="meme-container">{filteredMemes.map((meme)=> (
+                    <li>
+                        <img className="meme" src={meme.image} alt="meme"/>
+                    </li>
                 ))}
                 </ul>
                 

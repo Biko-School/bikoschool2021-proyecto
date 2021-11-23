@@ -1,4 +1,6 @@
 import React, { ChangeEvent } from 'react';
+import "../../reset.css"
+import "./search.css"
 
 interface Props {
     onFilter: (value: string) => void
@@ -14,9 +16,9 @@ function Search({onFilter}: Props) {
     )
 
     return (
-       <div>
-            <input type="text" onChange={handleChange}></input>
-            <button onClick={() => onFilter(name)}>buscar</button>
+       <div className="search">
+            <input className="search-input" type="text" onChange={handleChange}></input>
+            <button className="search-button" onClick={() => onFilter(name)}></button>   
        </div>
     )}
 
