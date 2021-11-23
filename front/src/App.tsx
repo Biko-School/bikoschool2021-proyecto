@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Meme from "./core/domain/model/Meme";
+import MemeService from "./core/infrastructure/api/MemeService";
 
 function App() {
   const [memes, setMemes] = useState(new Array<Meme>());
@@ -11,11 +12,10 @@ function App() {
   }, []);
 
   const fetchMemes = async () => {
-    let response = await fetch("/api/memes");
-    let newMemes = await response.json();
+    let newMemes = await MemeService.getMemes();
     setMemes(newMemes);
   };
-
+  
   return (
     <div className="gif__grid">
       {memes.map((meme, index) => (
