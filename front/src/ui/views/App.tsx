@@ -2,22 +2,16 @@ import React, { useEffect, useState } from "react";
 import { MemeType } from "../../core/domain/MemeType";
 import fetchAllMemes from "../../core/infrastructure/fetchMemes";
 import Meme from "../components/Meme/Meme";
-import filterMemesByNameOrTags from "../../core/service/filterMemesByNameOrTag";
-import cleanSearchText from "../../core/service/cleanSearchText";
 
 function App() {
-  const [memesData, setMemesData] = useState<MemeType[]>([]);
+  const [memes, setMemes] = useState<MemeType[]>([]);
   const [searchText, setSearchText] = useState("");
-  const cleanedSearchText = cleanSearchText(searchText);
-  const filteredMemes = filterMemesByNameOrTags(cleanedSearchText, memesData);
 
   useEffect(() => {
     fetchAllMemes().then((response) => {
-      setMemesData(response);
+      setMemes(response);
     });
   }, []);
-
-  const first50Memes: MemeType[] = filteredMemes.slice(0, 50);
 
   return (
     <div className="app_container">
@@ -45,14 +39,15 @@ function App() {
       </div>
 
       <div className="memes_grid">
-        {first50Memes.length === 0 && <div>Loading...</div>}
+        {memes.length === 0 && <div>Loading...</div>}
 
-        {first50Memes.length !== 0 &&
-          first50Memes.map((result) => (
+        {memes.length !== 0 &&
+          memes.map((result) => (
             <Meme
               title={result.title}
               id={result.id}
               imageUrl={result.images.small.url}
+              key={result.id}
             />
           ))}
       </div>
