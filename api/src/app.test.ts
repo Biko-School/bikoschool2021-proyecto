@@ -26,6 +26,15 @@ describe('/api/memes', () => {
             })
     })
 
+    it('recibe un array filtrado con los memes que tienen tag `sport`', (done) => {
+        request(app).get('/api/memes/sport').expect(200)
+            .then((response) => {
+                expect(response.body).toBeInstanceOf(Array);
+                expect(response.body).toHaveLength(16);
+                done();
+            })
+    })
+
     it.skip('devuelve el detalle de un meme', (done) => {
         request(app).get('/api/memes/YleuWir5NTNVXkflSp').expect(200)
             .then((response) => {

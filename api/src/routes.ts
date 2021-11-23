@@ -14,9 +14,9 @@ routes.get('/memes/:filteredValue', function (req: Request, res: Response) {
     const { params } = req
     const { filteredValue } = params
     const db = req.context.db;
-    const memes = db.get('memes').sortBy('import_datetime').reverse().filter(({ tags }) => tags.some(tag => tag.includes(filteredValue))).value()
-    const cleanMemes = memes.map(({id, images, tags, title }) => ({ id, name: title, tags, image: images.small.url}));
-    res.status(200).json(cleanMemes);
+    const apiMemeRepository = new ApiMemeRepository(db)
+    const memes = apiMemeRepository.getFilteredMemes(filteredValue)
+    res.status(200).json(memes);
 })
 
 routes.get('/memes/:memeId', function (req: Request, res: Response) {

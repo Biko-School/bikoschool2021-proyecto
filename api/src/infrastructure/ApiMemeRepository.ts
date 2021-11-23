@@ -15,4 +15,9 @@ export class ApiMemeRepository implements MemeRepository {
         const memes = this.db.get('memes').sortBy('import_datetime').reverse().take(50).value()
         return  memes.map(({id, images, tags, title }) => ({ id, name: title, tags, image: images.small.url}));
     }
+
+    getFilteredMemes(filteredValue:string):Meme[]{
+        const memes = this.db.get('memes').sortBy('import_datetime').reverse().filter(({ tags }) => tags.some(tag => tag.includes(filteredValue))).value()
+        return memes.map(({id, images, tags, title }) => ({ id, name: title, tags, image: images.small.url}));       
+    }
 }
