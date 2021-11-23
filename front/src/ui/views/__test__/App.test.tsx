@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import App from "../App";
-import memesData from "../../mocks/mockApi.json";
+import memesData from "../../../mocks/mockApi.json";
 
 describe("Home", () => {
   it("will match first 10 elements with db", () => {

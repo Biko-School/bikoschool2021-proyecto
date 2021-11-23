@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { MemeType } from "../core/domain/MemeType";
-import fetchAllMemes from "../core/infrastructure/fetchMemes";
-import Meme from "./components/Meme/Meme";
-import filterMemesByNameOrTags from "../core/service/filterMemesByNameOrTag";
-import cleanSearchText from "../core/service/cleanSearchText";
+import { MemeType } from "../../core/domain/MemeType";
+import fetchAllMemes from "../../core/infrastructure/fetchMemes";
+import Meme from "../components/Meme/Meme";
+import filterMemesByNameOrTags from "../../core/service/filterMemesByNameOrTag";
+import cleanSearchText from "../../core/service/cleanSearchText";
 
 function App() {
   const [memesData, setMemesData] = useState<MemeType[]>([]);
