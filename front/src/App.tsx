@@ -1,8 +1,8 @@
 import "./App.css";
-import { MemessList } from "./ui/views/MemesList/MemesList";
+import { MemesList } from "./ui/views/MemesList/MemesList";
 
 function App() {
-  return <MemessList />;
+  return <MemesList />;
 }
 
 export default App;

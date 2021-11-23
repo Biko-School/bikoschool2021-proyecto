@@ -13,5 +13,3 @@ export const Image = ({ src = '', alt = '', width = "50", height = "50" }: Image
         height={height}
     />
 )
-
-export default Image;

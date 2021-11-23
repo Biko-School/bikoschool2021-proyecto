@@ -34,5 +34,3 @@ const getFontWeight = (weight: fontWeights) => {
       };
       return weightMapper[weight];
 }
-
-export default Text;

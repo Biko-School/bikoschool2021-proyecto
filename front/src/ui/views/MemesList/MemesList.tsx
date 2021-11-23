@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Meme } from "../../../core/domain/model/Meme/Meme";
 import { fechAllMemes } from "../../../core/service/Meme";
-
 import lens from "../../../images/Lens.png";
 import { ApiMemeRepository } from "../../../core/infrastructure/ApiMemeRepository";
 import Header from "../../components/Header/Header";
-import Input from "../../components/Input/Input";
-import SectionTitle from "../../components/Title/Title";
-import Button from "../../components/Button/Button";
+import { Input } from "../../components/Input/Input";
+import { Button } from "../../components/Button/Button";
+import { Title } from "../../components/Title/Title";
+import { List } from "./_components/List";
 
-export const MemessList: React.FC = () => {
+export const MemesList: React.FC = () => {
 
   const [filter, setFilter] = useState('')
   const [memes, setMemes] = useState<Meme[]>([]);  
@@ -21,11 +21,6 @@ export const MemessList: React.FC = () => {
     })();
   }, []);
 
-  // function onSearchMemes() {
-  //   setFilter("");
-  //   setMemes([]);
-  // }
-
   const filteredMemes: Meme[] = memes.filter((meme:Meme) => meme.tags.find(tag => tag.includes(filter.toLowerCase())));
 
   return (
@@ -33,7 +28,7 @@ export const MemessList: React.FC = () => {
       <Header />
       <div className="App__SearchBar">
         <Input
-          placeholder="¿Qué quieres buscar? ¡Encuéntralo"
+          placeholder="¿Qué quieres buscar? ¡Encuéntralo!"
           onChange={(event) => setFilter(event.target.value)}
           value={filter}
         />
@@ -44,36 +39,15 @@ export const MemessList: React.FC = () => {
             width="25px"
             height="25px"
           />
-        {/* </Button> */}
       </div>
 
-      <SectionTitle />
+      <div className="App__SectionTitle">
+        <Title size="H3" weight="Bold" text="Los giffs más trendings del momento"/>
+      </div>      
 
       <div className="App__GridGiffs">
         <List memes={filteredMemes} />
-      </div>
-      
-      {/* <Footer memesCount={filteredMemes.length} /> */}
+      </div>      
     </div>
   );
 };
-
-
-// const Footer = ({ memesCount }: any) => (
-//   <Text size="H3" weight="Bold" text="Los giffs más trendings del momento" /> 
-// )
-
-const List = ({ memes }:any) => (
-  memes.map((meme:Meme) => (
-    <img
-      className="App__GridGiffs--Giff"
-      src={meme.img}
-      alt={meme.title}
-    ></img>
-  ))
-)
-
-  
-  
-
-export default MemessList;

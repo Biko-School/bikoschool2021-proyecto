@@ -4,6 +4,7 @@ import { MemeDTO } from "../../domain/model/Meme/MemeDTO";
 export function memesMapper(memes: MemeDTO[]): Meme[] {
   return memes.map((meme: MemeDTO) => {
     return {
+      id: meme.id,
       title: meme.title,
       tags: meme.tags,
       date: meme.import_datetime,

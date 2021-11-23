@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
-import MemesList from "./MemesList";
 import memes from "../../../mocks/memes.json";
+import { MemesList } from "./MemesList";
 
 describe("App", () => {
   it("find memes images", async () => {
