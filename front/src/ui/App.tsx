@@ -8,8 +8,8 @@ import cleanSearchText from "../core/service/cleanSearchText";
 function App() {
   const [memesData, setMemesData] = useState<MemeType[]>([]);
   const [searchText, setSearchText] = useState("");
-  const cleanedsearchText = cleanSearchText(searchText);
-  const filteredMemes = filterMemesByNameOrTags(cleanedsearchText, memesData);
+  const cleanedSearchText = cleanSearchText(searchText);
+  const filteredMemes = filterMemesByNameOrTags(cleanedSearchText, memesData);
 
   useEffect(() => {
     fetchAllMemes().then((response) => {
