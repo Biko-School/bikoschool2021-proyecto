@@ -1,7 +1,7 @@
 import http, { Server } from "http";
 import low from 'lowdb';
 import FileSync from 'lowdb/adapters/FileSync';
-import { DatabaseSchema } from "./DatabaseSchema";
+import { DatabaseSchema } from "./domain/DatabaseSchema";
 
 import { createApp } from './app'
 
@@ -10,7 +10,7 @@ const db = low(adapter);
 
 const app = createApp(db);
 
-const port: string = process.env.PORT || "3000";
+const port: string = process.env.PORT || "8001";
 // Assigns setting name to value
 // http://expressjs.com/es/api.html#app.set
 app.set("port", port);

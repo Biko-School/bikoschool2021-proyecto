@@ -1,4 +1,4 @@
-import { DatabaseSchema } from "./DatabaseSchema";
+import { DatabaseSchema } from "./domain/DatabaseSchema";
 import { LowdbSync } from "lowdb";
 
 declare global {
