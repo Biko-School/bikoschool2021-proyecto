@@ -1,14 +1,14 @@
 import { Meme } from "../../../../core/domain/model/Meme/Meme"
-import { Redirect } from 'react-router-dom'
-import { routes } from "../../../routers"
+// import { Redirect } from 'react-router-dom'
+// import { routes } from "../../../routers"
 
 export const List = ({ memes }:any) => {
 
-    const { from } = { from: { pathname: routes.MEME_DETAIL } }
+    // const { from } = { from: { pathname: routes.MEME_DETAIL } }
 
-    if (redirectToReferrer) {
-        return 
-    }
+    // if (redirectToReferrer) {
+    //     return 
+    // }
     // function openMemeDetail(idMeme:string){
     //   console.log(idMeme);
     //   <Redirect to={from + } />

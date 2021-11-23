@@ -5,7 +5,7 @@ import lens from "../../../images/Lens.png";
 import { ApiMemeRepository } from "../../../core/infrastructure/ApiMemeRepository";
 import Header from "../../components/Header/Header";
 import { Input } from "../../components/Input/Input";
-import { Button } from "../../components/Button/Button";
+// import { Button } from "../../components/Button/Button";
 import { Title } from "../../components/Title/Title";
 import { List } from "./_components/List";
 
@@ -32,14 +32,17 @@ export const MemesList: React.FC = () => {
           onChange={(event) => setFilter(event.target.value)}
           value={filter}
         />
-        <Button onClick={(event) => console.log(event)}/>
+        {/* <Button onClick={(event) => console.log(event)}/> */}
+        <button className = "App__SearchBar--button" onClick={(event) => console.log(event)}> 
         <img
             src={lens}
             alt="Lens"
             width="25px"
             height="25px"
           />
+          </button>
       </div>
+      
 
       <div className="App__SectionTitle">
         <Title size="H3" weight="Bold" text="Los giffs más trendings del momento"/>
