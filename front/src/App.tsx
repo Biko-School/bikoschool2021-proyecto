@@ -33,7 +33,13 @@ function App() {
 
         <Routes>
           <Route path="/" element={Home()} />
-          <Route path="/memeSheet" element={Sheet()} />
+          <Route path="memeSheet" element={Sheet()} />
+
+          <Route path="*" element={
+            <main>
+              <p>There's nothing here! No match route</p>
+            </main>
+          }/>
 
         </Routes>
       </div>
