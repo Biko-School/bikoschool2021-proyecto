@@ -1,12 +1,13 @@
 .header {
   display: flex;
-  align-content: space-between;
+  align-items: center;
   width: 600px;
 }
 
 .header__image {
   width: 55.88px;
   height: 61.75;
+  margin-right: 14.12px;
 }
 
 .header__title {

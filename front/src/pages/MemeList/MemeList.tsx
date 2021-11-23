@@ -44,15 +44,13 @@ export const MemeList: React.FC = () => {
     <>
       {titleMeme && gifImage ? (
         <>
-          <h1>{titleMeme.title}</h1>
           <SearchInput />
           <TitlePage />
-          <img src={gifImage} alt="gifImage" id="2"></img>
-          <ul>
+          <div>
             {meme50?.map((meme) => {
               return <img src={meme.url} alt={meme.title} id={meme.id}></img>;
             })}
-          </ul>
+          </div>
         </>
       ) : (
         <div>There are not availables gifs</div>

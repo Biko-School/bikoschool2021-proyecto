@@ -1,13 +1,17 @@
 import React from "react";
 import "./SearchInput.css";
+import SearchButton from "./SearchButton.svg";
 
 export const SearchInput: React.FC = () => {
   return (
-    <>
+    <div className="searchInput">
       <input
-        className="searchInput"
+        className="boxInput"
         placeholder="¿Qué quieres buscar?¡Encuentralo!"
-      ></input>
-    </>
+      />
+      <button className="boxInput">
+        <img src={SearchButton} alt="SearchButton" />
+      </button>
+    </div>
   );
 };
