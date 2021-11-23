@@ -1,0 +1,17 @@
+.titlePage {
+  display: flex;
+  width: 1132px;
+  height: 51px;
+}
+
+.arrowImage {
+  width: 40.61px;
+  height: 9.61px;
+}
+
+.titlePage__Name {
+  color: white;
+  font-weight: 700;
+  font-size: 36.41px;
+  line-height: 49.58px;
+}

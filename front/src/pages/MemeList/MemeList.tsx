@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
-import { Meme } from "../entities/Meme";
-import { memeService } from "../services/getMeme";
-import { MemeDTO } from "../entities/MemeDTO";
+import { Meme } from "../../entities/Meme";
+import { memeService } from "../../services/getMeme";
+import { MemeDTO } from "../../entities/MemeDTO";
+import { SearchInput } from "./SearchInput";
+import { TitlePage } from "./TitlePage";
 
 export const MemeList: React.FC = () => {
   const [titleMeme, setMeme] = React.useState<{ title: string }>();
@@ -43,6 +45,8 @@ export const MemeList: React.FC = () => {
       {titleMeme && gifImage ? (
         <>
           <h1>{titleMeme.title}</h1>
+          <SearchInput />
+          <TitlePage />
           <img src={gifImage} alt="gifImage" id="2"></img>
           <ul>
             {meme50?.map((meme) => {

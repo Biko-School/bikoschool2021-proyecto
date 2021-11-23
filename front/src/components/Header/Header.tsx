@@ -1,12 +1,15 @@
 import React from "react";
-import GuifaniffinityLogo from "./GuifaffinityLogo.svg";
+import Logo from "./Logo.svg";
+import "./Header.css";
 
 export const Header: React.FC = () => {
   return (
     <>
       <header className="header">
-        <div>guifaffinity</div>
-        <img src={GuifaniffinityLogo} alt="GuifaniffinityLogo"></img>
+        <div className="header__image">
+          <img src={Logo} alt="GuifaniffinityLogo"></img>
+        </div>
+        <div className="header__title">GUIFAFFINITY</div>
       </header>
     </>
   );

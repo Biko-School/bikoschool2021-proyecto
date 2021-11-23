@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  align-content: space-between;
+  width: 600px;
+}
+
+.header__image {
+  width: 55.88px;
+  height: 61.75;
+}
+
+.header__title {
+  color: white;
+  font-weight: 800;
+  font-size: 41.83px;
+  line-height: 57px;
+  width: 295px;
+  height: 53px;
+}
