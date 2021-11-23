@@ -13,17 +13,19 @@ export const HomeMemesContainer = (props: any) => {
 
   return (
     <>
-      <div className='memes-container' data-testid='meme-container'>
+      <div className="memes-container" data-testid="meme-container">
         {props.memes.map((meme: Meme, index: number) => (
-          <img
-            width='200'
-            height='200'
-            className='meme-image'
-            alt={meme.title}
-            src={meme.url}
-            key={index}
-            data-testid={meme.id}
-          />
+          <figure key={index}>
+            <img
+              width="200"
+              height="200"
+              className="meme-image"
+              alt={meme.title}
+              src={meme.url}
+              data-testid={meme.id}
+            />
+            <figcaption>{meme.tags.join('')}</figcaption>
+          </figure>
         ))}
       </div>
     </>
