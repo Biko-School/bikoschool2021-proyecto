@@ -7,13 +7,15 @@ import { fetchAllMemes } from "./core/service/ApiService";
 
 // Librerías requeridas para enrutar
 import React from "react";
-import {BrowserRouter as Router, Routes, Route,Link} from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route,Link, useParams} from "react-router-dom";
 
 // La segunda página que vamos a renderizar
 import GifSheet from "./ui/components/GifSheet/GifSheet"
 
 
 function App() {
+
+  let memeId : string = "l0DEJovrRP58i5T1K";
 
   return(
     <Router>
@@ -28,13 +30,16 @@ function App() {
             <li>
               <Link to="/memeSheet">Sheet</Link>
             </li>
+            <li>
+              <Link to={`/memeSheet/${memeId}`} key={memeId}>See meme with ID: {memeId}</Link>
+            </li>
           </ul>
         </nav>
 
         <Routes>
           <Route path="/" element={Home()} />
-          <Route path="memeSheet" element={Sheet()} />
-
+          <Route path="/memeSheet/:memeId" element={<ShowSpecificSheet/>}>
+          </Route>
           <Route path="*" element={
             <main>
               <p>There's nothing here! No match route</p>
@@ -42,6 +47,7 @@ function App() {
           }/>
 
         </Routes>
+      
       </div>
 
 
@@ -82,7 +88,23 @@ function Home () {
 
 function  Sheet() {
   return(
-    <GifSheet/>
+    <div>
+      <GifSheet/>
+    </div>
+    
+  )
+}
+
+function  ShowSpecificSheet(){
+  console.log('holi')
+  const memeId = useParams()
+  console.log(memeId)
+  return(
+    <div>
+      <p>{JSON.stringify(memeId)}</p>
+      <GifSheet/>
+    </div>
+    
   )
 }
 
