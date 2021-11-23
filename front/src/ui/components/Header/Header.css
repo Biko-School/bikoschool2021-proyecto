@@ -1,0 +1,17 @@
+.header-container {
+  display: flex;
+  align-items: center;
+}
+
+img {
+  padding-top: var(--spacing-large);
+}
+
+h1 {
+  padding-top: var(--spacing-large);
+  padding-left: var(--spacing-tiny);
+  color: var(--color-white);
+  font-size: var(--font-size-h1);
+  font-family: "Open Sans";
+  font-weight: 800;
+}
