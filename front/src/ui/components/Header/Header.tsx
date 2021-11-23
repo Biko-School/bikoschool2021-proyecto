@@ -1,10 +1,10 @@
-import { Text } from "../Text/Text";
 import logo from "../../../images/Logo.png";
+import { Title } from "../Title/Title";
 
 export const Header = () => (
   <div className="header">
     <img src={logo} alt="logo" width="55.88" height="61.75" />
-    <Text size="H1" weight="ExtraBold" text="GIFFAFFINITY" />
+    <Title size="H1" weight="ExtraBold" text="GIFFAFFINITY" />
   </div>
 );
 
