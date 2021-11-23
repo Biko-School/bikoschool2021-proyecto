@@ -1,7 +1,10 @@
 .guif-card {
   position: relative;
   display: flex;
-  padding: var(--spacing-mini);
+  padding-top: 0;
+  padding-right: var(--spacing-mini);
+  padding-bottom: var(--spacing-mini);
+  padding-left: 0;
 }
 .guif-card__img {
   width: 200px;
@@ -10,8 +13,9 @@
 }
 
 .guif-card__joined-tags {
-  padding: calc(var(--spacing-mini) + var(--spacing-tiny));
+  padding-top: calc(var(--spacing-mini) + var(--spacing-tiny));
   padding-bottom: var(--spacing-tiny);
+  padding-left: var(--spacing-xtiny);
   align-self: flex-end;
   color: var(--color-white);
   font-size: var(--font-size-small);
