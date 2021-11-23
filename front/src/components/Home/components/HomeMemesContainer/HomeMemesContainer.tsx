@@ -15,7 +15,7 @@ export const HomeMemesContainer = (props: any) => {
     <>
       <div className="memes-container" data-testid="meme-container">
         {props.memes.map((meme: Meme, index: number) => (
-          <figure key={index}>
+          <figure className="memes-figure" key={index}>
             <img
               width="200"
               height="200"
@@ -24,7 +24,7 @@ export const HomeMemesContainer = (props: any) => {
               src={meme.url}
               data-testid={meme.id}
             />
-            <figcaption>{meme.tags.join('')}</figcaption>
+            <figcaption className="memes-tags">{meme.tags.join('')}</figcaption>
           </figure>
         ))}
       </div>

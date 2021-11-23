@@ -23,4 +23,41 @@
   .memes-container {
     padding: 0;
   }
+
+  .memes-figure {
+    position: relative;
+    display: grid;
+    max-width: 200px;
+    align-items: flex-end;
+  }
+
+  .memes-tags,
+  .meme-image {
+    grid-area: 1/2;
+  }
+
+  .memes-figure:hover .memes-tags {
+    opacity: 1;
+    color: var(--color-white);
+    transition: opacity ease-in 0.6s;
+  }
+
+  .memes-tags {
+    align-self: end;
+
+    font-size: var(--small-font-size);
+    line-height: var(--small-line-height);
+    font-weight: 400;
+    letter-spacing: var(--letter-spacing);
+
+    padding: 0 var(--tiny-space) var(--tiny-space);
+
+    opacity: 0;
+    max-width: 200px;
+
+    text-overflow: ellipsis;
+
+    overflow: hidden;
+    white-space: nowrap;
+  }
 }
