@@ -5,11 +5,14 @@
 
 .logo {
   padding-top: var(--spacing-large);
+  padding-left: var(--spacing-mini);
+  padding-bottom: var(--spacing-large);
 }
 
 h1 {
   padding-top: var(--spacing-large);
   padding-left: var(--spacing-tiny);
+  padding-bottom: var(--spacing-large);
   color: var(--color-white);
   font-size: var(--font-size-h1);
   font-family: "Open Sans";
@@ -22,12 +25,13 @@ h1 {
 }
 
 .trending-icon {
-  padding-top: var(--spacing-large);
+  padding-left: var(--spacing-mini);
+  padding-bottom: var(--spacing-medium);
 }
 
 h2 {
-  padding-top: var(--spacing-large);
   padding-left: var(--spacing-tiny);
+  padding-bottom: var(--spacing-medium);
   color: var(--color-white);
   font-size: var(--font-size-h2);
   font-family: "Open Sans";
