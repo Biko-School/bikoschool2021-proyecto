@@ -37,6 +37,15 @@ describe('Funcionamiento de la página principal', () => {
       await screen.findByTestId(memes[i].id);
     }
   });
+
+  it('Muestra los tags de cada meme', async () => {
+    render(<Home />);
+
+    for (let i = 0; i < memes.length; i++) {
+      const tags: string = memes[i].tags.join('');
+      await screen.findByText(tags);
+    }
+  });
 });
 
 describe('Funcionamiento de la búsqueda de memes', () => {
