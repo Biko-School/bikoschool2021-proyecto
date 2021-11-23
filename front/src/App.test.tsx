@@ -24,10 +24,9 @@ test('Debería encontrar un meme por su título', async () => {
 
   fireEvent.input(inputSearch, { target: { value: testMeme.title } });
 
-  const memeElement = await screen.findByRole("img", {
-    name: testMeme.title,
-  });
-  expect(memeElement).toBeInTheDocument();
-  expect(memeElement).toHaveAttribute("src", testMeme.images.original.url);
+  const memeElements = await screen.findAllByRole("img");
+
+  expect(memeElements).toHaveLength(1);
+  expect(memeElements[0]).toHaveAttribute("src", testMeme.images.original.url);
   
 })
