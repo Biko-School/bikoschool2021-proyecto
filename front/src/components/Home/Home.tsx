@@ -54,18 +54,18 @@ export const Home = () => {
 
   return (
     <>
-      <div className='home-container'>
+      <div className="home-container">
         <HomeHeader></HomeHeader>
         <HomeMemesSearchbar
           onFilter={(event: any) => setFilter(event.target.value)}
           filter={filter}
-        ></HomeMemesSearchbar>
-        <HomeMemesTitle></HomeMemesTitle>
+        />
+        <HomeMemesTitle />
         <HomeMemesContainer
           memes={filteredMemes}
           loading={loading}
           error={error}
-        ></HomeMemesContainer>
+        />
       </div>
     </>
   );
