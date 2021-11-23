@@ -3,7 +3,7 @@
   align-items: center;
 }
 
-img {
+.logo {
   padding-top: var(--spacing-large);
 }
 
@@ -13,5 +13,23 @@ h1 {
   color: var(--color-white);
   font-size: var(--font-size-h1);
   font-family: "Open Sans";
-  font-weight: 800;
+  font-weight: 750;
+}
+
+.trending-title-container {
+  display: flex;
+  align-items: center;
+}
+
+.trending-icon {
+  padding-top: var(--spacing-large);
+}
+
+h2 {
+  padding-top: var(--spacing-large);
+  padding-left: var(--spacing-tiny);
+  color: var(--color-white);
+  font-size: var(--font-size-h2);
+  font-family: "Open Sans";
+  font-weight: 600;
 }
