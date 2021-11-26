@@ -1,0 +1,12 @@
+name: lint_action
+on: [push]
+jobs:
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Prettify code
+      uses: creyD/prettier_action@v4.0
+      with:
+        # This part is also where you can pass other options, for example:
+        prettier_options: --write **/*.{js,ts,tsx}
+        only_changed: True
