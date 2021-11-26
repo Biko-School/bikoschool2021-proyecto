@@ -1,8 +1,9 @@
 import React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import App from "./App";
 
 import testMemes from "./mocks/fixtures/test-memes"
+import userEvent from "@testing-library/user-event";
 
 test.concurrent.each(testMemes)('Muestra el meme #%#', async (meme) => {
   render(<App />);
@@ -22,11 +23,12 @@ test('Debería encontrar un meme por su título', async () => {
   
   const testMeme = testMemes[0];
 
-  fireEvent.input(inputSearch, { target: { value: testMeme.title } });
-
-  const memeElements = await screen.findAllByRole("img");
-
-  expect(memeElements).toHaveLength(1);
-  expect(memeElements[0]).toHaveAttribute("src", testMeme.images.original.url);
+  userEvent.type(inputSearch, testMeme.title);
+  
+  await waitFor(() => {   
+    const memeElements = screen.getAllByRole("img");
+    expect(memeElements).toHaveLength(1);
+    expect(memeElements[0]).toHaveAttribute("src", testMeme.images.original.url);
+  });
   
 })
