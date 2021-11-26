@@ -1,12 +1,22 @@
-name: lint_action
-on: [push]
+name: PR Linters and Test
+on:
+  push:
+    branches:
+      - 'iker_javier'
 jobs:
-  check-bats-version:
+  build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
     steps:
-    - name: Prettify code
-      uses: creyD/prettier_action@v4.0
-      with:
-        # This part is also where you can pass other options, for example:
-        prettier_options: --write **/*.{js,ts,tsx}
-        only_changed: True
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: Instalar dependencias
+        working-directory: front
+        run: npm ci
+      - name: Pasar prettier
+        working-directory: front
+        run: npm run prettier
