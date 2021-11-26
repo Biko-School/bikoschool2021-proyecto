@@ -1,8 +1,5 @@
-const Tag = (tagText : string) => {
-    return (
-        <span>{tagText}</span>
-        
-    )
-}
+const Tag = (tagText: string) => {
+  return <span>{tagText}</span>;
+};
 
 export default Tag;

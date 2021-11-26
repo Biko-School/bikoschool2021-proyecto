@@ -1,6 +1,6 @@
 //import Tag from "../Tag/Tag"
 import React from "react";
-import  Meme from '../../../core/domain/Meme'
+import Meme from "../../../core/domain/Meme";
 import "./GuifCard.css";
 
 const GuifCard: React.VFC<{ meme: Meme }> = (props) => {

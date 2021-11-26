@@ -1,9 +1,5 @@
-import Meme from "./Meme"
+import Meme from "./Meme";
 
-export default interface MemeRepository{
-
-    getAllMemes() : Promise<Meme[]>
-
-    
-
+export default interface MemeRepository {
+  getAllMemes(): Promise<Meme[]>;
 }

@@ -3,9 +3,7 @@ import Meme from "../../../core/domain/Meme";
 import GuifCard from "../GuifCard/GuifCard";
 import "./GuifContainer.css";
 
-export const GuifContainer: React.VFC<{ memes: Meme[] }> = ({
-  memes,
-}) => {
+export const GuifContainer: React.VFC<{ memes: Meme[] }> = ({ memes }) => {
   const JsxMemesArray = [];
 
   for (let i = 0; i < memes.length; i++) {
