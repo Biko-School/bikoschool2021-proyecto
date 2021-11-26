@@ -2,7 +2,7 @@
   "arrowParens": "always",
   "bracketSpacing": true,
   "singleQuote": true,
-  "printWidth": 80,
+  "printWidth": 130,
   "trailingComma": "es5",
   "tsxBracketSameLine": false,
   "tsxSingleQuote": true,

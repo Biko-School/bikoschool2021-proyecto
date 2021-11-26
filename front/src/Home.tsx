@@ -30,10 +30,7 @@ function Home() {
 
 	const onSearchHandler = (value: string) => {
 		const inputWithoutInitialSpaces = value.trim().replace(/\s{1,}\s/g, ' ');
-		if (
-			inputWithoutInitialSpaces.length <= 3 &&
-			inputWithoutInitialSpaces.length > 0
-		) {
+		if (inputWithoutInitialSpaces.length <= 3 && inputWithoutInitialSpaces.length > 0) {
 			setError('La longitud mínima de búsqueda son 3 caracteres.');
 		} else {
 			setError('');
@@ -43,10 +40,7 @@ function Home() {
 
 	return (
 		<div className="home">
-			<Searchbar
-				onChange={(e) => onSearchHandler(e.target.value)}
-				value={value}
-			/>
+			<Searchbar onChange={(e) => onSearchHandler(e.target.value)} value={value} />
 			<div>{error}</div>
 			{filteredMemes?.map((meme) => (
 				<img src={meme?.image} key={meme?.id} alt={meme?.name} />
