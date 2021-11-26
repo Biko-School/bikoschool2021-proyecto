@@ -11,7 +11,9 @@ describe("GuifAffinity", () => {
     // Assert
     await waitFor(() => {
       const image = screen.getAllByRole("img");
-      expect(image[0]).toHaveAttribute(
+      // image[0] is in header-container: <img src="Logo.png"/>
+      // image[1] is in header-container: <img src="icon/trending.svg"/>
+      expect(image[2]).toHaveAttribute(
         "src",
         expect.stringMatching("https://media4.giphy.com/media")
       );
