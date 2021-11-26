@@ -21,7 +21,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "test:precommit": "react-scripts test"
+    "test:precommit": "react-scripts test",
+    "prettier": "prettier --list-different '**/*.{js,ts,tsx}'"
   },
   "eslintConfig": {
     "extends": [
