@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { MemeType } from "../../core/domain/MemeType";
-import fetchAllMemes from "../../core/infrastructure/fetchMemes";
+import fetchMemes from "../../core/infrastructure/fetchMemes";
+import fetchFilteredMemes from "../../core/infrastructure/fetchFilteredMemes";
 import Meme from "../components/Meme/Meme";
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
   const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
-    fetchAllMemes().then((response) => {
+    fetchMemes().then((response) => {
       setMemes(response);
     });
   }, []);
@@ -28,7 +29,14 @@ function App() {
           onChange={(event) => setSearchText(event.target.value)}
           value={searchText}
         />
-        <div className="search_icon">
+        <div
+          className="search_icon"
+          onClick={(event) => {
+            fetchFilteredMemes(searchText).then((response) => {
+              setMemes(response);
+            });
+          }}
+        >
           <img src="/img/searchIcon.svg" alt="Search" />
         </div>
       </div>
