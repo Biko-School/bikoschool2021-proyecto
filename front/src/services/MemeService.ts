@@ -1,14 +1,13 @@
-import { MemeRepository } from "../domain/MemeRepository";
+import { MemeRepository } from '../domain/MemeRepository';
 
 export class MemeService {
+	memeRepository: MemeRepository;
 
-    memeRepository: MemeRepository;
-    
-    constructor(memeRepository: MemeRepository) {
-        this.memeRepository = memeRepository
-    }
+	constructor(memeRepository: MemeRepository) {
+		this.memeRepository = memeRepository;
+	}
 
-    getMemes() {
-        return this.memeRepository.getMemes()
-    }
+	getMemes() {
+		return this.memeRepository.getMemes();
+	}
 }

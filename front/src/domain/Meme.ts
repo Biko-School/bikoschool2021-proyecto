@@ -3,4 +3,4 @@ export type Meme = {
 	id: string;
 	name: string;
 	tags: string[];
-}
+};

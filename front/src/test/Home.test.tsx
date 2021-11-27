@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import Home from '../Home';
-import  memes  from '../memes.json';
+import memes from '../memes.json';
 
 describe('Home page', () => {
 	it('se muestra una lista de memes', async () => {
@@ -16,7 +16,7 @@ describe('Home page', () => {
 		const search = screen.getByPlaceholderText('buscador');
 		fireEvent.change(search, { target: { value: 'mo' } });
 
-		expect(screen.getByText('La longitud mínima de búsqueda son 3 caracteres.')).toBeInTheDocument();	
+		expect(screen.getByText('La longitud mínima de búsqueda son 3 caracteres.')).toBeInTheDocument();
 	});
 
 	it('se muestran los memes filtrados cuyos tags coinciden exactamente con el valor exacto introducido por el usuario', async () => {
@@ -25,7 +25,6 @@ describe('Home page', () => {
 		const search = screen.getByPlaceholderText('buscador');
 		fireEvent.change(search, { target: { value: 'humor' } });
 
-		expect(await screen.findAllByRole('img')).toHaveLength(1);	
+		expect(await screen.findAllByRole('img')).toHaveLength(1);
 	});
-
 });

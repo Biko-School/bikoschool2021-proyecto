@@ -40,7 +40,7 @@ function Home() {
 	};
 
 	return (
-		<div className="home">
+		<div className='home'>
 			<Searchbar onChange={(e) => onSearchHandler(e.target.value)} value={value} />
 			<div>{error}</div>
 			{filteredMemes?.map((meme) => (

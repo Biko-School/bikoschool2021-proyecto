@@ -1,5 +1,5 @@
-import { Meme } from "./Meme";
+import { Meme } from './Meme';
 
 export interface MemeRepository {
-    getMemes:  () => Promise<Meme[]>
+	getMemes: () => Promise<Meme[]>;
 }
