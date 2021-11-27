@@ -3,6 +3,9 @@ on: [push]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
+      trategy:
+      matrix:
+        node-version: [16.x]
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
@@ -14,3 +17,6 @@ jobs:
       - name: Pasar prettier
         working-directory: front
         run: npm run prettier
+      - name: Generar build
+        working-directory: front
+        run: npm run build
