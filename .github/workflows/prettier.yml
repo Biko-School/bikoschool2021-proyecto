@@ -17,9 +17,9 @@ jobs:
       - name: Instalar dependencias
         working-directory: front
         run: npm ci
-			- name: Pasar prettier
-				working-directory: front
-				run: npm run prettier
-      - name: Pasar test
-				working-directory: front
-				run: npm run test:precommit
+			# - name: Pasar prettier
+				# working-directory: front
+				# run: npm run prettier
+      # - name: Pasar test
+				# working-directory: front
+				# run: npm run test:precommit
