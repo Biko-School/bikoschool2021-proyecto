@@ -19,7 +19,7 @@ jobs:
         run: npm ci
       - name: Pasar prettier
         working-directory: front
-        run: prettier --list-different '**/*.{js,ts,tsx}'
+        run: npm run prettier
       - name: Pasar test
         working-directory: front
         run: npm run test:no-watch
