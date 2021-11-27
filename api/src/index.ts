@@ -1,14 +1,14 @@
-import { DataBaseSchema } from "DataBaseSchema"
-import http, { Server } from "http"
-import Lowdb from "lowdb"
-import FileSync from "lowdb/adapters/FileSync"
-import { createApp } from "./app"
+import { DataBaseSchema } from "DataBaseSchema";
+import http, { Server } from "http";
+import Lowdb from "lowdb";
+import FileSync from "lowdb/adapters/FileSync";
+import { createApp } from "./app";
 
-const database = './db/db.json'
+const database = "./db/db.json";
 
-const adapter = new FileSync<DataBaseSchema>(database)
-const db = Lowdb(adapter)
-const app = createApp(db)
+const adapter = new FileSync<DataBaseSchema>(database);
+const db = Lowdb(adapter);
+const app = createApp(db);
 
 const server: Server = http.createServer(app);
 
