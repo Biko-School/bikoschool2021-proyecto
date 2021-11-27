@@ -22,7 +22,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "test:no-watch": "react-scripts test --watchAll=false",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --list-different '**/*.{js,ts,tsx}'"
   },
   "eslintConfig": {
     "extends": [
