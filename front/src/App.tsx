@@ -20,21 +20,29 @@ function App() {
 
   const filterMemes = (event: ChangeEvent<HTMLInputElement>) => {
     const searchText = event?.target?.value?.trim().toLowerCase();
-      const newFilteredMemes = memes.filter(meme => meme.title.toLowerCase().includes(searchText));
-      setFilteredMemes(newFilteredMemes);
+    const newFilteredMemes = memes.filter((meme) =>
+      meme.title.toLowerCase().includes(searchText)
+    );
+    setFilteredMemes(newFilteredMemes);
+  };
 
-  }
-  
   return (
     <div>
-      <input type="text" placeholder="¿Que quieres buscar? ¡Encuentralo!" onChange={filterMemes}></input>
+      <input
+        type="text"
+        placeholder="¿Que quieres buscar? ¡Encuentralo!"
+        onChange={filterMemes}
+      ></input>
       <div className="gif__grid">
         {filteredMemes.map((meme, index) => (
           <div key={index}>
-            <img className="gif__card" alt={meme.title} src={meme.images.original.url} />
-            <p>{ meme.title }</p>
+            <img
+              className="gif__card"
+              alt={meme.title}
+              src={meme.images.original.url}
+            />
+            <p>{meme.title}</p>
           </div>
-          
         ))}
       </div>
     </div>

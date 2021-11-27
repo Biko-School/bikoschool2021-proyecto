@@ -16,23 +16,23 @@ test.concurrent.each(testMemes)("Muestra el meme #%#", async (meme) => {
 });
 
 test("Debería encontrar un meme por su título", async () => {
-render(<App />);
-const inputSearch = screen.getByPlaceholderText(
-"¿Que quieres buscar? ¡Encuentralo!"
-);
+  render(<App />);
+  const inputSearch = screen.getByPlaceholderText(
+    "¿Que quieres buscar? ¡Encuentralo!"
+  );
 
-expect(inputSearch).toBeInTheDocument();
+  expect(inputSearch).toBeInTheDocument();
 
-const testMeme = testMemes[0];
+  const testMeme = testMemes[0];
 
-userEvent.type(inputSearch, testMeme.title);
+  userEvent.type(inputSearch, testMeme.title);
 
-await waitFor(() => {
-const memeElements = screen.getAllByRole("img");
-expect(memeElements).toHaveLength(3);
-expect(memeElements[0]).toHaveAttribute(
-"src",
-testMeme.images.original.url
-);
-});
+  await waitFor(() => {
+    const memeElements = screen.getAllByRole("img");
+    expect(memeElements).toHaveLength(3);
+    expect(memeElements[0]).toHaveAttribute(
+      "src",
+      testMeme.images.original.url
+    );
+  });
 });
