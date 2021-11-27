@@ -20,7 +20,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "test:precommit": "TZ=UTC CI=true react-scripts test",
+    "test:precommit": "TZ=UTC react-scripts test",
+    "test:ci": "TZ=UTC CI=true react-scripts test",
     "prettier": "prettier --list-different '**/*.{js,ts,tsx}'",
     "prettier-write": "prettier --write '**/*.{js,ts,tsx}'"
   },
