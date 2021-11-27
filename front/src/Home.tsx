@@ -30,7 +30,7 @@ function Home() {
 
 	const onSearchHandler = (value: string) => {
 		const inputWithoutInitialSpaces = value.trim().replace(/\s{1,}\s/g, ' ');
-		console.log(inputWithoutInitialSpaces.length);
+
 		if (inputWithoutInitialSpaces.length <= 3 && inputWithoutInitialSpaces.length > 0) {
 			setError('La longitud mínima de búsqueda son 3 caracteres.');
 		} else {
