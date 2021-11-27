@@ -22,7 +22,7 @@ jobs:
         run: npm ci
       - name: Pasar prettier
         working-directory: front
-        run: npm run prettier --write src/**/*.js
+        run: npm run prettier --write *.{js,ts,tsx}
       - name: Pasar test
         working-directory: front
         run: npm run test:precommit
