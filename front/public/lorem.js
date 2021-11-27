@@ -1,1 +1,0 @@
-const lorem='lorem';const ipsum='ipsum';
