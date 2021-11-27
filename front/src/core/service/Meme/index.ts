@@ -1,1 +1,1 @@
-export { fechAllMemes } from './fechAllMemes'
+export { fechAllMemes } from "./fechAllMemes";

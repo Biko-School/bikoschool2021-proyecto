@@ -1,4 +1,4 @@
-import { Meme } from '../../../../core/domain/model/Meme/Meme';
+import { Meme } from "../../../../core/domain/model/Meme/Meme";
 // import { Redirect } from 'react-router-dom'
 // import { routes } from "../../../routers"
 
