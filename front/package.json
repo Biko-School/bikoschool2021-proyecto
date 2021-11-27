@@ -20,7 +20,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "test:precommit": "cross-env CI=TRUE react-scripts test",
-    "prettier": "prettier --list-different '**/*.{js,ts,tsx}'"
+    "prettier": "prettier --list-different 'src/**/*.{js,ts,tsx}'"
   },
   "proxy": "http://localhost:3000",
   "eslintConfig": {
