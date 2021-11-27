@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-            import { Home } from "./components/Home";
+import { Home } from './components/Home';
 
 function App() {
-  console.log('Test Error')
+  console.log('Test Error');
   return <Home />;
 }
 
