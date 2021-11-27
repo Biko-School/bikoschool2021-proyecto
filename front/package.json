@@ -24,7 +24,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "test:precommit": "TZ=UTC CI=true react-scripts test",
-    "prettier": "prettier --list-different '**/*.{js,ts,tsx}'"
+    "prettier": "prettier --list-different '**/*.{js,ts,tsx}'",
+    "deploy": "firebase deploy --only hosting:turkiffinidad"
   },
   "eslintConfig": {
     "extends": [
