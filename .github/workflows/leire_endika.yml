@@ -28,4 +28,4 @@ jobs:
         with:
         args: deploy --only hosting
         env:
-          FIREBASE_TOKEN: AAAAi6F2JWE:APA91bFIyugjaJJT_f7xHK2HaMEX-ULNG0dlsLlIWkHOdzcxkxdMyIUxezMGgbFD3mXbzFP5wE_SsbaX2CHB7pO9AN6_4cBx8i-dau_2h92HdmdB9sFDPacrleWzMlb8p5jCvtjrzUJQ
+          FIREBASE_TOKEN: 1//03gXNUcQ_53qPCgYIARAAGAMSNwF-L9IrjaGYRZFfVVj-xgqt-oO3yryp4ckJFEXjagwt7rdkNgVzye_yPB1rSuu0jhUuUMiTVP4
