@@ -20,3 +20,6 @@ jobs:
       - name: Pasar prettier
         working-directory: front
         run: npm run prettier
+      - name: Pasar tests precommit
+        working-directory: front
+        run: npm run test:precommit -- --watchAll=false
