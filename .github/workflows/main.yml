@@ -1,6 +1,5 @@
 name: GitHub Actions Demo
 on: [push]
-branches: aitor-javi
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
