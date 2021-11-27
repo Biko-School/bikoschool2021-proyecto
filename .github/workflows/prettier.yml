@@ -1,0 +1,28 @@
+name: PR Linters and Test
+on:
+  push:
+    branches:
+      - 'jon-yaiza'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: Instalar dependencias
+        working-directory: front
+        run: npm ci
+      - name: Instalar dependencias
+        working-directory: front
+        run: npm ci
+      - name: Pasar prettier
+        working-directory: front
+        run: npm run prettier --write *.{js,ts,tsx}
+      - name: Pasar test
+        working-directory: front
+        run: npm run test:precommit
