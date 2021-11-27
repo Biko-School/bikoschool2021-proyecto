@@ -31,7 +31,7 @@ export const MemesList: React.FC = () => {
       <Header />
       <div className="App__SearchBar">
         <Input
-          placeholder="¿Qué quieres buscar? ¡Encuéntralo!"
+          placeholder="¿Qué quieres buscar? ¡Encuéntralo!!"
           onChange={(event) => setFilter(event.target.value)}
           value={filter}
         />
