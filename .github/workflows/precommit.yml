@@ -20,3 +20,12 @@ jobs:
       - name: Pasar prettier
         working-directory: front
         run: npm run prettier
+      - name: Generar build
+        working-directory: front
+        run: npm run build
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting
+        env:
+          FIREBASE_TOKEN: "1//03eAQyzQI74qmCgYIARAAGAMSNwF-L9IrdwV7eGx2b908CT7FcMjNyicnv7LGFPwgawWC-pu9YgOzILWVr2yguyOAcqV54hQ9gok"
