@@ -17,6 +17,6 @@ jobs:
       - name: Instalar dependencias
         working-directory: front
         run: npm ci
-			- name: Pasar prettier
-				working-directory: front
+      - name: Pasar prettier
+        working-directory: front
         run: npm run prettier
