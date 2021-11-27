@@ -20,3 +20,6 @@ jobs:
       - name: Ejecutar tests
         working-directory: front
         run: npm run test:precommit
+      - name: Desplegar en firebase
+        working-directory: front
+        run: npm run deploy
