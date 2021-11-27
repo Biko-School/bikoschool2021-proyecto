@@ -3,7 +3,7 @@ on: [push]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
-      trategy:
+      strategy:
       matrix:
         node-version: [16.x]
     steps:
