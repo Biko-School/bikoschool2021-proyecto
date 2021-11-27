@@ -2,7 +2,7 @@ name: PR Linters and Test
 on:
   push:
     branches:
-      - 'leire-endika'
+      - 'leire-endika-2'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,3 +20,12 @@ jobs:
       - name: Pasar test
         working-directory: front
         run: npm run test:no-watch
+      - name: Generar build
+        working-directory: front
+        run: npm run build
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting
+        env:
+          FIREBASE_TOKEN: 1//03HRzkXxcaa5wCgYIARAAGAMSNwF-L9IriOfy0ioAwE9dvl5idonVRR3lRgTBU3VfH8V9HqgqimMwjQRbjeLRs-jDZNTfIpYrbYE
