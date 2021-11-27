@@ -221,7 +221,7 @@ async function getResponse(event, client, requestId) {
 
       console.error(
         `\
-[MSW] Uncaught exception in the request handler for "%s %s":
+[MSW] :) Uncaught exception in the request handler for "%s %s":
 
 ${parsedBody.location}
 
