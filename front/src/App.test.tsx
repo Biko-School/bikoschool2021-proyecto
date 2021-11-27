@@ -38,7 +38,7 @@ describe("Guifaffinity", () => {
     expect(api).toHaveLength(50);
   });
 
-  it("There is a meme title", async () => {
+  it.skip("There is a meme title", async () => {
     render(<App />);
 
     for (let meme of api) {
@@ -47,7 +47,7 @@ describe("Guifaffinity", () => {
     }
   });
 
-  it("There is an img", async () => {
+  it.skip("There is an img", async () => {
     //render(<Home/>)
     //expect(screen.getByRole('img')).toBeInTheDocument()
 
