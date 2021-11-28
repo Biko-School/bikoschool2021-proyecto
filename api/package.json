@@ -11,6 +11,7 @@
     "build:prod": "npm run clean && babel src -d dist --ignore=\"./src/test-runners\" --extensions \".ts\"",
     "build:dev": "npm run clean && babel src -d dist --ignore=\"./src/test-runners\" --extensions \".ts\" --source-maps",
     "test": "NODE_ENV=test jest --passWithNoTests",
+    "test:ci": "NODE_ENV=test TZ=UTC jest --ci",
     "test:watch": "npm test -- --watch",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
