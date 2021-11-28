@@ -4,7 +4,7 @@ on:
     branches:
       - 'jaime-javi'
 jobs:
-  build front:
+  build_front:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -32,7 +32,7 @@ jobs:
           args: deploy --only hosting
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-  build back:
+  build_back:
     runs-on: ubuntu-latest
     strategy:
       matrix:
