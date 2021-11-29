@@ -2,4 +2,8 @@
   "*.{js,ts,tsx}": [
     "prettier --write"
   ]
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 843d1834c5494ba880d26d4499686f9b72fbce28

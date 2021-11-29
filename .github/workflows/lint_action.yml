@@ -1,0 +1,36 @@
+name: PR Linters and Test
+on:
+  push:
+    branches:
+      - "iker_javier"
+env:
+  CI: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+      - name: Instalar dependencias
+        working-directory: front
+        run: npm ci
+      - name: Pasar prettier
+        working-directory: front
+        run: npm run prettier
+      - name: Pasar tests precommit
+        working-directory: front
+        run: npm run test:precommit -- --watchAll=false
+      - name: Generar build
+        working-directory: front
+        run: npm run build
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting
+        env:
+          FIREBASE_TOKEN: 1//035dtM2M2QnlCCgYIARAAGAMSNwF-L9Ir65GisSiQdNPBbApoPznX7Oxsetn1nwu152jSCnpSgdtMzhQ_EjYb_dIjT8JKJG57GBo

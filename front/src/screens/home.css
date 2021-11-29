@@ -1,15 +1,15 @@
 .meme {
-    width: 200px;
-    height: 200px;
+  width: 200px;
+  height: 200px;
 }
 
-.meme-container{
-    display: flex;
-    justify-content: space-between;
-    width: 1132px;
-    flex-wrap: no-wrap
+.meme-container {
+  display: flex;
+  justify-content: space-between;
+  width: 1132px;
+  flex-wrap: no-wrap;
 }
 
-.meme-parent-container{
-    justify-content: center;
+.meme-parent-container {
+  justify-content: center;
 }

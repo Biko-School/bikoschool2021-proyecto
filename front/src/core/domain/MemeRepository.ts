@@ -1,8 +1,7 @@
 import { Meme } from "./meme";
 
-
 export default interface MemeRepository {
-    filePath: string;
+  filePath: string;
 
-    getMemes(filePath: string): Promise<Meme[]>
+  getMemes(filePath: string): Promise<Meme[]>;
 }

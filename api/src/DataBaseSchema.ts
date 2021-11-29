@@ -1,9 +1,9 @@
 export interface DataBaseSchema {
-    memes: Meme[];
+  memes: Meme[];
 }
-interface Meme { 
-    id: string,
-    title: string,
-    images: {'original': {'url': string}},
-    tags: string[]
+interface Meme {
+  id: string;
+  title: string;
+  images: { original: { url: string } };
+  tags: string[];
 }
