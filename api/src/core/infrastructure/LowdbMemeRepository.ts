@@ -19,6 +19,6 @@ export default class LowdbMemeRepository implements MemeRepository {
       const chunkToGet = (page ?? 1) - 1;
       if(!searchText || searchText.length < 3)
         return [];
-      return this.database.get("memes").chunk(amount).get(chunkToGet).value();      
+      return this.database.get("memes").filter(meme => meme.tags.some(tag => tag.includes(searchText))).chunk(amount).get(chunkToGet).value();      
     };
   }

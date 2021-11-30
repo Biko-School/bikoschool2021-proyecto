@@ -11,6 +11,6 @@ routes.get("/memes", (req: Request, res: Response) => {
   if(searchText)
     memes = getSomeMemesByFilter(repo, 50, searchText)
   else
-    memes = getSomeMemes(repo,50);
+  memes = getSomeMemes(repo,50);
   res.status(200).json(memes);
 });
