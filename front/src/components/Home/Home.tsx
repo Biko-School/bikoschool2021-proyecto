@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './Home.css';
-import axios from 'axios';
 
 import { HomeHeader } from './components/HomeHeader';
 import { HomeMemesTitle } from './components/HomeMemesTitle';
