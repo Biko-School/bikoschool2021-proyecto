@@ -121,3 +121,10 @@ Bonus pack:
 - los espacios laterales o interiores superiores a 1 no cuentan como caracteres para calcular la longitud de la cadena de búsqueda.
 - Pablo escribe ‘···h····o····’
   => Se muestran los memes que coincidan con ‘h o’
+
+## Bonus Pack
+
+**Ejemplo R6:**
+
+- Pablo escribe 'paliza'
+  => Se le avisa a Pablo de que la búsqueda de esa palabra no es posible.
