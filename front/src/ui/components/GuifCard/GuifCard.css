@@ -11,6 +11,9 @@
   height: 200px;
   border-radius: 10px;
 }
+.guif-card__img:hover{
+  cursor:pointer;
+}
 
 .guif-card__joined-tags {
   padding-top: calc(var(--spacing-mini) + var(--spacing-tiny));
