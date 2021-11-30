@@ -1,4 +1,6 @@
 .container {
+  max-width: 1132px;
+  margin: 0 auto;
   background: linear-gradient(
     157.9deg,
     #4158d0 1.21%,
@@ -9,4 +11,5 @@
   padding-right: 156px;
   padding-top: 57px;
   padding-bottom: 57px;
+
 }

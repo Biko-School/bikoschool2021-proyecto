@@ -1,15 +1,17 @@
 .meme {
   width: 200px;
   height: 200px;
+  border-radius: 15px;
 }
 
 .meme-container {
   display: flex;
   justify-content: space-between;
   width: 1132px;
-  flex-wrap: no-wrap;
+  flex-wrap: wrap;
 }
 
 .meme-parent-container {
+  display: flex;
   justify-content: center;
 }
