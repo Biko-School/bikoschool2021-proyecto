@@ -12,7 +12,14 @@ routers.get("/memes", (req: Request, res: Response) => {
 routers.get("/memesByTag/:tag", (req: Request, res: Response) => {
   const db = req.context.db;
   var tagFilter = req.params.tag;
-  const result: MemeDTO[] = db.get("memes").filter((meme:MemeDTO) => meme.tags.find((tag) => tag.includes(tagFilter.toLowerCase())));
+  var result:MemeDTO[];
+  if (tagFilter === "") {
+    result = db.get("memes").take(50).value(); 
+  }
+  else{
+    result = db.get("memes").filter((meme:MemeDTO) => meme.tags.find((tag) => tag.includes(tagFilter.toLowerCase())));
+  }
+  
   res.status(200).json(result);
 });
 
