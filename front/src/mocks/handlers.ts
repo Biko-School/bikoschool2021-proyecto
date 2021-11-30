@@ -6,4 +6,8 @@ export const handlers = [
     // Check if the user is authenticated in this session
     return res(ctx.json(memes));
   }),
+  rest.get("/api/memesByTag", (req, res, ctx) => {
+    // Check if the user is authenticated in this session
+    return res(ctx.json(memes));
+  }),
 ];

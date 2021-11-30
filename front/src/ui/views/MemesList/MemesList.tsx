@@ -10,6 +10,7 @@ import { Input } from "../../components/Input/Input";
 import { Title } from "../../components/Title/Title";
 import { List } from "./_components/List";
 import { Button } from "../../components/Button/Button";
+import { fechMemesByTag } from "../../../core/service/Meme/fechMemesByTag";
 
 export const MemesList: React.FC = () => {
   const [filter, setFilter] = useState("");
@@ -22,6 +23,13 @@ export const MemesList: React.FC = () => {
       setMemes(await fechAllMemes(memeRepository));
     })();
   }, []);
+
+  useEffect(() => {
+    (async () => {
+      const memeRepository = new ApiMemeRepository();
+      setMemes(await fechMemesByTag(memeRepository, filter));
+    })();
+  }, [filter]);
 
   const filteredMemes: Meme[] = memes.filter((meme: Meme) =>
     meme.tags.find((tag) => tag.includes(filter.toLowerCase()))

@@ -4,7 +4,7 @@ export const api = {
     return response.json();
   },
   memesByTag: async (tag: string) => {
-    const response = await fetch(`/api/memesByTag?tag=${tag}`);
+    const response = await fetch(`/api/memesByTag/${tag}`);
     return response.json();
   },
 };
