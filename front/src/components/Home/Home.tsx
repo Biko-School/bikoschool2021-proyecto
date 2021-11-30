@@ -15,8 +15,6 @@ export const Home = () => {
   const [error, setError] = useState(false);
   const [filter, setFilter] = useState('');
 
-  const filteredMemes: Meme[] = MemeService.filterMemes(filter, memes);
-
   useEffect(() => {
     setLoading(true);
     MemeService.all()
@@ -24,6 +22,8 @@ export const Home = () => {
       .catch((error) => setError(true))
       .finally(() => setLoading(false));
   }, []);
+
+  const filteredMemes: Meme[] = MemeService.filterMemes(filter, memes);
 
   return (
     <>
