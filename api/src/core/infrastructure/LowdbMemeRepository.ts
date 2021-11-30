@@ -10,7 +10,8 @@ export default class LowdbMemeRepository implements MemeRepository {
     getAll(){
       return this.database.get('memes').take().value();
     }
-    getSome(amount: number){
-      return this.database.get("memes").chunk(amount).get(3).value();
+    getSome(amount: number, page?:number){
+      const chunkToGet = (page ?? 1) - 1;
+      return this.database.get("memes").chunk(amount).get(chunkToGet).value();
     }
   }
