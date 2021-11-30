@@ -1,6 +1,6 @@
 import React from 'react';
 import './HomeMemesContainer.css';
-import { Meme } from '../../Home';
+import { Meme } from '../../../../core/domain/model/Meme/Meme';
 
 export const HomeMemesContainer = (props: any) => {
   if (props.loading) {
