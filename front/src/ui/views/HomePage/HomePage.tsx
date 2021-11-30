@@ -4,33 +4,33 @@ import { useState, useEffect } from "react";
 import Meme from "../../../core/domain/Meme";
 import { fetchAllMemes } from "../../../core/service/ApiService";
 
-export const HomePage = () =>{
-    const [memes, setMemes] = useState<Meme[]>([]);
+export const HomePage = () => {
+  const [memes, setMemes] = useState<Meme[]>([]);
 
-    const getMemes = async () => {
-      const response = await fetchAllMemes();
-      setMemes(response);
-    };
-  
-    useEffect(() => {
-      getMemes();
-    }, []);
-  
-    if (memes.length === 0) {
-      return (
-        <>
-          <Header />
-          <p>Cargando...</p>
-        </>
-      );
-    }
-  
+  const getMemes = async () => {
+    const response = await fetchAllMemes();
+    setMemes(response);
+  };
+
+  useEffect(() => {
+    getMemes();
+  }, []);
+
+  if (memes.length === 0) {
     return (
       <>
         <Header />
-        <GuifContainer memes={memes} />
+        <p>Cargando...</p>
       </>
     );
-}
+  }
 
-export default HomePage
+  return (
+    <div>
+      <Header />
+      <GuifContainer memes={memes} />
+    </div>
+  );
+};
+
+export default HomePage;
