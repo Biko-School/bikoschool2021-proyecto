@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 export const NavigationBar = () => {
   const memeId: string = "l0DEJovrRP58i5T1K";
@@ -20,6 +20,7 @@ export const NavigationBar = () => {
           </li>
         </ul>
       </nav>
+      <Outlet />
     </div>
   );
 };

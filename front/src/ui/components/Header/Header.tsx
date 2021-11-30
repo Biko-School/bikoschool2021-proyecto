@@ -1,11 +1,12 @@
 import React from "react";
 import "./Header.css";
+import logo from "./Logo.png";
 
 export const Header: React.VFC<{}> = () => {
   return (
     <>
       <div className="header-container">
-        <img className="logo" src="Logo.png" alt="Guifaffinity icon" />
+        <img className="logo" src={logo} alt="Guifaffinity icon" />
         <h1>GUIFAFFINITY</h1>
       </div>
       <div className="trending-title-container">

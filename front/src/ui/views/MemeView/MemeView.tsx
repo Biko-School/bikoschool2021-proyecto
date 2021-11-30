@@ -1,12 +1,11 @@
-
 import Header from "../../components/Header/Header";
 
-export const MemeView = () =>{
+export const MemeView = () => {
+  return (
+    <div>
+      <Header />
+    </div>
+  );
+};
 
-    return(
-
-        <Header/>
-    )
-}
-
-export default MemeView
+export default MemeView;
