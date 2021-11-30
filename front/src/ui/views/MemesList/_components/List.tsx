@@ -1,10 +1,13 @@
 import { Meme } from "../../../../core/domain/model/Meme/Meme";
-// import { Redirect } from 'react-router-dom'
-// import { routes } from "../../../routers"
+import { createBrowserHistory } from "history";
+// import { routes } from "../../../routers";
 
 export const List = ({ memes }: any) => {
-  // const { from } = { from: { pathname: routes.MEME_DETAIL } }
+  const history = createBrowserHistory();
 
+  function handleClick() {
+    history.push("/meme/detail");
+  }
   // const { from } = { from: { pathname: routes.MEME_DETAIL } }
 
   // if (redirectToReferrer) {
@@ -20,7 +23,7 @@ export const List = ({ memes }: any) => {
       className="App__GridGiffs--Giff"
       src={meme.img}
       alt={meme.title}
-      //   onClick={(event) => openMemeDetail((event.target as Element).id)}
+      onClick={handleClick}
     />
   ));
 };
