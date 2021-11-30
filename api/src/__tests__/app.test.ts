@@ -51,7 +51,7 @@ describe("/api/memes con texto de búsqueda", () => {
 
     request(app)
     .get("/api/memes")
-    .query({searchText: 'te'})
+    .query({searchText: 'ta'})
     .then((response) => {
       expect(response.body).toHaveLength(0);
       done();
