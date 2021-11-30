@@ -14,6 +14,7 @@ import { Button } from "../../components/Button/Button";
 export const MemesList: React.FC = () => {
   const [filter, setFilter] = useState("");
   const [memes, setMemes] = useState<Meme[]>([]);
+  var inputMeme = "";
 
   useEffect(() => {
     (async () => {
@@ -32,10 +33,9 @@ export const MemesList: React.FC = () => {
       <div className="App__SearchBar">
         <Input
           placeholder="¿Qué quieres buscar? ¡Encuéntralo!"
-          onChange={(event) => setFilter(event.target.value)}
-          value={filter}
+          onChange={(event) => (inputMeme = event.target.value)}
         />
-        <Button onClick={(event) => console.log(event)} />
+        <Button onClick={() => setFilter(inputMeme)} />
       </div>
 
       <div className="App__SectionTitle">
