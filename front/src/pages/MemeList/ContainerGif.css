@@ -1,0 +1,16 @@
+.containerGif {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.gif {
+  flex-grow: 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  margin: 10px;
+  object-fit: cover;
+}

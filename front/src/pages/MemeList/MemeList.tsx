@@ -4,6 +4,7 @@ import { memeService } from "../../services/getMeme";
 import { MemeDTO } from "../../entities/MemeDTO";
 import { SearchInput } from "./SearchInput";
 import { TitlePage } from "./TitlePage";
+import { ContainerGif } from "./ContainerGif";
 
 export const MemeList: React.FC = () => {
   const [titleMeme, setMeme] = React.useState<{ title: string }>();
@@ -46,11 +47,7 @@ export const MemeList: React.FC = () => {
         <>
           <SearchInput />
           <TitlePage />
-          <div>
-            {meme50?.map((meme) => {
-              return <img src={meme.url} alt={meme.title} id={meme.id}></img>;
-            })}
-          </div>
+          <ContainerGif meme50={meme50} />
         </>
       ) : (
         <div>There are not availables gifs</div>
