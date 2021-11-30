@@ -49,7 +49,13 @@ export const MemesList: React.FC = () => {
             }
           }}
         />
-        <Button onClick={() => setFilter(inputMeme)} />
+        <Button
+          onClick={() => {
+            if (inputMeme !== "") {
+              setFilter(inputMeme);
+            }
+          }}
+        />
       </div>
 
       <div className="App__SectionTitle">
