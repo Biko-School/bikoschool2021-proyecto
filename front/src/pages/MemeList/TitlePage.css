@@ -1,12 +1,13 @@
 .titlePage {
   display: flex;
-  width: 1132px;
-  height: 51px;
+  align-items: center;
+  margin-top: 50px;
 }
 
 .arrowImage {
-  width: 40.61px;
-  height: 9.61px;
+  display: flex;
+  align-content: center;
+  margin-right: 14.12px;
 }
 
 .titlePage__Name {

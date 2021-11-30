@@ -9,7 +9,7 @@ export const SearchInput: React.FC = () => {
         className="boxInput"
         placeholder="¿Qué quieres buscar?¡Encuentralo!"
       />
-      <button className="boxInput">
+      <button className="boxButton">
         <img src={SearchButton} alt="SearchButton" />
       </button>
     </div>
