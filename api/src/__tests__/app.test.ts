@@ -100,5 +100,26 @@ describe("/api/memes con texto de búsqueda", () => {
       done();
     });
   });
+
+  it("Si se busca 'dAnCinG' devulve los memes que tienen una etiqueta que contiene o es 'dancing'", done => {
+    let memes = [];
+    memes.push({ id: 1, tags: ['#DancinG'] });
+    memes.push({ id: 2, tags: ['#daNcIngflowers'] });
+    memes.push({ id: 3, tags: ['#potatoes'] });
+
+    const adapter = new Memory<DatabaseSchema>("");
+    const db = low(adapter);
+    db.defaults({ memes }).write();
+    app = createApp(db);
+
+    request(app)
+    .get("/api/memes")
+    .query({searchText: 'dAnCinG'})
+    .then((response) => {
+      expect(response.body).toHaveLength(2);
+      expect(response.body).toEqual(expect.arrayContaining([expect.objectContaining({id:1}), expect.objectContaining({id:2})]));      
+      done();
+    });
+  });
 });
 
