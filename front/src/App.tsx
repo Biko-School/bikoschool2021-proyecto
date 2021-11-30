@@ -1,9 +1,15 @@
 import "./_reset.css";
 import "./App.css";
-import {HomePage} from "./ui/views/home/HomePage"
+import {HomePage} from "./ui/views/HomePage/HomePage"
+import {MemeView} from "./ui/views/MemeView/MemeView"
 
 function App() {
-  return(<HomePage/>)
+
+  if (false){
+    return(<HomePage/>)
+  }
+  return(<MemeView/>)
+  
 }
 
 export default App;
