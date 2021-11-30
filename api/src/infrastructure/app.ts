@@ -20,8 +20,6 @@ export const createApp = (db: low.LowdbSync<DbSchema>) => {
   // http://expressjs.com/es/api.html#express.urlencoded
   app.use(express.urlencoded({ extended: false }));
 
-  //   app.use("/api", routes);
-
   app.use((req, res, next) => {
     req.context = { db };
     next();

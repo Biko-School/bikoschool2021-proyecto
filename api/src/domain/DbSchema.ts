@@ -1,4 +1,5 @@
+import { MemeType } from "./MemeType";
 export interface DbSchema {
-  memes: Meme[];
+  memes: MemeType[];
 }
-interface Meme {}
+// interface Meme {}
