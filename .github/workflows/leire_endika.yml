@@ -28,4 +28,4 @@ jobs:
         with:
           args: deploy --only hosting
         env:
-          FIREBASE_TOKEN: ${{secrets.REACT_APP_API_KEY}}
+          FIREBASE_TOKEN: ${process.env.REACT_APP_API_KEY}
