@@ -7,14 +7,7 @@ import { HomeMemesTitle } from './components/HomeMemesTitle';
 import { HomeMemesSearchbar } from './components/HomeMemesSearchbar';
 import { HomeMemesContainer } from './components/HomeMemesContainer';
 
-export interface Meme {
-  id: string;
-  url: string;
-  title: string;
-  username: string;
-  tags: string[];
-  time: string;
-}
+import { Meme } from '../../core/domain/model/Meme/Meme';
 
 export const Home = () => {
   const [memes, setMemes] = useState([]);
