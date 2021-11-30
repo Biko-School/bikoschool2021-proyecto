@@ -7,6 +7,7 @@ import DatabaseSchema from "core/domain/model/DatabaseSchema";
 import { Express } from "express";
 
 import dbData from "../fixtures/db.json";
+import { resolve } from "path/posix";
 
 describe("/api/memes", () => {
   let app: Express;
@@ -38,3 +39,23 @@ describe("/api/memes", () => {
       });
   });
 });
+
+describe("/api/memes con texto de búsqueda", () => {
+  let app: Express;
+
+  it("No devuelve resultados si no tiene longitud de 3 caracteres", done => {
+    const adapter = new Memory<DatabaseSchema>("");
+    const db = low(adapter);
+    db.defaults(dbData).write();
+    app = createApp(db);
+
+    request(app)
+    .get("/api/memes")
+    .query({searchText: 'te'})
+    .then((response) => {
+      expect(response.body).toHaveLength(0);
+      done();
+    });
+  });
+});
+
