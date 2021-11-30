@@ -15,26 +15,7 @@ export const Home = () => {
   const [error, setError] = useState(false);
   const [filter, setFilter] = useState('');
 
-  const formatedFilter: string = filter
-    .split(' ')
-    .filter((substring: string) => substring)
-    .join(' ')
-    .toLowerCase();
-
-  let filteredMemes = memes.filter((meme: Meme) => {
-    return (
-      formatedFilter.length < 3 ||
-      meme.tags.some((tag: string) =>
-        tag.toLowerCase().includes(formatedFilter)
-      )
-    );
-  });
-
-  if (formatedFilter.length > 3) {
-    filteredMemes = filteredMemes.sort((meme1: Meme, meme2: Meme) => {
-      return meme1.time < meme2.time ? 1 : meme2.time < meme1.time ? -1 : 0;
-    });
-  }
+  const filteredMemes: Meme[] = MemeService.filterMemes(filter, memes);
 
   useEffect(() => {
     setLoading(true);
@@ -47,7 +28,7 @@ export const Home = () => {
   return (
     <>
       <div className="home-container">
-        <HomeHeader></HomeHeader>
+        <HomeHeader />
         <HomeMemesSearchbar
           onFilter={(event: any) => setFilter(event.target.value)}
           filter={filter}
