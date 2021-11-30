@@ -3,6 +3,7 @@ import { MemeType } from "../../core/domain/MemeType";
 import fetchMemes from "../../core/infrastructure/fetchMemes";
 import fetchFilteredMemes from "../../core/infrastructure/fetchFilteredMemes";
 import Meme from "../components/Meme/Meme";
+import { CircularProgress } from "@mui/material";
 
 function App() {
   const [memes, setMemes] = useState<MemeType[]>([]);
@@ -28,6 +29,13 @@ function App() {
           className="input_search"
           onChange={(event) => setSearchText(event.target.value)}
           value={searchText}
+          onKeyPress={(event) => {
+            if (event.key === "Enter") {
+              fetchFilteredMemes(searchText).then((response) => {
+                setMemes(response);
+              });
+            }
+          }}
         />
         <div
           className="search_icon"
@@ -47,7 +55,7 @@ function App() {
       </div>
 
       <div className="memes_grid">
-        {memes.length === 0 && <div>Loading...</div>}
+        {memes.length === 0 && <CircularProgress />}
 
         {memes.length !== 0 &&
           memes.map((result) => (
