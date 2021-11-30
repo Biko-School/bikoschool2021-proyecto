@@ -28,4 +28,4 @@ jobs:
         with:
           args: deploy --only hosting
         env:
-          FIREBASE_TOKEN: ${process.env.REACT_APP_API_KEY}
+          FIREBASE_TOKEN: 1//03gXNUcQ_53qPCgYIARAAGAMSNwF-L9IrjaGYRZFfVVj-xgqt-oO3yryp4ckJFEXjagwt7rdkNgVzye_yPB1rSuu0jhUuUMiTVP4
