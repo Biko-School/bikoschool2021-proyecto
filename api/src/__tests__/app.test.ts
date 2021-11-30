@@ -101,7 +101,7 @@ describe("/api/memes con texto de búsqueda", () => {
     });
   });
 
-  it("Si se busca 'dAnCinG' devulve los memes que tienen una etiqueta que contiene o es 'dancing'", done => {
+  it("Si se busca 'dAnCinG' devulve los memes que tienen una etiqueta que contiene o es 'dancing' ignorando mayúsculas", done => {
     let memes = [];
     memes.push({ id: 1, tags: ['#DancinG'] });
     memes.push({ id: 2, tags: ['#daNcIngflowers'] });
