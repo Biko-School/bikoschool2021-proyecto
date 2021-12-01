@@ -2,7 +2,7 @@ import "./title.css";
 
 function Title() {
   return (
-    <div className="title">
+    <div className="title-container">
       <h1>GUIFAFFINITY</h1>
     </div>
   );
