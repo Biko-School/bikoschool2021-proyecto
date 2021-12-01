@@ -1,0 +1,23 @@
+.subtitle-container {
+  display: flex;
+  width: 100%;
+  max-height: 204px;
+  padding-bottom: 30px;
+}
+
+.subtitle-icon {
+  height: 31px;
+  width: 36px;
+  padding-top: 12px;
+}
+
+.subtitle-text {
+  padding-left: 21px;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36.41px;
+  line-height: 50px;
+  letter-spacing: -0.015em;
+  color: #ffffff;
+}

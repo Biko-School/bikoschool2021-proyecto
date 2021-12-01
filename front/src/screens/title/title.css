@@ -1,6 +1,13 @@
 .title-container {
+  display: flex;
   padding-bottom: 66px;
+}
 
+.title-logo {
+  width: 56px;
+}
+
+.title-text {
   font-family: "Open Sans Condensed", sans-serif;
   font-style: normal;
   font-weight: 800;
@@ -8,6 +15,5 @@
   line-height: 57px;
   letter-spacing: -0.015em;
   color: #ffffff;
-  max-width: 1132;
-  margin: 0 auto;
+  padding-left: 14px;
 }

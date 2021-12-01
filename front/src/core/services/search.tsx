@@ -14,18 +14,13 @@ function Search({ onFilter }: Props) {
   );
 
   return (
-    <div className="search-parent">
-      <div className="search">
-        <input
-          className="search-input"
-          type="text"
-          onChange={handleChange}
-        ></input>
-        <button
-          className="search-button"
-          onClick={() => onFilter(name)}
-        ></button>
-      </div>
+    <div className="search-container">
+      <input
+        className="search-input"
+        type="text"
+        onChange={handleChange}
+      ></input>
+      <button className="search-button" onClick={() => onFilter(name)}></button>
     </div>
   );
 }

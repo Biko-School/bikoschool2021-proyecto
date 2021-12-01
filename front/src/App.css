@@ -1,15 +1,9 @@
 .container {
   max-width: 1132px;
+  height: 100%;
   margin: 0 auto;
-  background: linear-gradient(
-    157.9deg,
-    #4158d0 1.21%,
-    rgba(200, 80, 192, 0.46) 49.58%,
-    rgba(255, 204, 112, 0.58) 96.91%
-  );
   padding-left: 156px;
   padding-right: 156px;
   padding-top: 57px;
   padding-bottom: 57px;
-
 }
