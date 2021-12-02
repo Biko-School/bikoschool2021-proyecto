@@ -22,4 +22,23 @@
       rgba(0, 255, 153, 0.37) 100%
     ),
     #c4c4c4;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.search-button-ellipse {
+  align-self: flex-end;
+  width: 32px;
+  height: 30px;
+  padding-top: 14px;
+  padding-right: 14px;
+}
+
+.search-button-line {
+  width: 20px;
+  height: 22px;
+  position: relative;
+  left: 14px;
+  top: -6px;
 }

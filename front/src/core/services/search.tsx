@@ -1,6 +1,8 @@
 import React, { ChangeEvent } from "react";
 import "../../reset.css";
 import "./search.css";
+import ellipse from "./ellipse.png";
+import line from "./line.png";
 
 interface Props {
   onFilter: (value: string) => void;
@@ -20,7 +22,10 @@ function Search({ onFilter }: Props) {
         type="text"
         onChange={handleChange}
       ></input>
-      <button className="search-button" onClick={() => onFilter(name)}></button>
+      <button className="search-button" onClick={() => onFilter(name)}>
+        <img className="search-button-ellipse" src={ellipse} alt="ellipse" />
+        <img className="search-button-line" src={line} alt="line" />
+      </button>
     </div>
   );
 }
