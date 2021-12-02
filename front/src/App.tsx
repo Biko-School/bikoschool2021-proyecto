@@ -1,37 +1,27 @@
 import "./_reset.css";
 import "./App.css";
-import GuifContainer from "./ui/components/GuifContainer/GuifContainer";
-import Header from "./ui/components/Header/Header";
-import { useState, useEffect } from "react";
-import Meme from "./core/domain/Meme";
-import { fetchAllMemes } from "./core/service/ApiService";
+import { HomePage } from "./ui/views/HomePage/HomePage";
+import { MemeView } from "./ui/views/MemeView/MemeView";
+// import { NavigationBar } from "./ui/components/NavigationBar/NavigationBar";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
-  const [memes, setMemes] = useState<Meme[]>([]);
-
-  const getMemes = async () => {
-    const response = await fetchAllMemes();
-    setMemes(response);
-  };
-
-  useEffect(() => {
-    getMemes();
-  }, []);
-
-  if (memes.length === 0) {
-    return (
-      <>
-        <Header />
-        <p>Cargando...</p>
-      </>
-    );
-  }
-
   return (
-    <>
-      <Header />
-      <GuifContainer memes={memes} />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/memeSheet/:memeId" element={<MemeView />} />
+        <Route
+          path="*"
+          element={
+            <main>
+              <p>There's nothing here! No match route</p>
+            </main>
+          }
+        />
+      </Routes>
+    </Router>
   );
 }
 
