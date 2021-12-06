@@ -18,14 +18,14 @@ routes.get("/memes", (req, res) => {
 
 routes.get("/memes/:id", (req, res) => {
   const db = req.context.db;
-  const memes = db.get("memes").take(50).value();
-  const response = memes.map((meme) => {
+  const meme = db.get("memes").find({ id: req.params.id }).value();
+  const response = (meme) => {
     return {
       id: meme.id,
       title: meme.title,
       image: meme.images.original.url,
       tags: meme.tags,
     };
-  });
-  res.status(200).json(response);
+  };
+  res.status(200).json(response(meme));
 });
