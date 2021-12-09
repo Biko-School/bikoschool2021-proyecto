@@ -2,7 +2,7 @@ import { Router } from "express";
 
 export const routes = Router();
 
-routes.get("/memes", (req, res) => {
+routes.get("/memes.json", (req, res) => {
   const db = req.context.db;
   const memes = db.get("memes").take(50).value();
 

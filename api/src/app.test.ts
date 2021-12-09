@@ -6,20 +6,20 @@ import { DatabaseSchema } from "./DatabaseSchema";
 import { createApp } from "./app";
 import dbData from "./fixtures/db.json";
 
-describe("/api/memes", () => {
+describe("/api/memes.json", () => {
   let app: Express;
 
   beforeEach(() => {
     const adapter = new Memory<DatabaseSchema>("");
     const db = Lowdb(adapter);
-   
+
     db.defaults(dbData).write();
 
     app = createApp(db);
   });
 
   it("existe el endpoint", (done) => {
-    request(app).get("/api/memes").expect(200, done);
+    request(app).get("/api/memes.json").expect(200, done);
   });
 
   it("devuelve un listado de memes", (done) => {
@@ -34,7 +34,7 @@ describe("/api/memes", () => {
 
   it("devuelve un listado de 50 memes", (done) => {
     request(app)
-      .get("/api/memes")
+      .get("/api/memes.json")
       .expect(200)
       .then((response) => {
         expect(response.body).toHaveLength(50);

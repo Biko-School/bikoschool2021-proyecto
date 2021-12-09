@@ -3,7 +3,7 @@ import MemeRepository from "../domain/MemeRepository";
 
 export const api: MemeRepository = {
   getAllMemes: async (): Promise<Meme[]> => {
-    const response = await fetch("http://localhost:3000/api/memes");
+    const response = await fetch("https://raw.githubusercontent.com/jartigag/bikoschool2021-proyecto/jaime-javi/api/memes.json");
     const allMemesData: StoredMemeData[] = await response.json();
 
     let memeArray: Meme[] = [];
