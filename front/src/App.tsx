@@ -5,25 +5,20 @@ import MemeService from "./core/infrastructure/MemeService";
 
 function App() {
   const [memes, setMemes] = useState(new Array<Meme>());
-  const [filteredMemes, setFilteredMemes] = useState(new Array<Meme>());
 
   //Ejecuta petición API despues de cada renderizado
   useEffect(() => {
     fetchMemes();
   }, []);
 
-  const fetchMemes = async () => {
-    let newMemes = await MemeService.getMemes();
+  const fetchMemes = async (searchText: string = "") => {
+    let newMemes = await MemeService.getMemes(searchText);
     setMemes(newMemes);
-    setFilteredMemes(newMemes);
   };
 
-  const filterMemes = (event: ChangeEvent<HTMLInputElement>) => {
+  const searchMemesByEvent = (event: ChangeEvent<HTMLInputElement>) => {
     const searchText = event?.target?.value?.trim().toLowerCase();
-    const newFilteredMemes = memes.filter((meme) =>
-      meme.title.toLowerCase().includes(searchText)
-    );
-    setFilteredMemes(newFilteredMemes);
+    fetchMemes(searchText);
   };
 
   return (
@@ -31,10 +26,10 @@ function App() {
       <input
         type="text"
         placeholder="¿Que quieres buscar? ¡Encuentralo!"
-        onChange={filterMemes}
+        onChange={searchMemesByEvent}
       ></input>
       <div className="gif__grid">
-        {filteredMemes.map((meme, index) => (
+        {memes.map((meme, index) => (
           <div key={index}>
             <img
               className="gif__card"

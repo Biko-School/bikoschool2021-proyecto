@@ -15,7 +15,7 @@ test.concurrent.each(testMemes)("Muestra el meme #%#", async (meme) => {
   expect(memeElement).toHaveAttribute("src", meme.images.original.url);
 });
 
-test("Debería encontrar un meme por su título", async () => {
+test("Debería existir un buscador", async () => {
   render(<App />);
   const inputSearch = screen.getByPlaceholderText(
     "¿Que quieres buscar? ¡Encuentralo!"
