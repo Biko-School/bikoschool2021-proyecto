@@ -7,16 +7,9 @@ export const Memes = ({ memes }: any) => {
 
   function handleClick() {
     history.push("/meme/detail");
+    window.location.reload();
   }
-  // const { from } = { from: { pathname: routes.MEME_DETAIL } }
 
-  // if (redirectToReferrer) {
-  //     return
-  // }
-  // function openMemeDetail(idMeme:string){
-  //   console.log(idMeme);
-  //   <Redirect to={from + } />
-  // }
   return memes.map((meme: Meme) => (
     <img
       id={meme.id}
