@@ -1,4 +1,4 @@
-import React, { useState, useEffect, ChangeEvent } from "react";
+import { useState, useEffect, ChangeEvent } from "react";
 import "./App.css";
 import Meme from "./core/domain/model/Meme";
 import MemeService from "./core/infrastructure/MemeService";

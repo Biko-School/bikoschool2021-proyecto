@@ -7,7 +7,6 @@ import DatabaseSchema from "core/domain/model/DatabaseSchema";
 import { Express } from "express";
 
 import dbData from "../fixtures/db.json";
-import { resolve } from "path/posix";
 
 describe("/api/memes", () => {
   let app: Express;
