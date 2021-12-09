@@ -1,4 +1,5 @@
 import React from "react";
+import "./meme.css";
 
 const Meme = (props: { title: string; id: string; imageUrl: string }) => {
   return (

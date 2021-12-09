@@ -5,7 +5,7 @@ html {
       rgba(200, 80, 192, 0.444) 77.43%,
       rgba(255, 204, 112, 0.516) 100%
     ),
-    #ffffff;
+    #fff;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -79,13 +79,6 @@ html {
   letter-spacing: -0.015em;
   color: #fff;
   margin-left: 15px;
-}
-.meme {
-  width: 200px;
-  height: 200px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 10px;
 }
 
 .memes_grid {
