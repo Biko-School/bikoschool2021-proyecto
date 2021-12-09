@@ -5,6 +5,7 @@ import MemeService from "./core/infrastructure/MemeService";
 
 function App() {
   const [memes, setMemes] = useState(new Array<Meme>());
+  let memeSearchTimeout: NodeJS.Timeout | null = null;
 
   //Ejecuta petición API despues de cada renderizado
   useEffect(() => {
@@ -18,7 +19,10 @@ function App() {
 
   const searchMemesByEvent = (event: ChangeEvent<HTMLInputElement>) => {
     const searchText = event?.target?.value?.trim().toLowerCase();
-    fetchMemes(searchText);
+
+    if (memeSearchTimeout != null) clearTimeout(memeSearchTimeout);
+
+    memeSearchTimeout = setTimeout((_) => fetchMemes(searchText), 350);
   };
 
   return (
