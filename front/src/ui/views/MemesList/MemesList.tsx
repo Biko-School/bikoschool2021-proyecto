@@ -1,14 +1,13 @@
+import "./MemesList.css";
 import React, { useState, useEffect } from "react";
 import { Meme } from "../../../core/domain/model/Meme/Meme";
 import { fechAllMemes } from "../../../core/service/Meme";
-
 import arrow from "../../../images/Arrow.png";
 import { ApiMemeRepository } from "../../../core/infrastructure/ApiMemeRepository";
 import Header from "../../components/Header/Header";
 import { Input } from "../../components/Input/Input";
-// import { Button } from "../../components/Button/Button";
 import { Title } from "../../components/Title/Title";
-import { List } from "./_components/List";
+import { Memes } from "../components/Memes";
 import { Button } from "../../components/Button/Button";
 import { fechMemesByTag } from "../../../core/service/Meme/fechMemesByTag";
 
@@ -36,9 +35,9 @@ export const MemesList: React.FC = () => {
   );
 
   return (
-    <div className="App">
+    <>
       <Header />
-      <div className="App__SearchBar">
+      <div className="search_bar">
         <Input
           placeholder="¿Qué quieres buscar? ¡Encuéntralo!"
           onChange={(event) => {
@@ -58,7 +57,7 @@ export const MemesList: React.FC = () => {
         />
       </div>
 
-      <div className="App__SectionTitle">
+      <div className="section_title">
         <img src={arrow} alt="logo" width="25" height="20" />
         <Title
           size="H3"
@@ -67,9 +66,9 @@ export const MemesList: React.FC = () => {
         />
       </div>
 
-      <div className="App__GridGiffs">
-        <List memes={filteredMemes} />
+      <div className="gridd_giffs">
+        <Memes memes={filteredMemes} />
       </div>
-    </div>
+    </>
   );
 };

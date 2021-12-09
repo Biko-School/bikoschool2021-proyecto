@@ -1,8 +1,8 @@
-import { Meme } from "../../../../core/domain/model/Meme/Meme";
 import { createBrowserHistory } from "history";
+import { Meme } from "../../../core/domain/model/Meme/Meme";
 // import { routes } from "../../../routers";
 
-export const List = ({ memes }: any) => {
+export const Memes = ({ memes }: any) => {
   const history = createBrowserHistory();
 
   function handleClick() {
@@ -20,7 +20,7 @@ export const List = ({ memes }: any) => {
   return memes.map((meme: Meme) => (
     <img
       id={meme.id}
-      className="App__GridGiffs--Giff"
+      className="gridd_giffs__giff"
       src={meme.img}
       alt={meme.title}
       onClick={handleClick}

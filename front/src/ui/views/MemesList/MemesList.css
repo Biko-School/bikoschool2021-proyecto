@@ -1,0 +1,28 @@
+.search_bar {
+  display: flex;
+  align-items: center;
+  margin-top: 66px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.section_title {
+  display: flex;
+  align-items: center;
+  margin-top: 66px;
+}
+
+.gridd_giffs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.gridd_giffs__giff {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  margin: 15px;
+  object-fit: cover;
+}

@@ -1,34 +1,5 @@
-.App {
+.app {
   padding-top: 50px;
   padding-left: 155px;
   padding-right: 155px;
-}
-
-.App__SearchBar {
-  display: flex;
-  align-items: center;
-  margin-top: 66px;
-  height: 40px;
-  border-radius: 10px;
-  background-color: white;
-}
-
-.App__SectionTitle {
-  display: flex;
-  align-items: center;
-  margin-top: 66px;
-}
-
-.App__GridGiffs {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.App__GridGiffs--Giff {
-  width: 200px;
-  height: 200px;
-  border-radius: 10px;
-  margin: 15px;
-  object-fit: cover;
 }
