@@ -1,9 +1,39 @@
 .container {
-  max-width: 1132px;
-  height: 100%;
+  overflow-y: auto;
   margin: 0 auto;
-  padding-left: 156px;
-  padding-right: 156px;
   padding-top: 57px;
   padding-bottom: 57px;
+}
+
+
+@media (width >= 1132px) {
+  .container {
+    max-width: 1132px;
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+
+@media (width < 1132px) {
+  .container {
+    max-width: 100%;
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+
+@media (width < 768px) {
+  .container {
+    max-width: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (width < 480px) {
+  .container {
+    max-width: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }

@@ -27,23 +27,25 @@ function Home() {
 
   return (
     <>
-      <Search onFilter={setFilter} />
-      <Subtitle />
       <div>
         {memeId === "" ? (
-          <ul className="meme-container">
-            {filteredMemes.map((meme) => (
-              <li>
-                <img
-                  className="meme"
-                  id={meme.id}
-                  src={meme.image}
-                  alt="meme"
-                  onClick={handleId}
-                />
-              </li>
-            ))}
-          </ul>
+          <>
+            <Search onFilter={setFilter} />
+            <Subtitle />
+            <ul className="meme-container">
+              {filteredMemes.map((meme) => (
+                <li>
+                  <img
+                    className="meme"
+                    id={meme.id}
+                    src={meme.image}
+                    alt="Loading..."
+                    onClick={handleId}
+                  />
+                </li>
+              ))}
+            </ul>
+          </>
         ) : (
           <Memeinfo id={memeId} />
         )}

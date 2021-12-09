@@ -9,12 +9,10 @@
 }
 
 .title-text {
-  font-family: "Open Sans Condensed", sans-serif;
-  font-style: normal;
   font-weight: 800;
   font-size: 41.83px;
   line-height: 57px;
   letter-spacing: -0.015em;
-  color: #ffffff;
+
   padding-left: 14px;
 }
