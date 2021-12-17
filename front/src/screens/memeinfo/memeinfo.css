@@ -1,0 +1,27 @@
+.memeinfo-title {
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 50px;
+    letter-spacing: -0.015em;
+    padding-bottom: 32px
+}
+
+.memeinfo-image {
+    border-radius: 15px;
+    width: 500px;
+    height: 500px;
+}
+
+.memeinfo-tags{
+    background-color: rgba(84, 80, 80, 0.659);
+    width: 150px;
+    height: 40px;
+    border-radius: 109px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 25px;
+    padding-top: 7.5px;
+    padding-bottom: 7.5 px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Meme } from "../../core/domain/meme";
 import JsonMeme from "../../core/infrastructure/JsonMeme";
+import "./memeinfo.css";
 
 interface Props {
   id: string;
@@ -26,10 +27,23 @@ function Memeinfo({ id }: Props) {
     <div>
       <h1>
         {meme.title ? (
-          <>
-            <div>{meme.title}</div>
-            <img src={meme.image} alt={meme.title} />
-          </>
+          <div>
+            <div>
+              <div className="memeinfo-title">{meme.title}</div>
+              <img
+                className="memeinfo-image"
+                src={meme.image}
+                alt={meme.title}
+              />
+            </div>
+            <div>
+              <ul>
+                {meme.tags.map((tag) => (
+                  <li className="memeinfo-tags">{tag}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
         ) : (
           <h1>Loading ...</h1>
         )}
