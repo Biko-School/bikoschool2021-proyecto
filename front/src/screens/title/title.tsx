@@ -5,7 +5,9 @@ function Title() {
   return (
     <div className="title-container">
       <img className="title-logo" src={Logo} alt="logo" />
-      <h1 className="title-text">GUIFAFFINITY</h1>
+      <a href="." className="title-text">
+        GUIFAFFINITY
+      </a>
     </div>
   );
 }

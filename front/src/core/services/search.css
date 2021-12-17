@@ -8,7 +8,13 @@
 .search-input {
   flex-grow: 1;
   height: 70px;
-  border-radius: 15px 0px 0px 15px;
+  border-radius: 15px 0px 0px 15px; 
+}
+
+::placeholder {
+  font-weight: 400;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-style: normal;
 }
 
 .search-button {

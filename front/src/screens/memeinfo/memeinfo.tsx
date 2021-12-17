@@ -28,7 +28,7 @@ function Memeinfo({ id }: Props) {
         {meme.title ? (
           <>
             <div>{meme.title}</div>
-            <img src={meme.image} alt="meme" />
+            <img src={meme.image} alt={meme.title} />
           </>
         ) : (
           <h1>Loading ...</h1>

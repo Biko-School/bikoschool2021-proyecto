@@ -39,7 +39,7 @@ function Home() {
                     className="meme"
                     id={meme.id}
                     src={meme.image}
-                    alt="Loading..."
+                    alt={meme.title}
                     onClick={handleId}
                   />
                 </li>

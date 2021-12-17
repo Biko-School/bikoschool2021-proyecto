@@ -21,6 +21,7 @@ function Search({ onFilter }: Props) {
         className="search-input"
         type="text"
         onChange={handleChange}
+        placeholder="  ¿Que quieres buscar?¡Encuentralo!"
       ></input>
       <button className="search-button" onClick={() => onFilter(name)}>
         <img className="search-button-ellipse" src={ellipse} alt="ellipse" />
